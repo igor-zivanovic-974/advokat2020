@@ -127,5 +127,9 @@
   "case.active": "Predmet aktivan",
   "case.status": "Status predmeta",
   "case.set-as-client": "Postavi klijenta",
-  "case.internal-mark": "Interna oznaka"
+  "case.internal-mark": "Interna oznaka",
+  "case.movement": "Kretanje predmeta",
+  "case.notes": "Beleske",
+  "case.add-note": "Dodaj belesku",
+  "case.remove-note": "Obrisi belesku"
 }

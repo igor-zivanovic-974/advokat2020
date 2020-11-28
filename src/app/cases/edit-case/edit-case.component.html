@@ -7,24 +7,13 @@
   <div>
     <!-- *ngIf="!disabled" -->
     <form [formGroup]="form" class="">
-      <div class="row mt-4 mb-3">
+      <div class="row mt-4 mb-3" *ngIf="mode === 'edit'">
         <!-- council -->
         <div class="form-group col-6 col-lg-3">
           <label class="font-weight-bold" for="councilId">{{ 'case.council' | translate }}</label>
-          <ng-select
-            class=""
-            [items]="councils"
-            bindLabel="name"
-            bindValue="id"
-            formControlName="councilId"
-            [readonly]="disabled"
-          >
+          <ng-select class="" [items]="councils" bindLabel="name" bindValue="id" formControlName="councilId" [readonly]="disabled">
           </ng-select>
-          <small
-            [hidden]="form.controls.councilId.valid || form.controls.councilId.untouched"
-            class="text-danger"
-            translate
-          >
+          <small [hidden]="form.controls.councilId.valid || form.controls.councilId.untouched" class="text-danger" translate>
             {{ 'common.required-field' | translate }}
           </small>
         </div>
@@ -32,20 +21,9 @@
         <!-- regitrator -->
         <div class="form-group col-6 col-lg-3">
           <label class="font-weight-bold" for="">{{ 'case.registration-mark' | translate }}</label>
-          <ng-select
-            class=""
-            [items]="registrationMarks"
-            bindLabel="name"
-            bindValue="id"
-            formControlName="registrationMarkId"
-            [readonly]="disabled"
-          >
+          <ng-select class="" [items]="registrationMarks" bindLabel="name" bindValue="id" formControlName="registrationMarkId" [readonly]="disabled">
           </ng-select>
-          <small
-            [hidden]="form.controls.registrationMarkId.valid || form.controls.registrationMarkId.untouched"
-            class="text-danger"
-            translate
-          >
+          <small [hidden]="form.controls.registrationMarkId.valid || form.controls.registrationMarkId.untouched" class="text-danger" translate>
             {{ 'common.required-field' | translate }}
           </small>
         </div>
@@ -53,28 +31,17 @@
         <!-- case number -->
         <div class="form-group col-6 col-lg-3">
           <label class="font-weight-bold" for="caseNumber">{{ 'case.number' | translate }}</label>
-          <input
-            type="text"
-            class="form-control"
-            id="caseTitle"
-            placeholder="{{ 'case.number' | translate }}"
-            formControlName="caseNumber"
-            [readOnly]="disabled"
-          />
+          <input type="text" class="form-control" id="caseTitle" placeholder="{{ 'case.number' | translate }}" formControlName="caseNumber" [readOnly]="disabled" />
         </div>
 
         <!-- year -->
         <div class="form-group col-6 col-lg-3">
           <label class="font-weight-bold" for="year">{{ 'case.year' | translate }}</label>
-          <input
-            type="text"
-            class="form-control"
-            id="year"
-            placeholder="{{ 'case.year' | translate }}"
-            formControlName="year"
-            [readOnly]="disabled"
-          />
+          <input type="text" class="form-control" id="year" placeholder="{{ 'case.year' | translate }}" formControlName="year" [readOnly]="disabled" />
         </div>
+      </div>
+      <div class="row mt-4 mb-3" *ngIf="mode === 'preview'">{{'case.movement' | translate}}:
+        <button *ngFor="let state of case.stateChanges" class="mx-3" (click)="switchCase(state.state)" [ngClass]="{'btn btn-primary': !state.active, 'btn btn-danger': state.active}">{{state.state}}</button>
       </div>
 
       <!-- court Name -->
@@ -91,40 +58,19 @@
       <div class="row">
         <div class="form-group col-6 col-lg-9">
           <label class="font-weight-bold" for="caseTitle">{{ 'case.name' | translate }}</label>
-          <input
-            type="text"
-            class="form-control"
-            id="caseTitle"
-            placeholder="Case Title"
-            formControlName="caseTitle"
-            [readOnly]="disabled"
-          />
+          <input type="text" class="form-control" id="caseTitle" placeholder="Case Title" formControlName="caseTitle" [readOnly]="disabled" />
         </div>
         <!-- internal mark -->
         <div class="form-group col-6 col-lg-3">
           <label class="font-weight-bold" for="caseNumber">{{ 'case.internal-mark' | translate }}</label>
-          <input
-            type="text"
-            class="form-control"
-            id="internalMark"
-            placeholder="{{ 'case.internal-mark' | translate }}"
-            formControlName="internalMark"
-            readOnly
-          />
+          <input type="text" class="form-control" id="internalMark" placeholder="{{ 'case.internal-mark' | translate }}" formControlName="internalMark" readOnly />
         </div>
       </div>
 
       <!-- subject -->
       <div class="form-group">
         <label class="font-weight-bold" for="subject">{{ 'case.subject' | translate }}</label>
-        <input
-          type="text"
-          class="form-control"
-          id="subject"
-          placeholder="Case Title"
-          formControlName="subject"
-          [readOnly]="disabled"
-        />
+        <input type="text" class="form-control" id="subject" placeholder="Case Title" formControlName="subject" [readOnly]="disabled" />
       </div>
 
       <!-- prosecutor -->
@@ -135,27 +81,13 @@
           {{ 'case.prosecutor' | translate }}
         </label>
         <div class="d-flex mb-2">
-          <input
-            type="text"
-            class="form-control col-8"
-            id="prosecutorName"
-            placeholder="{{ 'case.prosecutor-name' | translate }}"
-            formControlName="prosecutorName"
-            readonly
-          />
+          <input type="text" class="form-control col-8" id="prosecutorName" placeholder="{{ 'case.prosecutor-name' | translate }}" formControlName="prosecutorName" readonly />
           <button class="btn btn-primary col-2 p-0 ml-2" (click)="editParty('prosecutor')" [disabled]="disabled">
             <i class="fa fa-edit"></i>&nbsp;
             {{ !(isMobileScreen$ | async) ? ('case.edit-prosecutor' | translate) : '' }}
           </button>
         </div>
-        <input
-          type="text"
-          class="form-control"
-          id="prosecutorAddress"
-          placeholder="{{ 'case.prosecutor-address' | translate }}"
-          formControlName="prosecutorAddress"
-          readonly
-        />
+        <input type="text" class="form-control" id="prosecutorAddress" placeholder="{{ 'case.prosecutor-address' | translate }}" formControlName="prosecutorAddress" readonly />
       </div>
       <!-- add -->
       <div class="form-group" *ngIf="mode === 'new'">
@@ -174,27 +106,13 @@
         </div>
         <div *ngIf="prosecutorAdded">
           <div class="d-flex mb-2">
-            <input
-              type="text"
-              class="form-control col-8"
-              id="prosecutorName"
-              placeholder="{{ 'case.prosecutor-name' | translate }}"
-              formControlName="prosecutorName"
-              readonly
-            />
+            <input type="text" class="form-control col-8" id="prosecutorName" placeholder="{{ 'case.prosecutor-name' | translate }}" formControlName="prosecutorName" readonly />
             <button class="btn btn-primary col-2 p-0 ml-2" (click)="editParty('prosecutor')">
               <i class="fa fa-edit"></i>&nbsp;
               {{ !(isMobileScreen$ | async) ? ('case.edit-prosecutor' | translate) : '' }}
             </button>
           </div>
-          <input
-            type="text"
-            class="form-control"
-            id="prosecutorAddress"
-            placeholder="{{ 'case.prosecutor-address' | translate }}"
-            formControlName="prosecutorAddress"
-            readonly
-          />
+          <input type="text" class="form-control" id="prosecutorAddress" placeholder="{{ 'case.prosecutor-address' | translate }}" formControlName="prosecutorAddress" readonly />
         </div>
       </div>
 
@@ -210,27 +128,13 @@
           <span *ngIf="respondentAdded" class="text-danger"> *</span>
         </label>
         <div class="d-flex mb-2">
-          <input
-            type="text"
-            class="form-control col-8"
-            id="respondentName"
-            placeholder="{{ 'case.respondent-name' | translate }}"
-            formControlName="respondentName"
-            readonly
-          />
+          <input type="text" class="form-control col-8" id="respondentName" placeholder="{{ 'case.respondent-name' | translate }}" formControlName="respondentName" readonly />
           <button class="btn btn-primary col-2 p-0 ml-2" (click)="editParty('respondent')" [disabled]="disabled">
             <i class="fa fa-edit"></i>&nbsp;
             {{ !(isMobileScreen$ | async) ? ('case.edit-respondent' | translate) : '' }}
           </button>
         </div>
-        <input
-          type="text"
-          class="form-control"
-          id="respondentAddress"
-          placeholder="{{ 'case.respondent-address' | translate }}"
-          formControlName="respondentAddress"
-          readonly
-        />
+        <input type="text" class="form-control" id="respondentAddress" placeholder="{{ 'case.respondent-address' | translate }}" formControlName="respondentAddress" readonly />
       </div>
       <!-- add -->
       <div class="form-group" *ngIf="mode === 'new'">
@@ -250,99 +154,46 @@
         </div>
         <div *ngIf="respondentAdded">
           <div class="d-flex mb-2">
-            <input
-              type="text"
-              class="form-control col-8"
-              id="respondentName"
-              placeholder="{{ 'case.respondent-name' | translate }}"
-              formControlName="respondentName"
-              readonly
-            />
+            <input type="text" class="form-control col-8" id="respondentName" placeholder="{{ 'case.respondent-name' | translate }}" formControlName="respondentName" readonly />
             <button class="btn btn-primary col-2 p-0 ml-2" (click)="editParty('respondent')">
               <i class="fa fa-edit"></i>&nbsp;
               {{ !(isMobileScreen$ | async) ? ('case.edit-respondent' | translate) : '' }}
             </button>
           </div>
-          <input
-            type="text"
-            class="form-control"
-            id="respondentAddress"
-            placeholder="{{ 'case.respondent-address' | translate }}"
-            formControlName="respondentAddress"
-            readonly
-          />
+          <input type="text" class="form-control" id="respondentAddress" placeholder="{{ 'case.respondent-address' | translate }}" formControlName="respondentAddress" readonly />
         </div>
       </div>
 
-      <!-- summary -->
+      <!-- notes -->
       <div class="form-group mb-5">
-        <label class="font-weight-bold" for="summary">{{ 'case.summary' | translate }}</label>
-        <textarea
-          type="text"
-          class="form-control"
-          id="summary"
-          placeholder="Summary"
-          formControlName="summary"
-          rows="10"
-          [readOnly]="disabled"
-        ></textarea>
+        <label class="font-weight-bold" for="notes">{{ 'case.notes' | translate }}</label>
+        <div class="" id="notes" placeholder="Notes" formControlName="notes">
+          <div *ngFor="let note of case.notes">{{note}}</div>
+        </div>
+        <button (click)="openAddNoteModal()">{{'case.add-note' | translate}}</button>
       </div>
 
       <div *ngIf="mode !== 'new'">
         <!-- files -->
-        <app-file-list
-          [items]="case.decisions"
-          [title]="'files'"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-file-list>
+        <app-file-list [items]="case.decisions" [title]="'files'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- evidences -->
-        <app-file-list
-          [items]="case.evidences"
-          [title]="'evidences'"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-file-list>
+        <app-file-list [items]="case.evidences" [title]="'evidences'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- hearing Minutes -->
-        <app-file-list
-          [items]="case.hearingMinutes"
-          [title]="'hearing-minutes'"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-file-list>
+        <app-file-list [items]="case.hearingMinutes" [title]="'hearing-minutes'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- expertises -->
-        <app-file-list
-          [items]="case.expertises"
-          [title]="'expertises'"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-file-list>
+        <app-file-list [items]="case.expertises" [title]="'expertises'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- decisions -->
-        <app-file-list
-          [items]="case.decisions"
-          [title]="'decisions'"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-file-list>
+        <app-file-list [items]="case.decisions" [title]="'decisions'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- other -->
-        <app-file-list
-          [items]="case.other"
-          [title]="'other'"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-file-list>
+        <app-file-list [items]="case.other" [title]="'other'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- history -->
-        <app-case-history
-          [caseHistory]="case.caseHistory"
-          [disabled]="disabled"
-          (changeOccured)="changeDetected()"
-        ></app-case-history>
+        <app-case-history [caseHistory]="case.caseHistory" [disabled]="disabled" (changeOccured)="changeDetected()"></app-case-history>
       </div>
 
       <!-- status -->
@@ -350,11 +201,7 @@
         <label class="font-weight-bold" for="statusId">{{ 'case.status' | translate }}</label>
         <ng-select [items]="statuses" bindLabel="name" bindValue="id" formControlName="statusId" [readonly]="disabled">
         </ng-select>
-        <small
-          [hidden]="form.controls.statusId.valid || form.controls.statusId.untouched"
-          class="text-danger"
-          translate
-        >
+        <small [hidden]="form.controls.statusId.valid || form.controls.statusId.untouched" class="text-danger" translate>
           {{ 'common.required-field' | translate }}
         </small>
       </div>
@@ -362,14 +209,7 @@
       <!-- caseValue -->
       <div class="form-group">
         <label class="font-weight-bold" for="caseValue">{{ 'case.value' | translate }}</label>
-        <input
-          type="text"
-          class="form-control"
-          id="caseValue"
-          placeholder="{{ 'case.value' | translate }}"
-          formControlName="caseValue"
-          [readOnly]="disabled"
-        />
+        <input type="text" class="form-control" id="caseValue" placeholder="{{ 'case.value' | translate }}" formControlName="caseValue" [readOnly]="disabled" />
       </div>
 
       <!-- active -->
@@ -385,13 +225,7 @@
       <!-- buttons -->
       <div class="row mt-3">
         <div class="col-md-offset-4 col-md-4">
-          <button
-            type="submit"
-            class="btn btn-outline-dark"
-            (click)="save()"
-            [disabled]="form.invalid"
-            *ngIf="!disabled"
-          >
+          <button type="submit" class="btn btn-outline-dark" (click)="save()" [disabled]="form.invalid" *ngIf="!disabled">
             {{ 'common.save' | translate }}
           </button>
           <button type="submit" class="btn btn-outline-dark" (click)="goToUrl('cases')" *ngIf="!disabled">

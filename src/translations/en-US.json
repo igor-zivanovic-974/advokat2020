@@ -127,5 +127,9 @@
   "case.active": "Case Active",
   "case.status": "Case Status",
   "case.set-as-client": "Set as Client",
-  "case.internal-mark": "Internal Mark"
+  "case.internal-mark": "Internal Mark",
+  "case.movement": "Case Movement",
+  "case.notes": "Notes",
+  "case.add-note": "Add Note",
+  "case.remove-note": "Remove note"
 }

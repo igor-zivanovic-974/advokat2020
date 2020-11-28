@@ -22,7 +22,7 @@ import { SelectCourtTypeModalComponent } from './select-court-type-modal/select-
 import { Observable, Subject } from 'rxjs';
 import { GlobalService } from '@app/shell/global.service';
 import { take, takeUntil } from 'rxjs/operators';
-import { debug } from 'console';
+import { NoteComponent } from '@app/@shared/note/note.component';
 
 @Component({
   selector: 'app-edit-cases',
@@ -61,6 +61,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   };
   case: Case = {
     id: null,
+    stateChanges: [],
     internalMark: '',
     dateCreated: new Date(),
     dateUpdated: new Date(),
@@ -75,7 +76,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     caseTitle: '',
     subject: '',
     caseValue: '',
-    summary: '',
+    notes: [],
     files: [],
     evidences: [],
     hearingMinutes: [],
@@ -102,6 +103,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   respondentAdded = false;
   statuses: KeyValuePair[];
   lastInternalMark: string;
+  note: string;
 
   constructor(
     private casesService: CasesService,
@@ -148,7 +150,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   selectCourtType() {
     const modalRef = this.modalService.open(SelectCourtTypeModalComponent, {
@@ -289,6 +291,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     };
     this.case = {
       id: null,
+      stateChanges: [],
       internalMark: this.form.value.internalMark,
       dateCreated: new Date(),
       dateUpdated: new Date(),
@@ -304,7 +307,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
       prosecutor: this.prosecutor,
       respondent: this.respondent,
       caseValue: this.form.value.caseValue,
-      summary: this.form.value.summary,
+      notes: this.form.value.notes,
       status: this.statuses.find((s) => s.id === this.form.value.statusId),
       active: true,
       files: [],
@@ -325,6 +328,18 @@ export class EditCaseComponent implements OnInit, OnDestroy {
 
   setClient(id: number) {
     this.case.clientId = id;
+  }
+
+  switchCase(state: string) {
+    alert(state);
+  }
+
+  openAddNoteModal() {
+    const modalRef = this.modalService.open(NoteComponent, { size: 'lg' });
+    modalRef.componentInstance.passEntry.subscribe((receivedEntry: string) => {
+      this.note = receivedEntry;
+      this.getHelperData();
+    });
   }
 
   addParty(party: string) {
@@ -397,7 +412,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
       year: ['', Validators.required],
       courtId: [null, Validators.required],
       caseTitle: ['', Validators.required],
-      summary: ['', Validators.required],
+      notes: [this.formBuilder.array([])],
       respondentName: [null, Validators.required],
       respondentAddress: ['', Validators.required],
       prosecutorName: [null, Validators.required],

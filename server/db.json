@@ -3,6 +3,11 @@
   "cases": [
     {
       "id": 1,
+      "stateChanges": [
+        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
+        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
+        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+      ],
       "clientId": 1,
       "internalMark": "01/2020",
       "council": {
@@ -40,7 +45,7 @@
       "caseTitle": "Parnica kuca",
       "subject": "Subject 1",
       "caseValue": "100.000 din",
-      "summary": "Summary of the case 1",
+      "notes": ["Note 1", "Note 2"],
       "files": [
         {
           "id": 1,
@@ -130,6 +135,11 @@
     },
     {
       "id": 2,
+      "stateChanges": [
+        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
+        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
+        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+      ],
       "internalMark": "02/2020",
       "council": {
         "id": 1,
@@ -167,7 +177,7 @@
       "caseTitle": "Tehnoloski visak",
       "subject": "Subject 2",
       "caseValue": "200.000 din",
-      "summary": "Summary of the case 2",
+      "notes": ["Note 1", "Note 2"],
       "files": [
         {
           "id": 1,
@@ -252,6 +262,11 @@
     },
     {
       "id": 3,
+      "stateChanges": [
+        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
+        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
+        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+      ],
       "internalMark": "03/2020",
       "council": {
         "id": 1,
@@ -289,7 +304,7 @@
       "caseTitle": "Tehnoloski visak",
       "subject": "Subject 3",
       "caseValue": "300.000 din",
-      "summary": "Summary of the case 3",
+      "notes": ["Note 1", "Note 2"],
       "files": [
         {
           "id": 1,
@@ -373,6 +388,11 @@
       ]
     },
     {
+      "stateChanges": [
+        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
+        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
+        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+      ],
       "dateCreated": "2020-11-23T02:37:13.130Z",
       "dateUpdated": "2020-11-23T02:37:13.130Z",
       "court": {
@@ -410,7 +430,7 @@
         "pin": "321323"
       },
       "caseValue": "100.000 din",
-      "summary": "spor oko nasledstva",
+      "notes": ["Note 1", "Note 2"],
       "status": {
         "id": 1,
         "name": "U toku"
@@ -427,6 +447,11 @@
       "internalMark": "04/2020"
     },
     {
+      "stateChanges": [
+        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
+        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
+        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+      ],
       "dateCreated": "2020-11-23T02:41:24.343Z",
       "dateUpdated": "2020-11-23T02:41:24.343Z",
       "court": {
@@ -465,7 +490,7 @@
         "pin": "321323"
       },
       "caseValue": "100.000 din",
-      "summary": "Cezar ga maltretira",
+      "notes": ["Note 1", "Note 2", "Cezar ga maltretira"],
       "status": {
         "id": 1,
         "name": "U toku"

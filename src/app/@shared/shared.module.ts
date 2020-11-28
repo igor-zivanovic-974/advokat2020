@@ -19,6 +19,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
+import { NoteComponent } from './note/note.component';
 
 @NgModule({
   imports: [
@@ -42,11 +43,12 @@ import { ConfirmationModalComponent } from './modals/confirmation-modal/confirma
     ContextMenuComponent,
     FileUploadComponent,
     DropdownComponent,
+    NoteComponent,
   ],
-  exports: [LoaderComponent, DeleteModalComponent, ConfirmationModalComponent, TranslateModule, FileUploadComponent],
-  entryComponents: [DeleteModalComponent, ConfirmationModalComponent, FileUploadComponent],
+  exports: [LoaderComponent, DeleteModalComponent, ConfirmationModalComponent, NoteComponent, TranslateModule, FileUploadComponent],
+  entryComponents: [DeleteModalComponent, ConfirmationModalComponent, FileUploadComponent, NoteComponent],
   providers: [NotificationsService],
 })
-export class SharedModule {}
+export class SharedModule { }
 
 // platformBrowserDynamic().bootstrapModule(SharedModule);
