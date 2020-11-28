@@ -1,0 +1,1051 @@
+{
+  "last": { "last": 9 },
+  "cases": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "internalMark": "01/2020",
+      "council": {
+        "id": 1,
+        "name": "III"
+      },
+      "court": {
+        "id": 1,
+        "name": "Prvi osnovni sud u Beogradu",
+        "courtTypeId": 1
+      },
+      "respondent": {
+        "id": 1,
+        "firstName": "Igor",
+        "lastName": "Zivanovic",
+        "address": "Radoja Dakica 12, Zemun",
+        "phone": "1234567898",
+        "pin": "9876543210"
+      },
+      "prosecutor": {
+        "id": 2,
+        "firstName": "Srbislava",
+        "lastName": "Janda",
+        "address": "Novi Sor 30, Sremska Mitrovica",
+        "phone": "1234567898",
+        "pin": "9876543210"
+      },
+      "registrationMark": {
+        "id": 1,
+        "name": "P",
+        "description": "Parnicni predmeti"
+      },
+      "caseNumber": "369",
+      "year": "2011",
+      "caseTitle": "Parnica kuca",
+      "subject": "Subject 1",
+      "caseValue": "100.000 din",
+      "summary": "Summary of the case 1",
+      "files": [
+        {
+          "id": 1,
+          "title": "Tuzba",
+          "link": "assets/files/plan-otplate-igor.pdf"
+        },
+        {
+          "id": 2,
+          "title": "odgovor na tuzbu",
+          "link": "assets/files/4.pdf"
+        }
+      ],
+      "evidences": [
+        {
+          "id": 1,
+          "title": "dokaz 1",
+          "link": "assets/files/5.pdf"
+        },
+        {
+          "id": 1,
+          "title": "dokaz 2",
+          "link": "assets/files/2.pdf"
+        }
+      ],
+      "hearingMinutes": [
+        {
+          "id": 1,
+          "title": "zapisnik sa rocista 1",
+          "link": "assets/files/3.pdf"
+        }
+      ],
+      "expertises": [
+        {
+          "id": 1,
+          "title": "vestacenje 1",
+          "link": "assets/files/1.pdf"
+        }
+      ],
+      "decisions": [
+        {
+          "id": 1,
+          "title": "odluka 1",
+          "link": "assets/files/6.pdf"
+        }
+      ],
+      "other": [
+        {
+          "id": 1,
+          "title": "prijem poziva na rociste 1",
+          "link": "assets/files/3.pdf"
+        },
+        {
+          "id": 2,
+          "title": "prijem poziva na rociste 2",
+          "link": "assets/files/4.pdf"
+        }
+      ],
+      "dateCreated": "2015-12-04",
+      "dateUpdated": "2020-11-05",
+      "status": {
+        "id": 2,
+        "name": "In progress"
+      },
+      "active": true,
+      "caseHistory": [
+        {
+          "id": 1,
+          "caseDate": "2020-01-01",
+          "caseTitle": "Tuzba"
+        },
+        {
+          "id": 11,
+          "caseDate": "2020-01-02",
+          "caseTitle": "Odgovor na tuzbu"
+        },
+        {
+          "id": 111,
+          "caseDate": "2020-01-03",
+          "caseTitle": "Dopis tuzioca"
+        },
+        {
+          "id": 1111,
+          "caseDate": "2020-01-04",
+          "caseTitle": "Rociste za glavnu raspravu"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "internalMark": "02/2020",
+      "council": {
+        "id": 1,
+        "name": "I"
+      },
+      "court": {
+        "id": 2,
+        "name": "Drugi osnovni sud u Beogradu",
+        "courtTypeId": 1
+      },
+      "clientId": 1,
+      "respondent": {
+        "id": 1,
+        "firstName": "Igor",
+        "lastName": "Zivanovic",
+        "address": "Radoja Dakica 12, Zemun",
+        "phone": "1234567898",
+        "pin": "9876543210"
+      },
+      "prosecutor": {
+        "id": 2,
+        "firstName": "Pera",
+        "lastName": "Peric",
+        "address": "Zmaj Jovina 22, Novi Sad",
+        "phone": "1234567898",
+        "pin": "9876543210"
+      },
+      "registrationMark": {
+        "id": 1,
+        "name": "P1",
+        "description": "Radni sporovi"
+      },
+      "caseNumber": "2995",
+      "year": "2015",
+      "caseTitle": "Tehnoloski visak",
+      "subject": "Subject 2",
+      "caseValue": "200.000 din",
+      "summary": "Summary of the case 2",
+      "files": [
+        {
+          "id": 1,
+          "title": "Tuzba",
+          "link": "assets/files/plan-otplate-igor.pdf"
+        },
+        {
+          "id": 2,
+          "title": "odgovor na tuzbu",
+          "link": "assets/files/2.pdf"
+        }
+      ],
+      "evidences": [
+        {
+          "id": 1,
+          "title": "dokaz 1",
+          "link": "assets/files/4.pdf"
+        },
+        {
+          "id": 1,
+          "title": "dokaz 2",
+          "link": "assets/files/5.pdf"
+        }
+      ],
+      "hearingMinutes": [
+        {
+          "id": 1,
+          "title": "zapisnik sa rocista 1",
+          "link": "assets/files/6.pdf"
+        }
+      ],
+      "expertises": [
+        {
+          "id": 1,
+          "title": "vestacenje 1",
+          "link": "assets/files/2.pdf"
+        }
+      ],
+      "decisions": [
+        {
+          "id": 1,
+          "title": "odluka 1",
+          "link": "assets/files/3.pdf"
+        }
+      ],
+      "other": [
+        {
+          "id": 1,
+          "title": "prijem poziva na rociste 1",
+          "link": "assets/files/4.pdf"
+        }
+      ],
+      "dateCreated": "2015-12-04",
+      "dateUpdated": "2020-11-05",
+      "status": {
+        "id": 2,
+        "name": "In progress"
+      },
+      "active": true,
+      "caseHistory": [
+        {
+          "id": 2,
+          "caseDate": "2020-01-01",
+          "caseTitle": "Tuzba"
+        },
+        {
+          "id": 22,
+          "caseDate": "2020-01-02",
+          "caseTitle": "Odgovor na tuzbu"
+        },
+        {
+          "id": 222,
+          "caseDate": "2020-01-03",
+          "caseTitle": "Dopis tuzioca"
+        },
+        {
+          "id": 2222,
+          "caseDate": "2020-01-04",
+          "caseTitle": "Rociste za glavnu raspravu"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "internalMark": "03/2020",
+      "council": {
+        "id": 1,
+        "name": "I"
+      },
+      "court": {
+        "id": 3,
+        "name": "Treci osnovni sud u Beogradu",
+        "courtTypeId": 1
+      },
+      "clientId": 1,
+      "respondent": {
+        "id": 1,
+        "firstName": "Jovan",
+        "lastName": "Jovanovic",
+        "address": "Respondent Address in Belgrade",
+        "phone": "1234567898",
+        "pin": "9876543210"
+      },
+      "prosecutor": {
+        "id": 3,
+        "firstName": "OS",
+        "lastName": "Starina Novak",
+        "address": "Knez Danilova 33-37, Belgrade",
+        "phone": "1234567898",
+        "pin": "9876543210"
+      },
+      "registrationMark": {
+        "id": 1,
+        "name": "P2",
+        "description": "Porodicni sporovi"
+      },
+      "caseNumber": "2991",
+      "year": "2018",
+      "caseTitle": "Tehnoloski visak",
+      "subject": "Subject 3",
+      "caseValue": "300.000 din",
+      "summary": "Summary of the case 3",
+      "files": [
+        {
+          "id": 1,
+          "title": "Tuzba",
+          "link": "assets/files/plan-otplate-igor.pdf"
+        },
+        {
+          "id": 2,
+          "title": "odgovor na tuzbu",
+          "link": "assets/files/1.pdf"
+        }
+      ],
+      "evidences": [
+        {
+          "id": 1,
+          "title": "dokaz 1",
+          "link": "assets/files/2.pdf"
+        },
+        {
+          "id": 1,
+          "title": "dokaz 2",
+          "link": "assets/files/3.pdf"
+        }
+      ],
+      "hearingMinutes": [
+        {
+          "id": 1,
+          "title": "zapisnik sa rocista 1",
+          "link": "assets/files/4.pdf"
+        }
+      ],
+      "expertises": [
+        {
+          "id": 1,
+          "title": "vestacenje 1",
+          "link": "assets/files/5.pdf"
+        }
+      ],
+      "decisions": [
+        {
+          "id": 1,
+          "title": "odluka 1",
+          "link": "assets/files/6.pdf"
+        }
+      ],
+      "other": [
+        {
+          "id": 1,
+          "title": "prijem poziva na rociste 1",
+          "link": "assets/files/5.pdf"
+        }
+      ],
+      "dateCreated": "2015-12-04",
+      "dateUpdated": "2020-11-05",
+      "status": {
+        "id": 2,
+        "name": "In progress"
+      },
+      "active": true,
+      "caseHistory": [
+        {
+          "id": 3,
+          "caseDate": "2020-01-01",
+          "caseTitle": "Tuzba"
+        },
+        {
+          "id": 33,
+          "caseDate": "2020-01-02",
+          "caseTitle": "Odgovor na tuzbu"
+        },
+        {
+          "id": 333,
+          "caseDate": "2020-01-03",
+          "caseTitle": "Dopis tuzioca"
+        },
+        {
+          "id": 3333,
+          "caseDate": "2020-01-04",
+          "caseTitle": "Rociste za glavnu raspravu"
+        }
+      ]
+    },
+    {
+      "dateCreated": "2020-11-23T02:37:13.130Z",
+      "dateUpdated": "2020-11-23T02:37:13.130Z",
+      "court": {
+        "id": 1,
+        "name": "Treci osnovni sud u Beogradu",
+        "courtTypeId": 1,
+        "courtTypeName": "Osnovni sud"
+      },
+      "council": {
+        "id": 2,
+        "name": "II"
+      },
+      "registrationMark": {
+        "id": 1,
+        "name": "P"
+      },
+      "caseNumber": "555",
+      "year": "2020",
+      "caseTitle": "Pera tuzi Simu",
+      "subject": "Subject 1",
+      "prosecutor": {
+        "id": 2,
+        "firstName": "Sima",
+        "lastName": "Simic",
+        "address": "Adresa 2",
+        "phone": "21323213",
+        "pin": "321323"
+      },
+      "respondent": {
+        "id": 2,
+        "firstName": "Sima",
+        "lastName": "Simic",
+        "address": "Adresa 2",
+        "phone": "21323213",
+        "pin": "321323"
+      },
+      "caseValue": "100.000 din",
+      "summary": "spor oko nasledstva",
+      "status": {
+        "id": 1,
+        "name": "U toku"
+      },
+      "active": true,
+      "files": [],
+      "decisions": [],
+      "evidences": [],
+      "expertises": [],
+      "hearingMinutes": [],
+      "other": [],
+      "caseHistory": [],
+      "id": 4,
+      "internalMark": "04/2020"
+    },
+    {
+      "dateCreated": "2020-11-23T02:41:24.343Z",
+      "dateUpdated": "2020-11-23T02:41:24.343Z",
+      "court": {
+        "id": 2,
+        "name": "Drugi osnovni sud u Beogradu",
+        "courtTypeId": 1,
+        "courtTypeName": "Osnovni sud"
+      },
+      "council": {
+        "id": 4,
+        "internalMark": "04/2020",
+        "name": "IV"
+      },
+      "registrationMark": {
+        "id": 3,
+        "name": "P2"
+      },
+      "caseNumber": "444",
+      "year": "2021",
+      "caseTitle": "Moma protiv Cezara",
+      "subject": "Mobing",
+      "prosecutor": {
+        "id": 2,
+        "firstName": "Sima",
+        "lastName": "Simic",
+        "address": "Adresa 2",
+        "phone": "21323213",
+        "pin": "321323"
+      },
+      "respondent": {
+        "id": 2,
+        "firstName": "Sima",
+        "lastName": "Simic",
+        "address": "Adresa 2",
+        "phone": "21323213",
+        "pin": "321323"
+      },
+      "caseValue": "100.000 din",
+      "summary": "Cezar ga maltretira",
+      "status": {
+        "id": 1,
+        "name": "U toku"
+      },
+      "active": true,
+      "files": [],
+      "decisions": [],
+      "evidences": [],
+      "expertises": [],
+      "hearingMinutes": [],
+      "other": [],
+      "caseHistory": [],
+      "id": 5,
+      "internalMark": "05/2020"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "roleId": 1,
+      "role": "operator"
+    },
+    {
+      "id": 2,
+      "firstName": "Ivan",
+      "lastName": "Smith",
+      "roleId": 3,
+      "role": "client"
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Douglas",
+      "roleId": 2,
+      "role": "owner"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "roleName": "operator"
+    },
+    {
+      "id": 2,
+      "roleName": "owner"
+    },
+    {
+      "id": 3,
+      "roleName": "client"
+    }
+  ],
+  "courtTypes": [
+    {
+      "id": 1,
+      "type": "Osnovni sud"
+    },
+    {
+      "id": 2,
+      "type": "Visi sud"
+    },
+    {
+      "id": 3,
+      "type": "Apelacioni sud"
+    },
+    {
+      "id": 4,
+      "type": "Privredni sud"
+    },
+    {
+      "id": 5,
+      "type": "Privredni apelacioni sud"
+    },
+    {
+      "id": 6,
+      "type": "Prekrsajni sud"
+    },
+    {
+      "id": 7,
+      "type": "Prekrsajni apelacioni sud"
+    },
+    {
+      "id": 8,
+      "type": "Upravni sud"
+    },
+    {
+      "id": 9,
+      "type": "Vrhovni kasacioni sud"
+    },
+    {
+      "id": 10,
+      "type": "Ustavni sud"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "firstName": "Igor",
+      "lastName": "Zivanovic",
+      "address": "Radoja Dakica 12, Zemun",
+      "phone": "063/ 331030",
+      "pin": "4444",
+      "cases": [
+        { "id": 1, "name": "Pera protiv Mike" },
+        { "id": 2, "name": "Mika protiv Zike" },
+        { "id": 3, "name": "Zika protiv svih" }
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Pera ",
+      "lastName": "Peric",
+      "address": "Svetogorska 33",
+      "phone": "063/ 8898016",
+      "pin": "5555",
+      "cases": [
+        { "id": 1, "name": "Pera protiv Mike" },
+        { "id": 2, "name": "Pera protiv Muje" },
+        { "id": 3, "name": "Zoran protiv Skole" }
+      ]
+    },
+    {
+      "id": 3,
+      "firstName": "Sima",
+      "lastName": "Simic",
+      "address": "Stanoja Glavasa 25",
+      "phone": "064/ 5566887",
+      "pin": "2222",
+      "cases": [
+        { "id": 1, "name": "Igor protiv Srbe" },
+        { "id": 2, "name": "Skola protiv Zike" },
+        { "id": 3, "name": "Zika protiv Vlade" }
+      ]
+    }
+  ],
+  "councils": [
+    {
+      "osnovni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "privredni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "prekrsajni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "visi": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "apelacioni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "kasacioni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    }
+  ],
+  "courts": [
+    {
+      "osnovni": [
+        {
+          "id": 1,
+          "name": "I Osnovni sud u Beogradu",
+          "active": true
+        },
+        {
+          "id": 2,
+          "name": "II Osnovni sud u Beogradu",
+          "active": true
+        },
+        {
+          "id": 3,
+          "name": "III Osnovni sud u Beogradu",
+          "active": true
+        },
+        {
+          "id": 4,
+          "name": "Osnovni sud u Pancevu",
+          "active": true
+        },
+        {
+          "id": 5,
+          "name": "Osnovni sud u Smederevu",
+          "active": true
+        },
+        {
+          "id": 6,
+          "name": "Osnovni sud u Obrenovcu",
+          "active": true
+        },
+        {
+          "id": 7,
+          "name": "Osnovni sud u Kragujevcu",
+          "active": true
+        },
+        {
+          "id": 8,
+          "name": "Osnovni sud u Arandjelovcu",
+          "active": true
+        },
+        {
+          "id": 9,
+          "name": "Osnovni sud u Ubu",
+          "active": true
+        },
+        {
+          "id": 10,
+          "name": "Osnovni sud u Mladenovcu",
+          "active": true
+        }
+      ]
+    },
+    {
+      "privredni": [
+        {
+          "id": 1,
+          "name": "Privredni sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Privredni sud u Pancevu"
+        },
+        {
+          "id": 3,
+          "name": "Privredni sud u Zrenjaninu"
+        },
+        {
+          "id": 4,
+          "name": "Privredni sud u Novom Sadu"
+        },
+        {
+          "id": 5,
+          "name": "Privredni sud u Subotici"
+        }
+      ]
+    },
+    {
+      "prekrsajni": [
+        {
+          "id": 1,
+          "name": "Prekrsajni sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Prekrsajni sud u Sapcu"
+        },
+        {
+          "id": 3,
+          "name": "Prekrsajni sud u Valjevu"
+        },
+        {
+          "id": 4,
+          "name": "Prekrsajni sud u Nisu"
+        },
+        {
+          "id": 5,
+          "name": "Prekrsajni sud u Subotici"
+        }
+      ]
+    },
+    {
+      "visi": [
+        {
+          "id": 1,
+          "name": "Visi sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Visi sud u "
+        },
+        {
+          "id": 3,
+          "name": "Visi sud u "
+        },
+        {
+          "id": 4,
+          "name": "Visi sud u "
+        },
+        {
+          "id": 5,
+          "name": "Visi sud u "
+        }
+      ]
+    },
+    {
+      "prekrsajniApelacioni": [
+        {
+          "id": 1,
+          "name": "Apelacioni sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Apelacioni sud u Novom Sadu"
+        },
+        {
+          "id": 3,
+          "name": "Apelacioni sud u Kragujevcu"
+        },
+        {
+          "id": 4,
+          "name": "Apelacioni sud u Nisu"
+        }
+      ]
+    },
+    {
+      "kasacioni": {
+        "id": 1,
+        "name": "Kasacioni sud"
+      }
+    },
+    {
+      "specijalni": {
+        "id": 1,
+        "name": "Specijalni sud"
+      }
+    },
+    {
+      "upravni": [
+        {
+          "id": 1,
+          "name": "Upravni sud u Beogradu"
+        },
+        {
+          "id": 1,
+          "name": "Upravni sud u Novom Sadu"
+        },
+        {
+          "id": 1,
+          "name": "Upravni sud u Kragujevcu"
+        },
+        {
+          "id": 1,
+          "name": "Upravni sud u Nisu"
+        }
+      ]
+    }
+  ]
+}

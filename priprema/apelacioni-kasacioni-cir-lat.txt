@@ -1,0 +1,94 @@
+sudovi cirilica --------------------------
+Апелациони суд у Београду 
+Апелациони суд у Крагујевцу
+Апелациони суд у Нишу
+Апелациони суд у Новом Саду
+Врховни касациони суд
+Управни суд</select>
+
+sudovi latinica ---------------------------
+Apelacioni sud u Beogradu 
+Apelacioni sud u Kragujevcu
+Apelacioni sud u Nišu
+Apelacioni sud u Novom Sadu
+Vrhovni kasacioni sud
+Upravni sud
+
+Upisnici Apelacionih sudova cirilica -----------------------
+Гж - Другостепени грађански предмети
+ГЖ1 - Другостепени грађански предмети - радни спорови
+ГЖ3 -Другостепени грађански предмети
+ГЖ4 - Другостепени грађански предмети
+Кж - Другостепени кривични предмети
+Кж1 - Другостепени кривични предмети
+Кж3 - Другостепени кривични предмети
+Р - Уписник за разне грађанске предмете по жалби
+Р1 - Сукоб надлежности
+Р3 - Дозвољеност ревизије у грађанским споровима
+
+
+Upisnici Apelacionih sudova latinica -------------------------
+Gž - Drugostepeni građanski predmeti
+Гж1 - Drugostepeni građanski predmeti - radni sporovi
+Гж3 - Drugostepeni građanski predmeti
+Гж4 - Drugostepeni građanski predmeti
+Kž - Drugostepeni krivični predmeti
+Kž1 - Drugostepeni krivični predmeti
+Kž3 - Drugostepeni krivični predmeti
+R - Upisnik za razne građanske predmete po žalbi
+R1 - Sukob nadležnosti
+R3 - Dozvoljenost revizije u građanskim sporovima
+
+
+Upisnici Kasacionog suda latinica ------------------------------------
+Gzp - Zahtev za preispitivanje pravosnažne presude u građanskim predmetima
+Kzz - Zahtevi za zaštitu zakonitosti
+Kzz Pr - Zahtevi za zaštitu zakonitosti podignuti protiv odluka prekršajnih sudova iz oblasti JRM, saobraćaja i JB
+Pzp - Zahtev za preispitivanje pravosnažne presude u privrednim predmetima
+Prev - Revizija na odluke trgovinskog i višeg trgovinskog suda
+Przz - Zahtev za zaštitu zakonitosti u prekršajnim predmetima
+Przp - Zahtev za vanredno preispitivanje pravosnažnih presuda prekršajnog suda
+Rev - Revizije na presude sudova
+Rev1 - Revizija
+Rev2 - Revizije na presude sudova
+Už - Žalbe
+Už - Naredba o postupanju - ustavna žalba
+Uzp - Zahtev za preispitivanje odluke upravnog suda
+Uzp1 - Odluke Ustavnog suda donete u postupku po ustavnoj žalbi protiv odluke VKS
+
+
+Upisnici Kasacionog suda cirilica -----------------------------
+Гзп - Захтев за преиспитивање правоснажне пресуде у грађанским предметима
+Кзз - Захтеви за заштиту законитости
+Кзз Пр - Захтеви за заштиту законитости подигнути против одлука прекршајних судова из области ЈРМ, саобраћаја и ЈБ
+Пзп - Захтев за преиспитивање правоснажне пресуде у привредним предметима
+Прев - Ревизија на одлуке трговинског и вишег трговинског суда
+Прзз - Захтев за заштиту законитости у прекршајним предметима
+Прзп - Захтев за ванредно преиспитивање правоснажних пресуда прекршајног суда
+Рев - Ревизије на пресуде судова
+Рев1 - Ревизија
+Рев2 - Ревизије на пресуде судова
+Уж - Жалбе
+Уж - Наредба о поступању - уставна жалба
+Узп - Захтев за преиспитивање одлуке управног суда
+Узп1 - Одлуке Уставног суда донете у поступку по уставној жалби против одлуке ВКС
+
+Upisnici upravni sud cirilica ----------------------------
+У - Управни спорови
+Ув - Приговори на одлуку судије појединца
+Уж - Изборни спорови
+Уи - Захтев за извршење пресуде управног суда
+Уип - Судска заштита изборног права
+Уо - Одлагање извршења пре подношења тужбе
+Уп - Понављање управно-судског поступка
+Ур - Разни управни предмети
+
+Upisnici upravni sud latinica ----------------------------
+U - Upravni sporovi
+Uv - Prigovori na odluku sudije pojedinca
+Už - Izborni sporovi
+Ui - Zahtev za izvršenje presude upravnog suda
+Uip - Sudska zaštita izbornog prava
+Uo - Odlaganje izvršenja pre podnošenja tužbe
+Up - Ponavljanje upravno-sudskog postupka
+Ur - Razni upravni predmeti

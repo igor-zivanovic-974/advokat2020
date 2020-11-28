@@ -1,0 +1,115 @@
+gradovi prekrsajni sudovi cirilica
+Аранђеловац
+Бачка Паланка
+Београд
+Бечеј
+Ваљево
+Врање
+Вршац
+Горњи Милановац
+Зајечар
+Зрењанин
+Јагодина
+Кикинда
+Крагујевац
+Краљево
+Крушевац
+Лазаревац
+Лесковац
+Лозница
+Младеновац
+Неготин
+Ниш
+Нови Пазар
+Нови Сад
+Обреновац
+Панчево
+Параћин
+Пирот
+Пожаревац
+Пожега
+Прешево
+Пријепоље
+Прокупље
+Рашка
+Рума
+Сента
+Сјеница
+медерево
+Сомбор
+Сремска Митровица
+Суботица
+Трстеник
+Ужице
+Чачак
+Шабац
+
+gradovi prekrsajni sudovi latinica
+Aranđelovac
+Bačka Palanka
+Beograd
+Bečej
+Valjevo
+Vranje
+Vršac
+Gornji Milanovac
+Zaječar
+Zrenjanin
+Jagodina
+Kikinda
+Kragujevac
+Kraljevo
+Kruševac
+Lazarevac
+Leskovac
+Loznica
+Mladenovac
+Negotin
+Niš
+Novi Pazar
+Novi Sad
+Obrenovac
+Pančevo
+Paraćin
+Pirot
+Požarevac
+Požega
+Preševo
+Prijepolje
+Prokuplje
+Raška
+Ruma
+Senta
+Sjenica
+mederevo
+Sombor
+Sremska Mitrovica
+Subotica
+Trstenik
+Užice
+Čačak
+Šabac
+
+upisnici cirilica
+ПР
+ИПР
+ИПР1
+ИПР2
+ИПР3
+ИПРВ
+ПРУЗ
+ПРН
+ПРЖН
+ПРЖУЗ
+
+upisnici latinica
+PR
+IPR
+IPR1
+IPR2
+IPR3
+IPRV
+PRUZ
+PRN
+PRŽN
+PRŽUZ

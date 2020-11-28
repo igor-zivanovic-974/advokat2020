@@ -1,0 +1,14 @@
+// .border-bold {
+//   border: solid 2px #999;
+// }
+
+.btn-xs {
+  width: 20px;
+  height: 10px;
+}
+
+::ng-deep .xxlModal > .modal-dialog {
+  max-width: 1490px !important;
+  min-width: 971px !important;
+  width: 95% !important;
+}

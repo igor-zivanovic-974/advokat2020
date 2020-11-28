@@ -1,0 +1,144 @@
+upisnici privredni sud cirilica
+И
+И2
+Ив
+Ив1
+Ии
+ИИв
+Икд
+Ипв
+Ипв (И)
+Ипв (Ив)
+Ипв (Ив1)
+Л
+П
+П2
+Пк
+Пки
+Пкр
+ПЛ
+ПП
+Р
+Рео
+Ст
+Фи
+
+
+upisnici privredni sud latinica
+I
+I2
+Iv
+Iv1
+Ii
+IIv
+Ikd
+Ipv
+Ipv (I)
+Ipv (Iv)
+Ipv (Iv1)
+L
+P
+P2
+Pk
+Pki
+Pkr
+PL
+PP
+R
+Reo
+St
+Fi
+
+
+
+gradovi privredni sudovi cirilica
+БЕОГРАД
+ЧАЧАК
+КРАГУЈЕВАЦ
+КРАЉЕВО
+ЛЕСКОВАЦ
+НИШ
+НОВИ САД
+ПАНЧЕВО
+ПОЖАРЕВАЦ
+СОМБОР
+СРЕМСКА МИТРОВИЦА
+СУБОТИЦА
+УЖИЦЕ
+ВАЉЕВО
+ЗАЈЕЧАР
+ЗРЕЊАНИН
+
+
+gradovi privredni sudovi latinica
+BEOGRAD
+ČAČAK
+KRAGUJEVAC
+KRALjEVO
+LESKOVAC
+NIŠ
+NOVI SAD
+PANČEVO
+POŽAREVAC
+SOMBOR
+SREMSKA MITROVICA
+SUBOTICA
+UŽICE
+VALjEVO
+ZAJEČAR
+ZRENjANIN
+
+
+
+
+cirilica
+И - ИЗВРШЕЊА НА ОСНОВУ ИЗВРШНЕ ИСПРАВЕ
+И2 - ИЗВРШЕЊА НАПЛАТЕ НОВЧАНИХ КАЗНИ
+Ив - ИЗВРШЕЊА НА ОСНОВУ ВЕРОДОСТОЈНЕ ИСПРАВЕ
+Ив1 - ИЗВРШЕЊА У СКРАЋЕНОМ ИЗВРШНОМ ПОСТУПКУ
+Ии - ПРЕДЛОГ ЗА СПРОВОЂЕЊЕ ИЗВРШЕЊА НА ОСНОВУ ИЗВРШНЕ ИСПРАВЕ ОД СТРАНЕ ИЗВРШИТЕЉА
+Иив - ПРЕДЛОГ ЗА СПРОВОЂЕЊЕ ИЗВРШЕЊА НА ОСНОВУ ВЕРОДОСТОЈНЕ ИСПРАВЕ ОД СТРАНЕ ИЗВРШИТЕЉА
+Икд - КЊИГА ИЗВРШНИХ ДУЖНИКА
+Ипв - ДРУГОСТЕПЕНИ ПОСТУПЦИ ИЗВРШЕЊА
+Ипв (И) - ПОСТУПЦИ ПО ПРИГОВОРУ НА "И" РЕШЕЊА
+Ипв (Ив) - ПОСТУПЦИ ПО ПРИГОВОРУ НА "ИВ" РЕШЕЊА
+Ипв (Ив1) - ПОСТУПЦИ ПО ПРИГОВОРУ НА "ИВ1" РЕШЕЊА
+Л - ЛИКВИДАЦИЈЕ
+П - ПАРНИЧНИ ПРЕДМЕТИ
+П2 - ПАРНИЧНИ ПРЕДМЕТИ ПО ПРИГОВОРУ
+Пк - ПРИВРЕДНИ ПРЕСТУПИ
+Пки - ПРЕТХОДНИ ПОСТУПЦИ ПО ПРИВРЕДНИМ ПРЕСТУПИМА
+Пкр - ПРЕДМЕТИ КОЈИ НЕ СПАДАЈУ У БИЛО КОЈИ УПИСНИК ПРИВРЕДНИХ СУДОВА
+ПЛ - ПЛАТНИ НАЛОЗИ
+ПП - ПРИНУДНА ПОРАВНАЊА
+РР - РАЗНИ ГРАЂАНСКИ ПРЕДМЕТИ
+Рео - РЕОРГАНИЗАЦИЈА
+Ст - СТЕЧАЈИ
+Фи - ПРИЈАВЕ ЗА УПИС У РЕГИСТАР
+
+
+latinica
+I - IZVRŠENjA NA OSNOVU IZVRŠNE ISPRAVE
+I2 - IZVRŠENjA NAPLATE NOVČANIH KAZNI
+Iv - IZVRŠENjA NA OSNOVU VERODOSTOJNE ISPRAVE
+Iv1 - IZVRŠENjA U SKRAĆENOM IZVRŠNOM POSTUPKU
+Ii - PREDLOG ZA SPROVOĐENjE IZVRŠENjA NA OSNOVU IZVRŠNE ISPRAVE OD STRANE IZVRŠITELjA
+Iiv - PREDLOG ZA SPROVOĐENjE IZVRŠENjA NA OSNOVU VERODOSTOJNE ISPRAVE OD STRANE IZVRŠITELjA
+Ikd - KNjIGA IZVRŠNIH DUŽNIKA
+Ipv - DRUGOSTEPENI POSTUPCI IZVRŠENjA
+Ipv (I) - POSTUPCI PO PRIGOVORU NA "I" REŠENjA
+Ipv (Iv) - POSTUPCI PO PRIGOVORU NA "IV" REŠENjA
+Ipv (Iv1) - POSTUPCI PO PRIGOVORU NA "IV1" REŠENjA
+L - LIKVIDACIJE
+P - PARNIČNI PREDMETI
+P2 - PARNIČNI PREDMETI PO PRIGOVORU
+Pk - PRIVREDNI PRESTUPI
+Pki - PRETHODNI POSTUPCI PO PRIVREDNIM PRESTUPIMA
+Pkr - PREDMETI KOJI NE SPADAJU U BILO KOJI UPISNIK PRIVREDNIH SUDOVA
+PL - PLATNI NALOZI
+PP - PRINUDNA PORAVNANjA
+RR - RAZNI GRAĐANSKI PREDMETI
+Reo - REORGANIZACIJA
+St - STEČAJI
+Fi - PRIJAVE ZA UPIS U REGISTAR
+

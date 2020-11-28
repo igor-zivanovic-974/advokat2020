@@ -1,0 +1,47 @@
+<!--<div class="card" *ngIf="!clicked">
+  <button class="btn btn-sm-danger" (click)="clicked = true">+</button>
+</div>
+<div class="card" *ngIf="clicked">
+   <p>file-upload works!</p>
+    <ul>
+        <li *ngFor="let file of files" class="list-unstyled">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" value="file.progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <span id="file-label"></span>
+        </li>
+    </ul>
+    <button class="btn btn-warning" (click)="onClick()">
+        <i class="fa fa-upload" aria-hidden="true"></i> Upload
+    </button>
+    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" /> -->
+<ngx-file-drop
+  dropZoneClassName="drop-zone"
+  contentClassName="content"
+  dropZoneLabel="Drop files here"
+  (onFileDrop)="dropped($event)"
+>
+  <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+    <span class="icon" (click)="openFileSelector()"
+      ><i
+        class=""
+        [ngClass]="{
+          'fas fa-circle-notch fa-spin': (progress > 0 && progress < 100) || preparing,
+          'far fa-image': !(progress > 0 && progress < 100) && !preparing
+        }"
+      ></i
+    ></span>
+    <span
+      *ngIf="!(progress > 0 && progress < 100) && !preparing"
+      class="text-center"
+      (click)="openFileSelector()"
+      translate="{{ 'file-upload-placeholder' }}"
+    ></span>
+    <span *ngIf="preparing">{{ 'common.preparing-images-for-upload' | translate }}</span>
+    <span *ngIf="progress > 0 && progress < 100">{{ 'common.uploading...' | translate }}</span>
+  </ng-template>
+</ngx-file-drop>
+<p class="mt-2" *ngIf="progress > 0 && progress < 100">
+  <ngb-progressbar type="primary" [showValue]="true" [value]="progress"></ngb-progressbar>
+</p>
+<!-- </div> -->

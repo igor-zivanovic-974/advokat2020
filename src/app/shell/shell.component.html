@@ -1,0 +1,26 @@
+<!-- Mobile$: {{isMobileScreen$ | async}} Mobile: {{isMobileScreen}}
+SideMenu$: {{hasSideMenu$ | async}} SideMenu: {{hasSideMenu}} -->
+
+<app-header></app-header>
+<div *ngIf="!(isMobileScreen$ | async)">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <app-side-menu></app-side-menu>
+      </div>
+      <div class="col-10">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isMobileScreen$ | async">
+  <button class="btn btn primary float-right" (click)="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="container-fluid">
+    <app-side-menu></app-side-menu>
+    <router-outlet></router-outlet>
+  </div>
+</div>

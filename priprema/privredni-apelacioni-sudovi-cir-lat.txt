@@ -1,0 +1,25 @@
+Уписници Привредног апелационог суда
+ИЖ - ДРУГОСТЕПЕНИ ИЗВРШНИ ПРЕДМЕТИ
+ПВЖ - ДРУГОСТЕПЕНИ ВАНПАРНИЧНИ ПРЕДМЕТИ
+ПЖ - ДРУГОСТЕПЕНИ ПАРНИЧНИ ПРЕДМЕТИ
+ПКЖ - ДРУГОСТЕПЕНИ ПРЕДМЕТИ ПРИВРЕДНИХ ПРЕСТУПА
+Р-ВТС-СН - СУКОБ НАДЛЕЖНОСТИ
+Р-ДЕЛЕГАЦИЈА - ДЕЛЕГАЦИЈА
+УРС - УПРАВНО-РАЧУНСКИ СПОРОВИ
+
+
+Upisnici Privrednog apelacionog suda
+IŽ - DRUGOSTEPENI IZVRŠNI PREDMETI
+PVŽ - DRUGOSTEPENI VANPARNIČNI PREDMETI
+PŽ - DRUGOSTEPENI PARNIČNI PREDMETI
+PKŽ - DRUGOSTEPENI PREDMETI PRIVREDNIH PRESTUPA
+R-VTS-SN - SUKOB NADLEŽNOSTI
+R-DELEGACIJA - DELEGACIJA
+URS - UPRAVNO-RAČUNSKI SPOROVI
+
+Gradovi cirilica
+БЕОГРАД - ПРИВРЕДНИ АПЕЛАЦИОНИ
+
+
+Gradovi latinica
+BEOGRAD - PRIVREDNI APELACIONI

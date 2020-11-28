@@ -1,0 +1,17 @@
+<div class="border menu-top text-right pr-4">
+  <span class="mx-5">Kontakt: 063/ 33.10.30</span>
+  <span class="mx-5">
+    <a routerLink="/messages" class="no-underline">
+      <span *ngIf="hasMessages$ | async">
+        <i class="far fa-envelope-open no-underline"></i>
+        <span class="dot text-center">{{ messageCounter$ | async }}</span>
+      </span>
+      <span *ngIf="!(hasMessages$ | async)"><i class="far fa-envelope"></i></span>
+    </a>
+  </span>
+  <span>
+    <button class="btn btn-sm btn-link" (click)="setLanguage('sr')">SR</button>
+    |
+    <button class="btn btn-md btn-link" (click)="setLanguage('en')">EN</button>
+  </span>
+</div>

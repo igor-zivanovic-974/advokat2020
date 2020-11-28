@@ -1,0 +1,26 @@
+<div class="container pb-4">
+  <div class="title">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ 'titleDelete' | translate }}
+  </div>
+  <hr />
+  <div class="question">
+    {{ 'app.deleteText' | translate }}
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-3 col-lg-5 text-center">
+      <button type="button" class="btn btn-outline-dark float-right" (click)="setCancel()">
+        {{ 'app.cancel' | translate }}
+      </button>
+    </div>
+    <div class="col-3 col-lg-5 text-center">
+      <button type="button" class="btn btn-outline-dark float-left" (click)="setConfirm()">
+        {{ 'app.delete' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+<simple-notifications></simple-notifications>

@@ -1,0 +1,23 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <pdf-viewer
+      [src]="selectedDocument"
+      [rotation]="0"
+      [fit-to-page]="true"
+      [original-size]="true"
+      [show-all]="true"
+      style="display: block"
+    ></pdf-viewer>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+      {{ 'close' | translate }}
+    </button>
+  </div>
+</ng-template>

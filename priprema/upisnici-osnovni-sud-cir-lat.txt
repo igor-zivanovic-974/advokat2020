@@ -1,0 +1,103 @@
+ГЖ
+ГЖ 1
+ГЖ-И
+И
+Ив
+Ив1
+Ии
+ИИв
+Икд
+Ипв
+Ипв1
+К
+К
+К1
+КЖ
+КЖ1
+КЖ2
+О
+П
+П
+П1
+П1
+П3
+П4
+ПЛ
+Прр
+Прр 1
+Прр1
+Р1
+Р2
+Р3
+
+upisnici osnovni sud cirilica ---------------------
+И - ПРЕДМЕТИ ИЗВРШЕЊА
+Ии - ПРЕДЛОГ ЗА СПРОВОЂЕЊЕ ИЗВРШЕЊА НА ОСНОВУ ИЗВРШНЕ ИСПРАВЕ ОД СТРАНЕ ИЗВРШИТЕЉА
+Иив - ПРЕДЛОГ ЗА СПРОВОЂЕЊЕ ИЗВРШЕЊА НА ОСНОВУ ВЕРОДОСТОЈНЕ ИСПРАВЕ ОД СТРАНЕ ИЗВРШИТЕЉА
+Икд - КЊИГА ИЗВРШНИХ ДУЖНИКА
+Ипв - ПРИГОВОРИ У  "ИВ"  ПРЕДМЕТИМА
+Ипв1 - ПРИГОВОРИ У "ИВ1" ПРЕДМЕТИМА
+К - КРИВИЧНИ ПРЕДМЕТИ
+О - ОСТАВИНСКИ ПОСТУПАК
+П - ПАРНИЧНИ ПРЕДМЕТИ
+П1 - РАДНИ СПОРОВИ
+ПЛ - ПЛАТНИ НАЛОЗИ
+ПРР  - ПРЕДМЕТИ ПО ТУЖБАМА ЗА НАКНАДУ НЕИМОВИНСКЕ ШТЕТЕ ЗБОГ ПОВРЕДЕ ПРАВА НА СУЂЕЊЕ У РАЗУМНОМ РОКУ
+ПРР1 - ПРЕДМЕТИ ПО ТУЖБАМА ЗА НАКНАДУ ИМОВИНСКЕ ШТЕТЕ ЗБОГ ПОВРЕДЕ ПРАВА НА СУЂЕЊЕ У РАЗУМНОМ РОКУ
+Р1 - ОСТАЛИ ВАНПАРНИЧНИ ПРЕДМЕТИ
+Р2 - ОСТАЛИ ВАНПАРНИЧНИ ПРЕДМЕТИ
+Р3 - ОСТАЛИ ВАНПАРНИЧНИ ПРЕДМЕТИ
+Ив - ПРЕДМЕТИ ИЗВРШЕЊА НА ОСНОВУ ВЕРОДОСТОЈНЕ ИСПРАВЕ
+Ив1 - ПРЕДМЕТИ ИЗВРШЕЊА НА ОСНОВУ ВЕРОДОСТОЈНЕ ИСПРАВЕ У СКРАЋЕНОМ ПОСТУПКУ ИЗВРШЕЊА
+
+
+Upisnici osnovni sud latinica ----------------------
+I - PREDMETI IZVRŠENjA
+Ii - PREDLOG ZA SPROVOĐENjE IZVRŠENjA NA OSNOVU IZVRŠNE ISPRAVE OD STRANE IZVRŠITELjA
+Iiv - PREDLOG ZA SPROVOĐENjE IZVRŠENjA NA OSNOVU VERODOSTOJNE ISPRAVE OD STRANE IZVRŠITELjA
+Ikd - KNjIGA IZVRŠNIH DUŽNIKA
+Ipv - PRIGOVORI U  "IV"  PREDMETIMA
+Ipv1 - PRIGOVORI U "IV1" PREDMETIMA
+K - KRIVIČNI PREDMETI
+O - OSTAVINSKI POSTUPAK
+P - PARNIČNI PREDMETI
+P1 - RADNI SPOROVI
+PL - PLATNI NALOZI
+PRR  - PREDMETI PO TUŽBAMA ZA NAKNADU NEIMOVINSKE ŠTETE ZBOG POVREDE PRAVA NA SUĐENjE U RAZUMNOM ROKU
+PRR1 - PREDMETI PO TUŽBAMA ZA NAKNADU IMOVINSKE ŠTETE ZBOG POVREDE PRAVA NA SUĐENjE U RAZUMNOM ROKU
+R1 - OSTALI VANPARNIČNI PREDMETI
+R2 - OSTALI VANPARNIČNI PREDMETI
+R3 - OSTALI VANPARNIČNI PREDMETI
+Iv - PREDMETI IZVRŠENjA NA OSNOVU VERODOSTOJNE ISPRAVE
+Iv1 - PREDMETI IZVRŠENjA NA OSNOVU VERODOSTOJNE ISPRAVE U SKRAĆENOM POSTUPKU IZVRŠENjA
+
+
+
+upisnici Visi sud cirilica -----------------------------
+ГЖ - ПАРНИЧНИ ПРЕДМЕТИ ПО ЖАЛБИ
+ГЖ 1 - ПАРНИЧНИ ПРЕДМЕТИ ПО ЖАЛБИ
+К - КРИВИЧНИ ПРЕДМЕТИ
+К1 - КАЖЊАВАЊЕ БЕЗ ОДРЖАВАЊА ГЛАВНОГ ПРЕТРЕСА
+КЖ  - КРИВИЧНИ ПРЕДМЕТИ ПО ЖАЛБИ
+КЖ1 - КРИВИЧНИ ПРЕДМЕТИ ПО ЖАЛБИ
+КЖ2 - КРИВИЧНИ ПРЕДМЕТИ ПО ЖАЛБИ
+П - ПАРНИЧНИ ПРЕДМЕТИ
+П1 - РАДНИ СПОРОВИ
+П3 - ПАРНИЧНИ ПРЕДМЕТИ У ВЕЗИ СА ОБЈАВЉИВАЊЕМ ИНФОРМАЦИЈА У МЕДИЈАМА
+П4 - ПАРНИЧНИ ПРЕДМЕТИ У ВЕЗИ СА АУТОРСКИМ ПРАВИМА
+ПРР1 - ПРЕДМЕТИ ПО ТУЖБАМА ЗА НАКНАДУ ИМОВИНСКЕ ШТЕТЕ ЗБОГ ПОВРЕДЕ ПРАВА НА СУЂЕЊЕ У РАЗУМНОМ РОКУ
+
+
+upisnici Visi sud latinica -----------------------------
+GŽ - PARNIČNI PREDMETI PO ŽALBI
+GŽ 1 - PARNIČNI PREDMETI PO ŽALBI
+K - KRIVIČNI PREDMETI
+K1 - KAŽNjAVANjE BEZ ODRŽAVANjA GLAVNOG PRETRESA
+KŽ  - KRIVIČNI PREDMETI PO ŽALBI
+KŽ1 - KRIVIČNI PREDMETI PO ŽALBI
+KŽ2 - KRIVIČNI PREDMETI PO ŽALBI
+P - PARNIČNI PREDMETI
+P1 - RADNI SPOROVI
+P3 - PARNIČNI PREDMETI U VEZI SA OBJAVLjIVANjEM INFORMACIJA U MEDIJAMA
+P4 - PARNIČNI PREDMETI U VEZI SA AUTORSKIM PRAVIMA
+PRR1 - PREDMETI PO TUŽBAMA ZA NAKNADU IMOVINSKE ŠTETE ZBOG POVREDE PRAVA NA SUĐENjE U RAZUMNOM ROKU

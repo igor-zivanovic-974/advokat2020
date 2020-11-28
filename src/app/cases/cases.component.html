@@ -1,0 +1,242 @@
+<div class="wrapper">
+  <div class="row top">
+    <div class="col-10 col-lg-4">
+      <h3>{{ 'cases' | translate }}</h3>
+    </div>
+    <div class="col-9 col-lg-6">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="search"
+          placeholder="{{ 'case.search' | translate }}"
+          (ngModelChange)="searchCases()"
+          [(ngModel)]="filter"
+        />
+      </div>
+    </div>
+    <div class="col-2 text-right pr-5">
+      <button
+        class=""
+        (click)="goToUrl('new', 0)"
+        class="btn btn-outline-primary header-btn"
+        title="{{ 'case.add-new' | translate }}"
+      >
+        <i class="fas fa-folder-plus px-1"></i>
+        {{ !(isMobileScreen$ | async) ? ('case.add-new' | translate) : '' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="cases && cases.length > 0">
+    <div class="col-8">
+      <!-- [ngClass]="{'col-6':selectedDocument && isMobileScreen$,'col-12':selectedDocument && !isMobileScreen$}" -->
+      <div
+        class="card my-3 pb-3"
+        *ngFor="let case of cases; let i = index"
+        (click)="setActiveCase(case.id)"
+        [ngClass]="{ 'border-bold': case.id === selectedCaseId }"
+      >
+        <div class="card-header">
+          <h5 class="my-3">
+            {{ case.council.name }} {{ case.registrationMark.name }} {{ case.caseNumber }}/{{ case.year }}
+            <span class="small">{{ case.court.name }}</span> -
+            {{ case.status.name }}
+          </h5>
+        </div>
+
+        <div class="card-body my-0 py-0">
+          <!-- <h5 class="my-3">
+            {{case.council.name}} {{case.registrationMark.name}} {{case.caseNumber}}/{{case.year}} -
+            <span class="small">{{case.court.name}}</span> -
+            {{case.status.name}}
+          </h5> -->
+
+          <!-- case title -->
+          <h5 class="mt-3">{{ case.caseTitle }}</h5>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-4 p-0 m-0 text-center">
+                <button
+                  class="btn btn-link mx-auto"
+                  (click)="goToUrl('preview', case.id)"
+                  title="{{ 'case.preview' | translate }}"
+                >
+                  <i class="fas fa-info-circle ml-2 pr-2"></i>
+                  {{ !(isMobileScreen$ | async) ? ('case.preview' | translate) : '' }}
+                </button>
+              </div>
+              <div class="col-4 p-0 m-0 text-center">
+                <button
+                  class="btn btn-link mx-auto"
+                  (click)="invokeDelete(case.id)"
+                  title="{{ 'case.delete' | translate }}"
+                >
+                  <i class="fa fa-times ml-2 pr-2"></i>
+                  {{ !(isMobileScreen$ | async) ? ('case.delete' | translate) : '' }}
+                </button>
+              </div>
+              <div class="col-4 p-0 m-0 text-center">
+                <button
+                  class="btn btn-link mx-auto"
+                  (click)="goToUrl('edit', case.id)"
+                  title="{{ 'case.edit' | translate }}"
+                >
+                  <i class="fa fa-edit ml-2 pr-2"></i>
+                  {{ !(isMobileScreen$ | async) ? ('case.edit' | translate) : '' }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="px-3 d-none"
+          *ngIf="selectedCase"
+          [ngClass]="{ 'd-block': selectedCase.id === case.id, 'd-none': selectedCase.id !== case.id }"
+        >
+          <!-- prebaci u posebnu komponentu col-12 col-lg-6 -->
+          <hr />
+          <h6>
+            {{ 'case.subject' | translate }}: <span class="normal-text">{{ selectedCase.subject }}</span>
+          </h6>
+          <h6>
+            {{ 'case.value' | translate }}: <span class="normal-text">{{ selectedCase.caseValue }}</span>
+          </h6>
+
+          <!-- parties to the dispute -->
+          <h6 class="mt-3">
+            {{ 'case.prosecutor' | translate }}:
+            <span class="normal-text">
+              {{ selectedCase.prosecutor.firstName }} {{ selectedCase.prosecutor.lastName }}:
+              {{ selectedCase.prosecutor.address }}</span
+            >
+          </h6>
+          <h6>
+            {{ 'case.respondent' | translate }}:
+            <span class="normal-text">
+              {{ selectedCase.respondent.firstName }} {{ selectedCase.respondent.lastName }}:
+              {{ selectedCase.respondent.address }}</span
+            >
+          </h6>
+
+          <!-- summary -->
+          <h6 class="mt-3">
+            {{ 'case.summary' | translate }}: <span class="normal-text">{{ selectedCase.summary }}</span>
+          </h6>
+
+          <!-- files  -->
+          <h6 class="mt-3">{{ 'case.files' | translate }}:</h6>
+          <div *ngIf="selectedCase.files && selectedCase.files.length > 0">
+            <div class="normal-text pl-4" *ngFor="let file of selectedCase.files">
+              <a (click)="showFileInModal(file.link, content)"><i class="far fa-file"></i> {{ file.title }}</a>
+            </div>
+          </div>
+          <div *ngIf="!selectedCase.files || selectedCase.files.length === 0">
+            {{ 'common.no-data' | translate }}
+          </div>
+          <!-- <a (click)="addFile('files')"><i class="fas fa-file"></i> {{'add-file' | translate}}</a> -->
+          <!-- <div class="form-group">
+          <label for="file">Choose File</label>
+          <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+        </div> -->
+          <!-- ---------------
+          <app-file-upload></app-file-upload>
+          --------------- -->
+          <!-- 
+        <a href="javascript:void(0)" style="cursor:pointer" (click)="downloadPdf('./assets/files/plan-otplate.pdf','plan-otplate.pdf')">
+          Download PDF
+        </a> -->
+
+          <!-- hearing-minutes -->
+          <h6 class="mt-3">{{ 'case.hearing-minutes' | translate }}:</h6>
+          <div *ngIf="selectedCase.hearingMinutes && selectedCase.hearingMinutes.length > 0"></div>
+          <div class="normal-text pl-4" *ngFor="let hm of selectedCase.hearingMinutes">
+            <a (click)="showFileInModal(hm.link, content)"><i class="far fa-file"></i> {{ hm.title }}</a>
+          </div>
+          <div *ngIf="!selectedCase.hearingMinutes || selectedCase.hearingMinutes.length === 0">
+            {{ 'common.no-data' | translate }}
+          </div>
+
+          <!-- evidences -->
+          <h6 class="mt-3">{{ 'case.evidences' | translate }}:</h6>
+          <div *ngIf="selectedCase.evidences && selectedCase.evidences.length > 0">
+            <div class="normal-text pl-4" *ngFor="let ev of selectedCase.evidences">
+              <a (click)="showFileInModal(ev.link, content)"><i class="far fa-file"></i> {{ ev.title }}</a>
+            </div>
+          </div>
+          <div *ngIf="!selectedCase.evidences || selectedCase.evidences.length === 0">
+            {{ 'common.no-data' | translate }}
+          </div>
+
+          <!-- decisions -->
+          <h6 class="mt-3">{{ 'case.decisions' | translate }}:</h6>
+          <div *ngIf="selectedCase.decisions && selectedCase.decisions.length > 0">
+            <div class="normal-text pl-4" *ngFor="let dec of selectedCase.decisions">
+              <a (click)="showFileInModal(dec.link, content)"><i class="far fa-file"></i> {{ dec.title }}</a>
+            </div>
+          </div>
+          <div *ngIf="!selectedCase.decisions || selectedCase.decisions.length === 0">
+            {{ 'common.no-data' | translate }}
+          </div>
+
+          <!-- other -->
+          <h6 class="mt-3" *ngIf="selectedCase.other">{{ 'case.other' | translate }}:</h6>
+          <div *ngIf="selectedCase.other && selectedCase.other.length > 0">
+            <div class="normal-text pl-4" *ngFor="let o of selectedCase.other">
+              <a (click)="showFileInModal(o.link, content)"><i class="far fa-file"></i> {{ o.title }}</a>
+            </div>
+          </div>
+          <div *ngIf="!selectedCase.other || selectedCase.other.length === 0">
+            {{ 'common.no-data' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 card my-3" *ngIf="selectedCase">
+      <h5>{{ 'case.history' | translate }}</h5>
+      <div *ngIf="selectedCase.caseHistory && selectedCase.caseHistory.length > 0">
+        <div *ngFor="let ch of selectedCase.caseHistory; let i = index">
+          <!-- {{i+1}}.  -->
+          {{ ch.caseDate | date: 'dd.MM.yyyy.' }} - {{ ch.caseTitle }}
+          <hr />
+        </div>
+      </div>
+      <div *ngIf="!selectedCase.caseHistory || selectedCase.caseHistory.length === 0">
+        {{ 'common.no-data' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!(cases && cases.length > 0)">
+    {{ 'common.no-data' | translate }}
+  </div>
+</div>
+
+<app-delete-modal [hidden]="!modalState"></app-delete-modal>
+
+<ngx-spinner></ngx-spinner>
+<simple-notifications></simple-notifications>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <pdf-viewer
+      [src]="selectedDocument"
+      [rotation]="0"
+      [fit-to-page]="true"
+      [original-size]="true"
+      [show-all]="true"
+      style="display: block"
+    ></pdf-viewer>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+      {{ 'close' | translate }}
+    </button>
+  </div>
+</ng-template>
+<!-- <app-pdf-preview-modal #content [selectedDocument]="selectedDocument"></app-pdf-preview-modal> -->

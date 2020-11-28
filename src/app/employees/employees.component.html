@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="wrapper">
+    <div class="row top">
+      <div class="col-lg-11 col-md-11 col-xs-11">
+        <h1>{{ 'employees' | translate }}</h1>
+      </div>
+      <div class="col-lg-1 col-md-1 col-xs-1">
+        <button (click)="goToUrl('new')" class="btn btn-primary btn-md header-btn">
+          <i class="fa fa-user-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-xs-1"><b>#</b></div>
+      <div class="col-lg-2 col-xs-2">
+        <b>{{ 'firstName' | translate }}</b>
+      </div>
+      <div class="col-lg-2 col-xs-2">
+        <b>{{ 'lastName' | translate }}</b>
+      </div>
+      <div class="col-lg-2 col-xs-2">
+        <b>{{ 'role' | translate }}</b>
+      </div>
+      <div class="col-lg-1 col-xs-1">
+        <b>{{ 'action' | translate }}</b>
+      </div>
+    </div>
+    <hr />
+    <div class="row" *ngFor="let employee of employees; index as i">
+      <div class="col-lg-1 col-xs-1">{{ i + 1 }}</div>
+      <div class="col-lg-2 col-xs-2">{{ employee.firstName }}</div>
+      <div class="col-lg-2 col-xs-2">{{ employee.lastName }}</div>
+      <div class="col-lg-2 col-xs-2">{{ employee.role | translate }}</div>
+      <div class="col-lg-1 col-xs-1">
+        <a><i class="fa fa-edit" (click)="goToUrl(employee.id)"></i></a>
+        <a><i class="fa fa-times" (click)="invokeDelete(employee.id)"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-delete-modal [hidden]="!modalState"></app-delete-modal
+><!--  (onConfirm)="onConfirm($event)"-->
+<ngx-spinner></ngx-spinner>
+<simple-notifications></simple-notifications>

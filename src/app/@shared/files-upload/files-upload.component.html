@@ -1,0 +1,47 @@
+<div class="image-box">
+  <h4 class="transform-none">{{ 'common.documents' | translate }}</h4>
+  <div class="center mb-3">
+    <ngx-file-drop
+      dropZoneClassName="edwards-drop-zone"
+      contentClassName="edwards-content"
+      dropZoneLabel="Drop files here"
+      (onFileDrop)="dropped($event)"
+    >
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+        <span class="icon" (click)="openFileSelector()"
+          ><i
+            class=""
+            [ngClass]="{
+              'fas fa-circle-notch fa-spin': (progress > 0 && progress < 100) || preparing,
+              'far fa-file': !(progress > 0 && progress < 100) && !preparing
+            }"
+          ></i
+        ></span>
+        <span
+          *ngIf="!(progress > 0 && progress < 100) && !preparing"
+          class="text-center"
+          (click)="openFileSelector()"
+          translate="{{ 'admin.lookups.files-upload-placeholder' }}"
+        ></span>
+        <span *ngIf="preparing">{{ 'common.preparing-documents-for-upload' | translate }}</span>
+        <span *ngIf="progress > 0 && progress < 100">{{ 'common.uploading...' | translate }}</span>
+      </ng-template>
+    </ngx-file-drop>
+    <p class="mt-2" *ngIf="progress > 0 && progress < 100">
+      <ngb-progressbar type="primary" [showValue]="true" [value]="progress"></ngb-progressbar>
+    </p>
+  </div>
+  <div class="row justify-content-between align-items-center mb-2" *ngFor="let item of files; let i = index">
+    <div class="col-9">
+      <button class="btn btn-link image-name" (click)="downloadDocument(item)">
+        <i class="fas fa-file-download fa-lg mr-1"></i> {{ item.name }}
+      </button>
+      <!-- <p>{{ item.fileSizeInUnit }} {{ item.unit }}</p> -->
+    </div>
+    <div class="col-3 col-nopadding-left align-self-center">
+      <div class="text-right">
+        <span class="burgundy-icon"><i class="fas fa-trash-alt" (click)="openConfirmationDialog(item)"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

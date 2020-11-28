@@ -1,0 +1,195 @@
+<optgroup label="Основни суд">
+АЛЕКСИНАЦ
+АРАНЂЕЛОВАЦ
+БАЧКА ПАЛАНКА
+БЕЧЕЈ
+БЕОГРАД - ДРУГИ ОСНОВНИ СУД
+БЕОГРАД - ПРВИ ОСНОВНИ СУД
+БЕОГРАД - ТРЕЋИ ОСНОВНИ СУД
+БОР
+БРУС
+БУЈАНОВАЦ
+ЧАЧАК
+ДЕСПОТОВАЦ
+ДИМИТРОВГРАД
+ГОРЊИ МИЛАНОВАЦ
+ИВАЊИЦА
+ЈАГОДИНА
+КИКИНДА
+КЊАЖЕВАЦ
+КОСОВСКА МИТРОВИЦА
+КРАГУЈЕВАЦ
+КРАЉЕВО
+КРУШЕВАЦ
+КУРШУМЛИЈА
+ЛАЗАРЕВАЦ
+ЛЕБАНЕ
+ЛЕСКОВАЦ
+ЛОЗНИЦА
+МАЈДАНПЕК
+МИОНИЦА
+МЛАДЕНОВАЦ
+НЕГОТИН
+НИШ
+НОВИ ПАЗАР
+НОВИ САД
+ОБРЕНОВАЦ
+ПАНЧЕВО
+ПАРАЋИН
+ПЕТРОВАЦ НА МЛАВИ
+ПИРОТ
+ПОЖАРЕВАЦ
+ПОЖЕГА
+ПРИБОЈ
+ПРИЈЕПОЉЕ
+ПРОКУПЉЕ
+РАШКА
+РУМА
+СЕНТА
+СЈЕНИЦА
+СМЕДЕРЕВО
+СОМБОР
+СРЕМСКА МИТРОВИЦА
+СТАРА ПАЗОВА
+СУБОТИЦА
+СУРДУЛИЦА
+ШАБАЦ
+ШИД
+ТРЕСТЕНИК
+УБ
+УЖИЦЕ
+ВАЉЕВО
+ВЕЛИКА ПЛАНА
+ВЕЛИКО ГРАДИШТЕ
+ВРАЊЕ
+ВРБАС
+ВРШАЦ
+ЗАЈЕЧАР
+ЗРЕЊАНИН
+</optgroup>
+
+osnovni sudovi latinica
+ALEKSINAC
+ARANĐELOVAC
+BAČKA PALANKA
+BEČEJ
+BEOGRAD - DRUGI OSNOVNI SUD
+BEOGRAD - PRVI OSNOVNI SUD
+BEOGRAD - TREĆI OSNOVNI SUD
+BOR
+BRUS
+BUJANOVAC
+ČAČAK
+DESPOTOVAC
+DIMITROVGRAD
+GORNjI MILANOVAC
+IVANjICA
+JAGODINA
+KIKINDA
+KNjAŽEVAC
+KOSOVSKA MITROVICA
+KRAGUJEVAC
+KRALjEVO
+KRUŠEVAC
+KURŠUMLIJA
+LAZAREVAC
+LEBANE
+LESKOVAC
+LOZNICA
+MAJDANPEK
+MIONICA
+MLADENOVAC
+NEGOTIN
+NIŠ
+NOVI PAZAR
+NOVI SAD
+OBRENOVAC
+PANČEVO
+PARAĆIN
+PETROVAC NA MLAVI
+PIROT
+POŽAREVAC
+POŽEGA
+PRIBOJ
+PRIJEPOLjE
+PROKUPLjE
+RAŠKA
+RUMA
+SENTA
+SJENICA
+SMEDEREVO
+SOMBOR
+SREMSKA MITROVICA
+STARA PAZOVA
+SUBOTICA
+SURDULICA
+ŠABAC
+ŠID
+TRESTENIK
+UB
+UŽICE
+VALjEVO
+VELIKA PLANA
+VELIKO GRADIŠTE
+VRANjE
+VRBAS
+VRŠAC
+ZAJEČAR
+ZRENjANIN
+
+<optgroup label="Виши суд">
+БЕОГРАД
+ЧАЧАК
+ЈАГОДИНА
+КОСОВСКА МИТРОВИЦА
+КРАГУЈЕВАЦ
+КРАЉЕВО
+КРУШЕВАЦ
+ЛЕСКОВАЦ
+НЕГОТИН
+НИШ
+НОВИ ПАЗАР
+НОВИ САД
+ПАНЧЕВО
+ПИРОТ
+ПОЖАРЕВАЦ
+ПРОКУПЉЕ
+СМЕДЕРЕВО
+СОМБОР
+СРЕМСКА МИТРОВИЦА
+СУБОТИЦА
+ШАБАЦ
+УЖИЦЕ
+ВАЉЕВО
+ВРАЊЕ
+ЗАЈЕЧАР
+ЗРЕЊАНИН
+</optgroup>
+
+visi sudovi latinica
+BEOGRAD
+ČAČAK
+JAGODINA
+KOSOVSKA MITROVICA
+KRAGUJEVAC
+KRALjEVO
+KRUŠEVAC
+LESKOVAC
+NEGOTIN
+NIŠ
+NOVI PAZAR
+NOVI SAD
+PANČEVO
+PIROT
+POŽAREVAC
+PROKUPLjE
+SMEDEREVO
+SOMBOR
+SREMSKA MITROVICA
+SUBOTICA
+ŠABAC
+UŽICE
+VALjEVO
+VRANjE
+ZAJEČAR
+ZRENjANIN

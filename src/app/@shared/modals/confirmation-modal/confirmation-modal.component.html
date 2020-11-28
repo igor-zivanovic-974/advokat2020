@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="title">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ 'common.confirmation' | translate }}
+  </div>
+  <hr />
+  <div class="question">
+    {{ queryText | translate }}
+  </div>
+  <hr />
+  <div class="row buttons">
+    <div class="col-lg-6 spacer text-center">
+      <button type="button" class="btn btn-outline-dark float-right" (click)="setCancel()">
+        {{ 'common.cancel' | translate }}
+      </button>
+    </div>
+    <div class="col-lg-6 spacer text-center">
+      <button type="button" class="btn btn-outline-dark float-left" (click)="setConfirm()">
+        {{ 'common.confirm' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+<simple-notifications></simple-notifications>

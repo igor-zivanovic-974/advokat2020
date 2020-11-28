@@ -1,0 +1,79 @@
+<div class="wrapper">
+  <div class="row top">
+    <div class="col-lg-10 col-md-10 col-xs-10">
+      <h1>
+        {{ mode === 'new' ? ('new' | translate) : ('update' | translate) }}
+        {{ 'employee' | translate }}
+      </h1>
+    </div>
+  </div>
+  <div class="container">
+    <form #f="ngForm">
+      <!-- employee first name -->
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-xs-2">
+          <label>{{ 'firstName' | translate }}</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6">
+          <input
+            type="text"
+            [(ngModel)]="employee.firstName"
+            #firstName="ngModel"
+            name="firstName"
+            id="firstName"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- employee last name -->
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-xs-2">
+          <label>{{ 'lastName' | translate }}</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6">
+          <input
+            type="text"
+            [(ngModel)]="employee.lastName"
+            #lastName="ngModel"
+            name="lastName"
+            id="lastName"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- role -->
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-xs-2">
+          <label>{{ 'role' | translate }}</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6">
+          <input type="text" [(ngModel)]="employee.roleId" #role="ngModel" name="roleId" id="roleId" required />
+        </div>
+      </div>
+
+      <!-- court -->
+      <!-- <div class="row">
+        <div class="col-lg-2 col-md-2 col-xs-2">
+          <label>{{'court' | translate}}</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6">
+          <input type="text" [(ngModel)]="employee.court" #court="ngModel" name="court" id="court" required>
+        </div>
+      </div> -->
+
+      <!-- buttons -->
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <button type="submit" class="btn btn-outline-dark" (click)="save()" [disabled]="!f.valid">
+            {{ 'save' | translate }}
+          </button>
+          <!-- </div>
+        <div class="col-lg-2 col-md-2 col-xs-2"> -->
+          <button type="submit" class="btn btn-outline-dark" (click)="goToUrl()">{{ 'cancel' | translate }}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

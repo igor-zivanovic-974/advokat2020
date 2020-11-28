@@ -1,0 +1,29 @@
+<div id="modal">
+  <div class="modal-header" data-toggle="modal">
+    <h4 class="modal-title" id="modal-basic-title">{{ 'case.select-court-type' | translate }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="goBack()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-check" *ngFor="let o of options">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="exampleRadios"
+        id="exampleRadios1"
+        value="option1"
+        (change)="setActiveItem(o.id)"
+      />
+      <label class="form-check-label" for="exampleRadios1">
+        {{ o.name }}
+      </label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="selectCourtType()" [disabled]="!activeItem">
+      {{ 'common.select' | translate }}
+    </button>
+    <button type="button" class="btn btn-outline-dark" (click)="goBack()">{{ 'common.cancel' | translate }}</button>
+  </div>
+</div>
