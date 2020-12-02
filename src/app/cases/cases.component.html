@@ -17,51 +17,37 @@
   </div>
 
   <div class="row" *ngIf="cases && cases.length > 0">
-    <div class="col-8">
-      <!-- [ngClass]="{'col-6':selectedDocument && isMobileScreen$,'col-12':selectedDocument && !isMobileScreen$}" -->
+    <div class="col-12">
+      <!-- [ngClass]="{'col-8': !(isMobileScreen$ | async), 'col-12': (isMobileScreen$ | async)}" -->
       <div class="card my-3 pb-3" *ngFor="let case of cases; let i = index" (click)="setActiveCase(case.id)" [ngClass]="{ 'border-bold': case.id === selectedCaseId }">
         <div class="card-header">
-          <h5 class="my-3">
-            {{ case.council.name }} {{ case.registrationMark.name }} {{ case.caseNumber }}/{{ case.year }}
-            <span class="small">{{ case.court.name }}</span> -
-            {{ case.status.name }}
-          </h5>
-        </div>
-
-        <div class="card-body my-0 py-0">
-          <!-- <h5 class="my-3">
-            {{case.council.name}} {{case.registrationMark.name}} {{case.caseNumber}}/{{case.year}} -
-            <span class="small">{{case.court.name}}</span> -
-            {{case.status.name}}
-          </h5> -->
-
-          <!-- case title -->
-          <h5 class="mt-3">{{ case.caseTitle }}</h5>
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-4 p-0 m-0 text-center">
-                <button class="btn btn-link mx-auto" (click)="goToUrl('preview', case.id)" title="{{ 'case.preview' | translate }}">
-                  <i class="fas fa-info-circle ml-2 pr-2"></i>
-                  {{ !(isMobileScreen$ | async) ? ('case.preview' | translate) : '' }}
-                </button>
-              </div>
-              <div class="col-4 p-0 m-0 text-center">
+          <div class="row my-3">
+            <div class="col-10">
+              <h5>{{ case.council.name }} {{ case.registrationMark.name }} {{ case.caseNumber }}/{{ case.year }}</h5>
+              <h6>{{ case.court.name }}</h6>
+              <h6>{{ case.status.name }}</h6>
+            </div>
+            <div class="col-2">
+              <div class="text-center">
                 <button class="btn btn-link mx-auto" (click)="invokeDelete(case.id)" title="{{ 'case.delete' | translate }}">
-                  <i class="fa fa-times ml-2 pr-2"></i>
-                  {{ !(isMobileScreen$ | async) ? ('case.delete' | translate) : '' }}
+                  <i class="fa fa-times"></i>
                 </button>
               </div>
-              <div class="col-4 p-0 m-0 text-center">
+              <div class="text-center">
                 <button class="btn btn-link mx-auto" (click)="goToUrl('edit', case.id)" title="{{ 'case.edit' | translate }}">
-                  <i class="fa fa-edit ml-2 pr-2"></i>
-                  {{ !(isMobileScreen$ | async) ? ('case.edit' | translate) : '' }}
+                  <i class="fa fa-edit"></i>
                 </button>
               </div>
             </div>
+
           </div>
         </div>
+
+        <!-- case title -->
+        <div class="card-body my-0 py-0">
+          <h6 class="my-3">{{ case.caseTitle }}</h6>
+        </div>
         <div class="px-3 d-none" *ngIf="selectedCase" [ngClass]="{ 'd-block': selectedCase.id === case.id, 'd-none': selectedCase.id !== case.id }">
-          <!-- prebaci u posebnu komponentu col-12 col-lg-6 -->
           <hr />
           <h6>
             {{ 'case.subject' | translate }}: <span class="normal-text">{{ selectedCase.subject }}</span>
@@ -71,6 +57,7 @@
           </h6>
 
           <!-- parties to the dispute -->
+
           <h6 class="mt-3">
             {{ 'case.prosecutor' | translate }}:
             <span class="normal-text">
@@ -85,94 +72,76 @@
           </h6>
 
           <!-- subject -->
-          <h6 class="mt-3">
+          <h6 class="my-3">
             {{ 'case.subject' | translate }}: <span class="normal-text">{{ selectedCase.subject }}</span>
           </h6>
 
-          <!-- files  -->
-          <h6 class="mt-3">{{ 'case.files' | translate }}:</h6>
-          <div *ngIf="selectedCase.files && selectedCase.files.length > 0">
-            <div class="normal-text pl-4" *ngFor="let file of selectedCase.files">
-              <a (click)="showFileInModal(file.link, content)"><i class="far fa-file"></i> {{ file.title }}</a>
+          <div class="row">
+            <!-- files  -->
+            <div class="col-12 col-lg-6">
+              <app-file-list class="mt-3" [items]="selectedCase.files" [title]="'files'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+            </div>
+
+            <!-- hearing-minutes -->
+            <div class="col-12 col-lg-6">
+              <app-file-list [items]="selectedCase.hearingMinutes" [title]="'hearing-minutes'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+            </div>
+
+            <!-- evidences -->
+            <div class="col-12 col-lg-6">
+              <app-file-list [items]="selectedCase.evidences" [title]="'evidences'" [disabled]="true"></app-file-list>
+            </div>
+
+            <!-- decisions -->
+            <div class="col-12 col-lg-6">
+              <app-file-list [items]="selectedCase.decisions" [title]="'decisions'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+
+              <!-- other -->
+              <app-file-list [items]="selectedCase.other" [title]="'other'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
             </div>
           </div>
-          <div *ngIf="!selectedCase.files || selectedCase.files.length === 0">
-            {{ 'common.no-data' | translate }}
-          </div>
-          <!-- <a (click)="addFile('files')"><i class="fas fa-file"></i> {{'add-file' | translate}}</a> -->
-          <!-- <div class="form-group">
-          <label for="file">Choose File</label>
-          <input type="file" id="file" (change)="handleFileInput($event.target.files)">
-        </div> -->
-          <!-- ---------------
-          <app-file-upload></app-file-upload>
-          --------------- -->
-          <!-- 
-        <a href="javascript:void(0)" style="cursor:pointer" (click)="downloadPdf('./assets/files/plan-otplate.pdf','plan-otplate.pdf')">
-          Download PDF
-        </a> -->
+        </div>
 
-          <!-- hearing-minutes -->
-          <h6 class="mt-3">{{ 'case.hearing-minutes' | translate }}:</h6>
-          <div *ngIf="selectedCase.hearingMinutes && selectedCase.hearingMinutes.length > 0"></div>
-          <div class="normal-text pl-4" *ngFor="let hm of selectedCase.hearingMinutes">
-            <a (click)="showFileInModal(hm.link, content)"><i class="far fa-file"></i> {{ hm.title }}</a>
-          </div>
-          <div *ngIf="!selectedCase.hearingMinutes || selectedCase.hearingMinutes.length === 0">
-            {{ 'common.no-data' | translate }}
-          </div>
 
-          <!-- evidences -->
-          <h6 class="mt-3">{{ 'case.evidences' | translate }}:</h6>
-          <div *ngIf="selectedCase.evidences && selectedCase.evidences.length > 0">
-            <div class="normal-text pl-4" *ngFor="let ev of selectedCase.evidences">
-              <a (click)="showFileInModal(ev.link, content)"><i class="far fa-file"></i> {{ ev.title }}</a>
+        <app-case-history *ngIf="selectedCase && case.id === selectedCaseId" [caseHistory]="selectedCase.caseHistory" [title]="'case.history'" [mode]="'preview'" [disabled]="true"></app-case-history>
+        <!-- case movement -->
+        <div class="card my-3" *ngIf="selectedCase && case.id === selectedCaseId">
+          <div class="form-group m-3 mb-5 ">
+            <div class="border-bottom mb-3">
+              <label class="font-weight-bold" for="other">{{ 'case.history-movement' | translate }}</label>
+              <hr>
+              <ul class="list-unstyled">
+                <li *ngFor="let cm of selectedCase.caseMovements" (click)="openRelatedCase()" class="list-link">
+                  {{cm.date | date: 'dd.MM.yyyy'}} - {{cm.title}}
+                </li>
+              </ul>
             </div>
-          </div>
-          <div *ngIf="!selectedCase.evidences || selectedCase.evidences.length === 0">
-            {{ 'common.no-data' | translate }}
-          </div>
-
-          <!-- decisions -->
-          <h6 class="mt-3">{{ 'case.decisions' | translate }}:</h6>
-          <div *ngIf="selectedCase.decisions && selectedCase.decisions.length > 0">
-            <div class="normal-text pl-4" *ngFor="let dec of selectedCase.decisions">
-              <a (click)="showFileInModal(dec.link, content)"><i class="far fa-file"></i> {{ dec.title }}</a>
-            </div>
-          </div>
-          <div *ngIf="!selectedCase.decisions || selectedCase.decisions.length === 0">
-            {{ 'common.no-data' | translate }}
-          </div>
-
-          <!-- other -->
-          <h6 class="mt-3" *ngIf="selectedCase.other">{{ 'case.other' | translate }}:</h6>
-          <div *ngIf="selectedCase.other && selectedCase.other.length > 0">
-            <div class="normal-text pl-4" *ngFor="let o of selectedCase.other">
-              <a (click)="showFileInModal(o.link, content)"><i class="far fa-file"></i> {{ o.title }}</a>
-            </div>
-          </div>
-          <div *ngIf="!selectedCase.other || selectedCase.other.length === 0">
-            {{ 'common.no-data' | translate }}
           </div>
         </div>
       </div>
     </div>
-    <div class="col-4 card my-3" *ngIf="selectedCase">
-      <h5>{{ 'case.history' | translate }}</h5>
-      <div *ngIf="selectedCase.caseHistory && selectedCase.caseHistory.length > 0">
-        <div *ngFor="let ch of selectedCase.caseHistory; let i = index">
-          <!-- {{i+1}}.  -->
-          {{ ch.caseDate | date: 'dd.MM.yyyy.' }} - {{ ch.caseTitle }}
-          <hr />
-        </div>
-      </div>
-      <div *ngIf="!selectedCase.caseHistory || selectedCase.caseHistory.length === 0">
-        {{ 'common.no-data' | translate }}
-      </div>
-    </div>
+
+    <!-- case history -->
+    <!-- <div [ngClass]="{'col-4': !(isMobileScreen$ | async), 'col-12': (isMobileScreen$ | async)}">
+      <div class="card my-3" *ngIf="selectedCase">
+        <app-case-history [caseHistory]="selectedCase.caseHistory" [title]="'case.history'" [disabled]="true"></app-case-history> -->
+
+    <!-- case movement -->
+    <!-- <div class="form-group m-3 mb-5 ">
+          <div class="border-bottom mb-3">
+            <label class="font-weight-bold" for="other">{{ 'case.history-movement' | translate }}</label>
+            <hr>
+            <ul class="list-unstyled">
+              <li *ngFor="let cm of selectedCase.caseMovements" (click)="openRelatedCase()" class="list-link">
+                {{cm.date | date: 'dd.MM.yyyy'}} - {{cm.title}}
+              </li>
+            </ul>
+          </div>
+        </div> 
+      </div>-->
   </div>
 
-  <div class="row" *ngIf="!(cases && cases.length > 0)">
+  <div *ngIf="!(cases && cases.length > 0)">
     {{ 'common.no-data' | translate }}
   </div>
 </div>
@@ -181,20 +150,3 @@
 
 <ngx-spinner></ngx-spinner>
 <simple-notifications></simple-notifications>
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <pdf-viewer [src]="selectedDocument" [rotation]="0" [fit-to-page]="true" [original-size]="true" [show-all]="true" style="display: block"></pdf-viewer>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
-      {{ 'close' | translate }}
-    </button>
-  </div>
-</ng-template>
-<!-- <app-pdf-preview-modal #content [selectedDocument]="selectedDocument"></app-pdf-preview-modal> -->

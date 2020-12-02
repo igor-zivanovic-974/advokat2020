@@ -1,12 +1,50 @@
 {
-  "last": { "last": 9 },
+  "last": {
+    "last": 9
+  },
   "cases": [
     {
       "id": 1,
       "stateChanges": [
-        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
-        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
-        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+        {
+          "id": 1,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "III P1 123/2008",
+          "active": false
+        },
+        {
+          "id": 2,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "II GZ1 123/2010",
+          "active": false
+        },
+        {
+          "id": 3,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "IV P1 123/2011",
+          "active": true
+        }
       ],
       "clientId": 1,
       "internalMark": "01/2020",
@@ -42,10 +80,63 @@
       },
       "caseNumber": "369",
       "year": "2011",
-      "caseTitle": "Parnica kuca",
+      "caseTitle": "Parnica kuca Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
       "subject": "Subject 1",
       "caseValue": "100.000 din",
-      "notes": ["Note 1", "Note 2"],
+      "notes": [
+        {
+          "id": 1,
+          "text": "Note 1",
+          "date": "2010-01-01",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 1
+        },
+        {
+          "id": 2,
+          "text": "Note 2",
+          "date": "2010-01-02",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 2
+        },
+        {
+          "id": 3,
+          "text": "Note 3",
+          "date": "2010-01-10",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 3
+        },
+        {
+          "id": 4,
+          "text": "Note 4",
+          "date": "2010-01-21",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 4
+        }
+      ],
       "files": [
         {
           "id": 1,
@@ -113,32 +204,88 @@
       "caseHistory": [
         {
           "id": 1,
-          "caseDate": "2020-01-01",
-          "caseTitle": "Tuzba"
+          "date": "2020-01-01",
+          "title": "Tuzba"
         },
         {
           "id": 11,
-          "caseDate": "2020-01-02",
-          "caseTitle": "Odgovor na tuzbu"
+          "date": "2020-01-02",
+          "title": "Odgovor na tuzbu"
         },
         {
           "id": 111,
-          "caseDate": "2020-01-03",
-          "caseTitle": "Dopis tuzioca"
+          "date": "2020-01-03",
+          "title": "Dopis tuzioca"
         },
         {
           "id": 1111,
-          "caseDate": "2020-01-04",
-          "caseTitle": "Rociste za glavnu raspravu"
+          "date": "2020-01-04",
+          "title": "Rociste za glavnu raspravu"
+        }
+      ],
+      "caseMovements": [
+        {
+          "id": 1,
+          "title": "III P1 222/10",
+          "date": "2010-01-01",
+          "active": false
+        },
+        {
+          "id": 2,
+          "title": "I GZ1 222/10",
+          "date": "2013-07-31",
+          "active": false
+        },
+        {
+          "id": 3,
+          "title": "IV P1 222/10",
+          "date": "2015-11-21",
+          "active": false
         }
       ]
     },
     {
       "id": 2,
       "stateChanges": [
-        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
-        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
-        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+        {
+          "id": 1,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "III P1 123/2008",
+          "active": false
+        },
+        {
+          "id": 2,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "II GZ1 123/2010",
+          "active": false
+        },
+        {
+          "id": 3,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "IV P1 123/2011",
+          "active": true
+        }
       ],
       "internalMark": "02/2020",
       "council": {
@@ -174,10 +321,63 @@
       },
       "caseNumber": "2995",
       "year": "2015",
-      "caseTitle": "Tehnoloski visak",
+      "caseTitle": "Tehnoloski visak Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
       "subject": "Subject 2",
       "caseValue": "200.000 din",
-      "notes": ["Note 1", "Note 2"],
+      "notes": [
+        {
+          "id": 1,
+          "text": "Note 1",
+          "date": "2010-01-01",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 1
+        },
+        {
+          "id": 2,
+          "text": "Note 2",
+          "date": "2010-01-02",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 2
+        },
+        {
+          "id": 3,
+          "text": "Note 3",
+          "date": "2010-01-10",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 3
+        },
+        {
+          "id": 4,
+          "text": "Note 4",
+          "date": "2010-01-21",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 4
+        }
+      ],
       "files": [
         {
           "id": 1,
@@ -240,32 +440,88 @@
       "caseHistory": [
         {
           "id": 2,
-          "caseDate": "2020-01-01",
-          "caseTitle": "Tuzba"
+          "date": "2020-01-01",
+          "title": "Tuzba"
         },
         {
           "id": 22,
-          "caseDate": "2020-01-02",
-          "caseTitle": "Odgovor na tuzbu"
+          "date": "2020-01-02",
+          "title": "Odgovor na tuzbu"
         },
         {
           "id": 222,
-          "caseDate": "2020-01-03",
-          "caseTitle": "Dopis tuzioca"
+          "date": "2020-01-03",
+          "title": "Dopis tuzioca"
         },
         {
           "id": 2222,
-          "caseDate": "2020-01-04",
-          "caseTitle": "Rociste za glavnu raspravu"
+          "date": "2020-01-04",
+          "title": "Rociste za glavnu raspravu"
+        }
+      ],
+      "caseMovements": [
+        {
+          "id": 1,
+          "title": "III P1 222/10",
+          "date": "2010-01-01",
+          "active": false
+        },
+        {
+          "id": 2,
+          "title": "I GZ1 222/10",
+          "date": "2013-07-31",
+          "active": false
+        },
+        {
+          "id": 3,
+          "title": "IV P1 222/10",
+          "date": "2015-11-21",
+          "active": false
         }
       ]
     },
     {
       "id": 3,
       "stateChanges": [
-        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
-        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
-        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+        {
+          "id": 1,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "III P1 123/2008",
+          "active": false
+        },
+        {
+          "id": 2,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "II GZ1 123/2010",
+          "active": false
+        },
+        {
+          "id": 3,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "IV P1 123/2011",
+          "active": true
+        }
       ],
       "internalMark": "03/2020",
       "council": {
@@ -301,10 +557,63 @@
       },
       "caseNumber": "2991",
       "year": "2018",
-      "caseTitle": "Tehnoloski visak",
+      "caseTitle": "Tehnoloski visak Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
       "subject": "Subject 3",
       "caseValue": "300.000 din",
-      "notes": ["Note 1", "Note 2"],
+      "notes": [
+        {
+          "id": 1,
+          "text": "Note 1",
+          "date": "2010-01-01",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 1
+        },
+        {
+          "id": 2,
+          "text": "Note 2",
+          "date": "2010-01-02",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 2
+        },
+        {
+          "id": 3,
+          "text": "Note 3",
+          "date": "2010-01-10",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 3
+        },
+        {
+          "id": 4,
+          "text": "Note 4",
+          "date": "2010-01-21",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 4
+        }
+      ],
       "files": [
         {
           "id": 1,
@@ -367,31 +676,87 @@
       "caseHistory": [
         {
           "id": 3,
-          "caseDate": "2020-01-01",
-          "caseTitle": "Tuzba"
+          "date": "2020-01-01",
+          "title": "Tuzba"
         },
         {
           "id": 33,
-          "caseDate": "2020-01-02",
-          "caseTitle": "Odgovor na tuzbu"
+          "date": "2020-01-02",
+          "title": "Odgovor na tuzbu"
         },
         {
           "id": 333,
-          "caseDate": "2020-01-03",
-          "caseTitle": "Dopis tuzioca"
+          "date": "2020-01-03",
+          "title": "Dopis tuzioca"
         },
         {
           "id": 3333,
-          "caseDate": "2020-01-04",
-          "caseTitle": "Rociste za glavnu raspravu"
+          "date": "2020-01-04",
+          "title": "Rociste za glavnu raspravu"
+        }
+      ],
+      "caseMovements": [
+        {
+          "id": 1,
+          "title": "III P1 222/10",
+          "date": "2010-01-01",
+          "active": false
+        },
+        {
+          "id": 2,
+          "title": "I GZ1 222/10",
+          "date": "2013-07-31",
+          "active": false
+        },
+        {
+          "id": 3,
+          "title": "IV P1 222/10",
+          "date": "2015-11-21",
+          "active": false
         }
       ]
     },
     {
       "stateChanges": [
-        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
-        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
-        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+        {
+          "id": 1,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "III P1 123/2008",
+          "active": false
+        },
+        {
+          "id": 2,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "II GZ1 123/2010",
+          "active": false
+        },
+        {
+          "id": 3,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "IV P1 123/2011",
+          "active": true
+        }
       ],
       "dateCreated": "2020-11-23T02:37:13.130Z",
       "dateUpdated": "2020-11-23T02:37:13.130Z",
@@ -411,7 +776,7 @@
       },
       "caseNumber": "555",
       "year": "2020",
-      "caseTitle": "Pera tuzi Simu",
+      "caseTitle": "Pera tuzi Simu Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
       "subject": "Subject 1",
       "prosecutor": {
         "id": 2,
@@ -430,7 +795,60 @@
         "pin": "321323"
       },
       "caseValue": "100.000 din",
-      "notes": ["Note 1", "Note 2"],
+      "notes": [
+        {
+          "id": 1,
+          "text": "Note 1",
+          "date": "2010-01-01",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 1
+        },
+        {
+          "id": 2,
+          "text": "Note 2",
+          "date": "2010-01-02",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 2
+        },
+        {
+          "id": 3,
+          "text": "Note 3",
+          "date": "2010-01-10",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 3
+        },
+        {
+          "id": 4,
+          "text": "Note 4",
+          "date": "2010-01-21",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 4
+        }
+      ],
       "status": {
         "id": 1,
         "name": "U toku"
@@ -443,14 +861,70 @@
       "hearingMinutes": [],
       "other": [],
       "caseHistory": [],
+      "caseMovements": [
+        {
+          "id": 1,
+          "title": "III P1 222/10",
+          "date": "2010-01-01",
+          "active": false
+        },
+        {
+          "id": 2,
+          "title": "I GZ1 222/10",
+          "date": "2013-07-31",
+          "active": false
+        },
+        {
+          "id": 3,
+          "title": "IV P1 222/10",
+          "date": "2015-11-21",
+          "active": false
+        }
+      ],
       "id": 4,
       "internalMark": "04/2020"
     },
     {
       "stateChanges": [
-        { "id": 1, "caseId": 1, "dateOfChange": "2008-10-12", "state": "III P1 123/2008", "active": false },
-        { "id": 2, "caseId": 1, "dateOfChange": "2008-10-12", "state": "II GZ1 123/2010", "active": false },
-        { "id": 3, "caseId": 1, "dateOfChange": "2008-10-12", "state": "IV P1 123/2011", "active": true }
+        {
+          "id": 1,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "III P1 123/2008",
+          "active": false
+        },
+        {
+          "id": 2,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "II GZ1 123/2010",
+          "active": false
+        },
+        {
+          "id": 3,
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "dateOfChange": "2008-10-12",
+          "state": "IV P1 123/2011",
+          "active": true
+        }
       ],
       "dateCreated": "2020-11-23T02:41:24.343Z",
       "dateUpdated": "2020-11-23T02:41:24.343Z",
@@ -471,7 +945,7 @@
       },
       "caseNumber": "444",
       "year": "2021",
-      "caseTitle": "Moma protiv Cezara",
+      "caseTitle": "Moma protiv Cezara Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
       "subject": "Mobing",
       "prosecutor": {
         "id": 2,
@@ -490,7 +964,60 @@
         "pin": "321323"
       },
       "caseValue": "100.000 din",
-      "notes": ["Note 1", "Note 2", "Cezar ga maltretira"],
+      "notes": [
+        {
+          "id": 1,
+          "text": "Note 1",
+          "date": "2010-01-01",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 1
+        },
+        {
+          "id": 2,
+          "text": "Note 2",
+          "date": "2010-01-02",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 2
+        },
+        {
+          "id": 3,
+          "text": "Note 3",
+          "date": "2010-01-10",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 3
+        },
+        {
+          "id": 4,
+          "text": "Note 4",
+          "date": "2010-01-21",
+          "employee": {
+            "id": 1,
+            "firstName": "Pera",
+            "lastName": "Peric",
+            "roleId": 2,
+            "role": "operator"
+          },
+          "userId": 4
+        }
+      ],
       "status": {
         "id": 1,
         "name": "U toku"
@@ -503,6 +1030,26 @@
       "hearingMinutes": [],
       "other": [],
       "caseHistory": [],
+      "caseMovements": [
+        {
+          "id": 1,
+          "title": "III P1 222/10",
+          "date": "2010-01-01",
+          "active": false
+        },
+        {
+          "id": 2,
+          "title": "I GZ1 222/10",
+          "date": "2013-07-31",
+          "active": false
+        },
+        {
+          "id": 3,
+          "title": "IV P1 222/10",
+          "date": "2015-11-21",
+          "active": false
+        }
+      ],
       "id": 5,
       "internalMark": "05/2020"
     }
@@ -595,9 +1142,18 @@
       "phone": "063/ 331030",
       "pin": "4444",
       "cases": [
-        { "id": 1, "name": "Pera protiv Mike" },
-        { "id": 2, "name": "Mika protiv Zike" },
-        { "id": 3, "name": "Zika protiv svih" }
+        {
+          "id": 1,
+          "name": "Pera protiv Mike"
+        },
+        {
+          "id": 2,
+          "name": "Mika protiv Zike"
+        },
+        {
+          "id": 3,
+          "name": "Zika protiv svih"
+        }
       ]
     },
     {
@@ -608,9 +1164,18 @@
       "phone": "063/ 8898016",
       "pin": "5555",
       "cases": [
-        { "id": 1, "name": "Pera protiv Mike" },
-        { "id": 2, "name": "Pera protiv Muje" },
-        { "id": 3, "name": "Zoran protiv Skole" }
+        {
+          "id": 1,
+          "name": "Pera protiv Mike"
+        },
+        {
+          "id": 2,
+          "name": "Pera protiv Muje"
+        },
+        {
+          "id": 3,
+          "name": "Zoran protiv Skole"
+        }
       ]
     },
     {
@@ -621,9 +1186,18 @@
       "phone": "064/ 5566887",
       "pin": "2222",
       "cases": [
-        { "id": 1, "name": "Igor protiv Srbe" },
-        { "id": 2, "name": "Skola protiv Zike" },
-        { "id": 3, "name": "Zika protiv Vlade" }
+        {
+          "id": 1,
+          "name": "Igor protiv Srbe"
+        },
+        {
+          "id": 2,
+          "name": "Skola protiv Zike"
+        },
+        {
+          "id": 3,
+          "name": "Zika protiv Vlade"
+        }
       ]
     }
   ],
@@ -1071,6 +1645,21 @@
           "name": "Upravni sud u Nisu"
         }
       ]
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "text": "dsfds",
+      "date": "2020-12-01T16:10:01.586Z",
+      "employee": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "roleId": 1,
+        "role": "operator"
+      },
+      "caseId": 1
     }
   ]
 }

@@ -12,6 +12,8 @@ import { GlobalService } from '@app/shell/global.service';
 import { FileService } from '@app/@shared/services/file.service';
 import { PreviewImageComponent } from '@app/@shared/preview-image/preview-image.component';
 import { Document } from '@core/models/document';
+import { EditCaseComponent } from './edit-case/edit-case.component';
+import { CaseHistoryComponent } from './edit-case/case-history/case-history.component';
 
 declare var require: any;
 const FileSaver = require('file-saver');
@@ -75,57 +77,26 @@ export class CasesComponent implements OnInit {
     );
   }
 
-  // downloadPdf(pdfUrl: string, pdfName: string) {
-  //   // const pdfUrl = './assets/sample.pdf';
-  //   // const pdfName = 'your_pdf_file';
-  //   FileSaver.saveAs(pdfUrl, pdfName);
-  //   this.openDoc(pdfUrl, 1);
-  // }
-
-  // openDoc(pdfUrl: string, startPage: number) {
-  //   window.open(pdfUrl + '#page=' + startPage, '_blank', '', true);
-  // }
-
-  // openFile(file: string) {
-  //   this.selectedDocument = file;
-  //   // const img: Document = { id: 555, data: 'assets/files/plan-otplate-igor.pdf', fileName: 'Test', fileSize: 500, fileSizeInUnit: 5, unit: 'kb' };
-  //   // const modalRef = this.modalService.open(PreviewImageComponent, { size: 'xl' });
-  //   // modalRef.componentInstance.title = file;
-  //   // modalRef.componentInstance.selectedImage = img;
-  //   // modalRef.componentInstance.confirm.subscribe((res: boolean) => {}
-  // }
-
-  addFile(file: string) {
-    console.log(file);
+  openRelatedCase() {
+    const modalRef = this.modalService.open(CaseHistoryComponent, { size: 'xl', scrollable: true });
+    modalRef.componentInstance.title = 'case.history-movement';
+    modalRef.componentInstance.caseHistory = this.selectedCase.caseMovements;
+    modalRef.componentInstance.disabled = true;
   }
 
-  // getPdf(file: string) {
-  //   this.fileService.getPdf(file).subscribe((data: any) => {
+  // handleFileInput(files: FileList) {
+  //   this.fileToUpload = files.item(0);
+  //   this.uploadFileToActivity();
+  // }
 
-  //     const blob = new Blob([data], { type: 'application/pdf' });
-
-  //     const downloadURL = window.URL.createObjectURL(data);
-  //     const link = document.createElement('a');
-  //     link.href = downloadURL;
-  //     link.download = 'help.pdf';
-  //     link.click();
-
+  // uploadFileToActivity() {
+  //   this.casesService.postFile(this.fileToUpload).subscribe((data) => {
+  //     // fileUploadService
+  //     // do something, if upload success
+  //     // }, error => {
+  //     //   console.log(error);
   //   });
   // }
-
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-    this.uploadFileToActivity();
-  }
-
-  uploadFileToActivity() {
-    this.casesService.postFile(this.fileToUpload).subscribe((data) => {
-      // fileUploadService
-      // do something, if upload success
-      // }, error => {
-      //   console.log(error);
-    });
-  }
 
   searchCases() {
     setTimeout(() => {

@@ -1,9 +1,11 @@
 import { CaseHistory } from './caseHistory';
+import { CaseMovement } from './caseMovement';
 import { Client } from './client';
 import { Council } from './council';
 import { Court } from './court';
 import { File } from './file';
 import { KeyValuePair } from './keyValuePair';
+import { Note } from './note';
 import { RegistrationMark } from './registrationMark';
 import { StateChange } from './stateChange';
 
@@ -24,7 +26,7 @@ export interface Case {
   caseTitle: string;
   subject: string;
   caseValue: string;
-  notes: string[];
+  notes: Note[];
   files?: File[];
   evidences?: File[];
   hearingMinutes?: File[];
@@ -34,4 +36,5 @@ export interface Case {
   status: KeyValuePair;
   active: boolean;
   caseHistory?: CaseHistory[];
+  caseMovements?: CaseMovement[];
 }

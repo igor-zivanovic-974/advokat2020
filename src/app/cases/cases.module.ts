@@ -13,7 +13,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
-import { PdfPreviewModalComponent } from './pdf-preview-modal/pdf-preview-modal.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FileListComponent } from './edit-case/file-list/file-list.component';
 import { CaseHistoryComponent } from './edit-case/case-history/case-history.component';
@@ -23,7 +22,6 @@ import { SelectCourtTypeModalComponent } from './edit-case/select-court-type-mod
   declarations: [
     CasesComponent,
     EditCaseComponent,
-    PdfPreviewModalComponent,
     FileListComponent,
     CaseHistoryComponent,
     SelectCourtTypeModalComponent,
@@ -47,4 +45,4 @@ import { SelectCourtTypeModalComponent } from './edit-case/select-court-type-mod
   exports: [PdfViewerComponent],
   entryComponents: [SelectCourtTypeModalComponent],
 })
-export class CasesModule {}
+export class CasesModule { }

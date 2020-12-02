@@ -32,7 +32,7 @@ export class PersistenceService {
     private notificationService: NotificationsService,
     private router: Router,
     private translateService: TranslateService
-  ) {}
+  ) { }
 
   displayErrorMessageFromApi(error: any) {
     const title: any = this.translateService.get('error');

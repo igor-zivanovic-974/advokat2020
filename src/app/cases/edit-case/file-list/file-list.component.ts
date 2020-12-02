@@ -14,6 +14,7 @@ export class FileListComponent implements OnInit {
   @Input() items: File[];
   @Input() title: string;
   @Input() disabled?: boolean;
+  @Input() mode?: string;
   @Output() changeOccured: EventEmitter<boolean> = new EventEmitter();
   wholeTitle: string;
   isMobileScreen$: Observable<boolean>;
@@ -27,8 +28,8 @@ export class FileListComponent implements OnInit {
 
   ngOnInit(): void {
     this.wholeTitle = 'case.' + this.title;
-    console.log(this.title);
-    console.log(this.items);
+    // console.log(this.title);
+    // console.log(this.items);
   }
 
   addFile() {

@@ -11,14 +11,20 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CaseHistoryComponent implements OnInit {
   @Input() caseHistory: CaseHistory[];
-  @Input() disabled: boolean;
+  @Input() title: string;
+  @Input() link?: string;
+  @Input() url?: string;
+  @Input() disabled?: boolean;
+  @Input() mode?: string;
   @Output() changeOccured: EventEmitter<boolean> = new EventEmitter();
   historyMode = Mode.preview;
   editHistoryId: number;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('caseHistory: ', this.caseHistory);
+  }
 
   addHistory() {
     alert('Added history item');
@@ -44,7 +50,7 @@ export class CaseHistoryComponent implements OnInit {
       } else {
         const item: HTMLElement = document.getElementById(row + '2');
         item.contentEditable = 'false';
-        item.innerText = this.caseHistory[row].caseTitle;
+        item.innerText = this.caseHistory[row].title;
         item.removeAttribute('tabindex');
         this.historyMode = Mode.preview;
         this.editHistoryId = null;
@@ -75,4 +81,30 @@ export class CaseHistoryComponent implements OnInit {
     alert('History item removed');
     this.changeOccured.emit(true);
   }
+
+  // openRelatedCase(e: Event) {
+  //   if (!this.link || this.url) {
+  //     e.stopImmediatePropagation();
+  //     return;
+  //   }
+
+  //   if (this.link) {
+  //     const modalRef = this.modalService.open(CaseHistoryComponent, { size: 'xl', scrollable: true });
+  //     // modalRef.componentInstance.case = this.cases.find(x => x.id === caseMovementId);
+  //     // modalRef.componentInstance.mode = 'preview';
+  //     modalRef.componentInstance.caseHistory = this.caseHistory;
+  //     modalRef.componentInstance.disabled = true;
+  //     modalRef.componentInstance.title = 'case.history-movement';
+  //     // modalRef.componentInstance.passEntry.subscribe((receivedEntry: boolean) => {
+  //     //   //  this.getCases();
+  //     // })
+  //   } else if (this.url) {
+  //     const modalRef = this.modalService.open(CaseHistoryComponent, { size: 'xl', scrollable: true });
+  //     modalRef.componentInstance.caseHistory = this.caseHistory;
+  //     modalRef.componentInstance.disabled = true;
+  //     modalRef.componentInstance.title = 'case.history';
+  //     //   modalRef.componentInstance.passEntry.subscribe((receivedEntry: boolean) => {
+  //     // }
+  //   }
+  // }
 }

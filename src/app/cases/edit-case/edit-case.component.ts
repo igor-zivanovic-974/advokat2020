@@ -15,7 +15,7 @@ import { DeleteModalComponent } from '@app/@shared/modals/delete-modal/delete-mo
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from '@app/@shared';
 import { TranslateService } from '@ngx-translate/core';
-import { Court, RegistrationMark } from '@app/@core';
+import { Court, Employee, RegistrationMark } from '@app/@core';
 import { KeyValuePair } from '@app/@core/interfaces/keyValuePair';
 import { EditCaseService } from './edit-case.service';
 import { SelectCourtTypeModalComponent } from './select-court-type-modal/select-court-type-modal.component';
@@ -23,6 +23,10 @@ import { Observable, Subject } from 'rxjs';
 import { GlobalService } from '@app/shell/global.service';
 import { take, takeUntil } from 'rxjs/operators';
 import { NoteComponent } from '@app/@shared/note/note.component';
+import { Note } from '@app/@core/interfaces/note';
+import { User } from '@app/@core/interfaces/user';
+import { EmployeesService } from '@app/employees/employees.service';
+import { NoteService } from '@app/@shared/note/note.service';
 
 @Component({
   selector: 'app-edit-cases',
@@ -104,6 +108,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   statuses: KeyValuePair[];
   lastInternalMark: string;
   note: string;
+  employees: Employee[];
 
   constructor(
     private casesService: CasesService,
@@ -114,6 +119,8 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private modalService: NgbModal,
     private _globalService: GlobalService,
+    private employeesService: EmployeesService,
+    private notesService: NoteService,
     private translateService: TranslateService
   ) {
     this.createForm();
@@ -188,12 +195,22 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   }
 
   getHelperData() {
+    this.getEmployees();
     this.getLastInternalMark();
     this.getCouncils();
     this.getRegistrators();
     this.getCourtNames();
     this.getStatuses();
     this.spinner.hide();
+  }
+
+  getEmployees() {
+    this.employeesService
+      .getEmployees()
+      .pipe(take(1))
+      .subscribe((employees: Employee[]) => {
+        this.employees = employees;
+      });
   }
 
   getLastInternalMark() {
@@ -334,12 +351,36 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     alert(state);
   }
 
-  openAddNoteModal() {
-    const modalRef = this.modalService.open(NoteComponent, { size: 'lg' });
-    modalRef.componentInstance.passEntry.subscribe((receivedEntry: string) => {
-      this.note = receivedEntry;
+  openNoteModal(noteId?: number) {
+    const modalRef = this.modalService.open(NoteComponent, { size: 'xl' });
+    modalRef.componentInstance.caseId = this.case.id;
+    if (noteId) {
+      modalRef.componentInstance.noteToEdit = this.case.notes.find(n => n.id === noteId);
+    }
+    modalRef.componentInstance.note.subscribe((receivedEntry: Note) => {
+      this.case.notes.push(receivedEntry);
       this.getHelperData();
     });
+  }
+
+  invokeDeleteNote(noteId: number) {
+    const modalRef = this.modalService.open(ConfirmationModalComponent, { size: 'xl' });
+    modalRef.componentInstance.id = noteId;
+    modalRef.componentInstance.queryText = 'common.delete-note-query';
+    modalRef.componentInstance.confirm.subscribe((response: boolean) => {
+      if (response) {
+        this.deleteNote(noteId);
+      }
+    });
+  }
+
+  deleteNote(noteId: number) {
+    this.notesService.deleteNote(noteId).pipe(take(1)).subscribe((note: Note) => {
+      const index = this.case.notes.indexOf(note);
+      if (index) {
+        this.case.notes.splice(index, 1);
+      }
+    })
   }
 
   addParty(party: string) {

@@ -11,12 +11,12 @@ import { NotificationsService } from 'angular2-notifications';
 export class ConfirmationModalComponent implements OnInit {
   @Input() modalState = false;
   @Input() queryText?: string;
-  @Output() confirm = new EventEmitter<boolean>();
+  @Output() confirm: EventEmitter<boolean> = new EventEmitter<boolean>();
   deleteConfirm = false;
 
-  constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {}
+  constructor(public activeModal: NgbActiveModal, private translate: TranslateService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   isIn(): boolean {
     return this.modalState;

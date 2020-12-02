@@ -40,7 +40,7 @@
           <input type="text" class="form-control" id="year" placeholder="{{ 'case.year' | translate }}" formControlName="year" [readOnly]="disabled" />
         </div>
       </div>
-      <div class="row mt-4 mb-3" *ngIf="mode === 'preview'">{{'case.movement' | translate}}:
+      <div class="row mt-4 mb-3" *ngIf="mode === 'preview'">{{'case.history-movement' | translate}}:
         <button *ngFor="let state of case.stateChanges" class="mx-3" (click)="switchCase(state.state)" [ngClass]="{'btn btn-primary': !state.active, 'btn btn-danger': state.active}">{{state.state}}</button>
       </div>
 
@@ -165,12 +165,30 @@
       </div>
 
       <!-- notes -->
-      <div class="form-group mb-5">
-        <label class="font-weight-bold" for="notes">{{ 'case.notes' | translate }}</label>
-        <div class="" id="notes" placeholder="Notes" formControlName="notes">
-          <div *ngFor="let note of case.notes">{{note}}</div>
+      <div class="form-group mb-5" *ngIf="case.notes && case.notes.length > 0">
+        <div class="border-bottom mb-3"><label class="font-weight-bold" for="notes">{{ 'case.notes' | translate }}</label>
+          <button class="btn btn-sm btn primary" (click)="openNoteModal()"><i class="fas fa-plus"></i>
+            <!-- {{'case.add-note' | translate}} -->
+          </button>
         </div>
-        <button (click)="openAddNoteModal()">{{'case.add-note' | translate}}</button>
+        <div id="notes" placeholder="Notes">
+          <div *ngFor="let note of case.notes">
+            <div>{{note.date | date: 'dd.MM.yyyy'}}
+              <span class="small"><b>{{'common.note-created-by' | translate}}: {{note.employee.firstName}}</b></span>
+              <span *ngIf="mode === 'edit'" class="float-right">
+                <button class="btn btn-sm btn primary" (click)="openNoteModal(note.id)">
+                  <i class="fa fa-edit"></i>
+                  <!-- {{'case.add-note' | translate}} -->
+                </button>
+                <button class="btn btn-sm btn primary" (click)="invokeDeleteNote(note.id)">
+                  <i class="fa fa-times"></i>
+                  <!-- {{'case.add-note' | translate}} -->
+                </button>
+              </span>
+            </div>
+            <div class="mb-3">{{note.text}}</div>
+          </div>
+        </div>
       </div>
 
       <div *ngIf="mode !== 'new'">
@@ -193,7 +211,7 @@
         <app-file-list [items]="case.other" [title]="'other'" [disabled]="disabled" (changeOccured)="changeDetected()"></app-file-list>
 
         <!-- history -->
-        <app-case-history [caseHistory]="case.caseHistory" [disabled]="disabled" (changeOccured)="changeDetected()"></app-case-history>
+        <app-case-history [caseHistory]="case.caseHistory" [disabled]="disabled" [mode]="mode" [title]="'case.history'" (changeOccured)="changeDetected()"></app-case-history>
       </div>
 
       <!-- status -->
@@ -240,3 +258,8 @@
     </form>
   </div>
 </div>
+
+<!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil magnam esse dolores nobis asperiores, in veritatis adipisci minus! Praesentium mollitia, maiores, itaque harum est autem beatae maxime reiciendis possimus eos recusandae sunt molestiae fugiat, nisi voluptas quasi non cum animi vero. Nisi nulla necessitatibus magni officia ab amet? Rem quas corrupti, aliquam voluptatem illo voluptatibus ipsam quisquam fugit doloribus amet eligendi quos ab ratione nisi nobis corporis officia. Est, repudiandae aperiam similique commodi nesciunt, maiores perspiciatis tenetur nisi laborum praesentium quam quae ratione inventore facere nam ducimus culpa eos sequi. Iusto dolorem corrupti, natus officiis dolor voluptates et repellendus.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam perferendis ratione harum praesentium quasi eligendi sunt minus atque repellendus molestias deleniti ullam laudantium nihil, possimus ipsa laborum rerum placeat beatae iste. Autem tempora ea praesentium omnis, accusantium consectetur dicta ex odio nisi molestiae. Illum iusto quibusdam commodi saepe in.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni natus earum temporibus dolorem pariatur accusantium, aut consectetur quam, nobis eaque dolores tenetur ipsum unde vitae odit, cupiditate debitis ipsam nostrum provident? Aut distinctio, officia cumque recusandae mollitia explicabo cupiditate perspiciatis sunt inventore alias laboriosam quis vitae facilis a corrupti et debitis voluptatum consectetur ipsam quibusdam beatae nam libero, maiores sed? Amet unde ut cum porro quisquam! Rerum molestiae dolor temporibus quam dignissimos, quos expedita quae.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab? -->

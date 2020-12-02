@@ -1,20 +1,23 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Employee } from '@app/@core/interfaces/Employee';
-import { TranslateService } from '@ngx-translate/core';
+import { Injectable } from '@angular/core';
+import { Employee } from '@app/@core';
+import { Note } from '@app/@core/interfaces/note';
 import { PersistenceService } from '@app/@core/services/persistence.service';
+import { TranslateService } from '@ngx-translate/core';
 import { NotificationsService } from 'angular2-notifications';
+import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class EmployeesService {
-  url = this.persistenceService.apiUrl + '/employees';
+export class NoteService {
+  url = this.persistenceService.apiUrl + '/notes';
   st: any = this.translateService.get('api.successTitle');
   sc: any = this.translateService.get('api.successCreate');
   su: any = this.translateService.get('api.successUpdate');
   sd: any = this.translateService.get('api.successDelete');
+  er: any = this.translateService.get('api.error');
   notificationsOptions = {
     timeOut: 2000,
     showProgressBar: true,
@@ -30,60 +33,57 @@ export class EmployeesService {
     private translateService: TranslateService
   ) { }
 
-  getEmployees(): Observable<Employee[]> {
+  getNotes(): Observable<Note[]> {
     return this.http.get(this.url).pipe(
-      // GetEmployees
-      map((res: Employee[]) => {
-        return res as Employee[];
+      map((res: Note[]) => {
+        return res as Note[];
       }),
       catchError((err: any) => this.persistenceService.handleError(err))
     );
   }
 
-  getEmployeeById(id: number): Observable<Employee> {
-    // const fd = new FormData();
-    // fd.append('id', id.toString());
-    return this.http.get(`${this.url}/${id}`).pipe( // , fd
-      // GetEmployee
-      map((res: Employee) => {
-        return res as Employee;
+  getNoteById(id: number): Observable<Note> {
+    return this.http.get(this.url + '/' + id).pipe(
+      map((res: Note) => {
+        return res as Note;
       }),
       catchError((err: any) => this.persistenceService.handleError(err))
     );
+    // const n: Note = {
+    //   id: 4,
+    //   text: 'Note 4',
+    //   date: new Date('2010-01-21'),
+    //   employee: { 'id': 1, 'firstName': 'Pera', 'lastName': 'Peric', 'roleId': 2, 'role': 'operator' },
+    //   caseId: 1
+    // };
+    // return of(n);
   }
 
-  createEmployee(body: Employee): Observable<Employee> {
-    const fd = new FormData();
-    fd.append('firstName', body.firstName);
-    fd.append('lastName', body.lastName);
-    fd.append('roleId', body.roleId.toString());
-    return this.http.post(this.url, fd).pipe(
-      // InsertEmployee
-      map((res: Employee) => {
+  addNote(body: Note): Observable<Note> {
+    return this.http.post(this.url, body).pipe(
+      map((res: Note) => {
         this.notificationService.success(this.st.value, this.sc.value, this.notificationsOptions);
-        return res as Employee;
+        return res as Note;
       }),
       catchError((err: any) => this.persistenceService.handleError(err))
     );
   }
 
-  updateEmployee(body: Employee): Observable<Employee> {
-    return this.http.put(`${this.url}/${body.id}`, body).pipe(
-      // UpdateEmployee
-      map((res: Employee) => {
-        this.notificationService.success(this.st.value, this.su.value, this.notificationsOptions);
-        return res as Employee;
+  editNote(body: Note): Observable<Note> {
+    return this.http.put(this.url, body).pipe(
+      map((res: Note) => {
+        this.notificationService.success(this.st.value, this.sc.value, this.notificationsOptions);
+        return res as Note;
       }),
       catchError((err: any) => this.persistenceService.handleError(err))
     );
   }
 
-  deleteEmployee(id: number): Observable<Employee> {
-    return this.http.delete(`${this.url}/${id}`).pipe(
-      // DeleteEmployee
-      map((res: Employee) => {
+  deleteNote(id: number): Observable<Note> {
+    return this.http.delete(this.url + '/' + id).pipe(
+      map((res: Note) => {
         this.notificationService.success(this.st.value, this.sd.value, this.notificationsOptions);
-        return res as Employee;
+        return res as Note;
       }),
       catchError((err: any) => this.persistenceService.handleError(err))
     );
