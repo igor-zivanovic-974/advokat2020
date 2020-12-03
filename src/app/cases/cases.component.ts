@@ -77,11 +77,12 @@ export class CasesComponent implements OnInit {
     );
   }
 
-  openRelatedCase() {
-    const modalRef = this.modalService.open(CaseHistoryComponent, { size: 'xl', scrollable: true });
-    modalRef.componentInstance.title = 'case.history-movement';
-    modalRef.componentInstance.caseHistory = this.selectedCase.caseMovements;
-    modalRef.componentInstance.disabled = true;
+  openRelatedCase(id?: number) {
+    alert(id);
+    // const modalRef = this.modalService.open(CaseHistoryComponent, { size: 'xl', scrollable: true });
+    // modalRef.componentInstance.title = 'case.history-movement';
+    // modalRef.componentInstance.caseHistory = this.selectedCase.caseMovements;
+    // modalRef.componentInstance.disabled = true;
   }
 
   // handleFileInput(files: FileList) {

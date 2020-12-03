@@ -22,11 +22,12 @@ import { SelectCourtTypeModalComponent } from './select-court-type-modal/select-
 import { Observable, Subject } from 'rxjs';
 import { GlobalService } from '@app/shell/global.service';
 import { take, takeUntil } from 'rxjs/operators';
-import { NoteComponent } from '@app/@shared/note/note.component';
+import { NoteComponent } from '@app/@shared/modals/note/note.component';
 import { Note } from '@app/@core/interfaces/note';
 import { User } from '@app/@core/interfaces/user';
 import { EmployeesService } from '@app/employees/employees.service';
-import { NoteService } from '@app/@shared/note/note.service';
+import { NoteService } from '@app/@shared/modals/note/note.service';
+import { PaymentsComponent } from '@app/@shared/modals/payments/payments.component';
 
 @Component({
   selector: 'app-edit-cases',
@@ -90,6 +91,8 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     status: null,
     active: false,
     caseHistory: [],
+    caseMovements: [],
+    payments: []
   };
   id: number;
   mode: string;
@@ -233,7 +236,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe((councils: Council[]) => {
         this.councils = councils;
-        console.log('councils', this.councils);
+        // console.log('councils', this.councils);
       });
   }
 
@@ -336,7 +339,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
       caseHistory: [],
     };
 
-    console.log(this.case);
+    // console.log(this.case);
   }
 
   goToUrl(url: string) {
@@ -381,6 +384,17 @@ export class EditCaseComponent implements OnInit, OnDestroy {
         this.case.notes.splice(index, 1);
       }
     })
+  }
+
+  openPaymentsModal() {
+    const modalRef = this.modalService.open(PaymentsComponent, { size: 'xl' });
+    modalRef.componentInstance.payments = this.case.payments;
+    // modalRef.componentInstance.queryText = 'common.delete-note-query';
+    // modalRef.componentInstance.confirm.subscribe((response: boolean) => {
+    //   if (response) {
+    //     this.deleteNote(noteId);
+    //   }
+    // });
   }
 
   addParty(party: string) {
@@ -442,6 +456,16 @@ export class EditCaseComponent implements OnInit, OnDestroy {
 
   changeDetected() {
     this.getCase();
+  }
+
+  onChangeCourt(courtId: number) {
+    this.form.value.courtId = courtId;
+    // console.log('FORM', this.form.value);
+  }
+
+  onChangeCouncil(councilId: number) {
+    this.form.value.councilId = councilId;
+    console.log('FORM', this.form.value);
   }
 
   createForm() {

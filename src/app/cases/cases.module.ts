@@ -17,6 +17,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FileListComponent } from './edit-case/file-list/file-list.component';
 import { CaseHistoryComponent } from './edit-case/case-history/case-history.component';
 import { SelectCourtTypeModalComponent } from './edit-case/select-court-type-modal/select-court-type-modal.component';
+import { CaseMovementsComponent } from './edit-case/case-movements/case-movements.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SelectCourtTypeModalComponent } from './edit-case/select-court-type-mod
     FileListComponent,
     CaseHistoryComponent,
     SelectCourtTypeModalComponent,
+    CaseMovementsComponent,
   ],
   imports: [
     CommonModule,

@@ -137,5 +137,7 @@
   "case.history-movement": "Kretanje predmeta",
   "case.notes": "Beleske",
   "case.add-note": "Dodaj belesku",
-  "case.remove-note": "Obrisi belesku"
+  "case.remove-note": "Obrisi belesku",
+  "case.payments": "Troskovnik",
+  "case.charges": "Potrazivanja"
 }

@@ -1,12 +1,11 @@
-<!-- <div class="form-group">
-    <label for="">{{ 'case.registration-mark' | translate }}</label>
-    <ng-select class="" [items]="registrationMarks" bindLabel="name" bindValue="id" formControlName="registrationMark">
-    </ng-select>
-    <small [hidden]="form.controls.registrationMark.valid || form.controls.registrationMark.untouched" class="text-danger" translate>
+<!-- <div class="container-fluid"> -->
+<div class="form-group">
+  <label for="" class="font-weight-bold">{{ label | translate }}</label>
+  <ng-select [items]="items" bindLabel="name" bindValue="id" id="dropdown" (change)="onValueChange()" [(ngModel)]="selectedItemId">
+  </ng-select>
+  <!-- formControlName="registrationMark" -->
+  <!-- <small [hidden]="form.controls.registrationMark.valid || form.controls.registrationMark.untouched" class="text-danger" translate>
       {{ 'common.required-field' | translate }}
-    </small>
-  </div>
-
-  label 
-  placeholder 
-  items  -->
+    </small> -->
+</div>
+<!-- </div> -->

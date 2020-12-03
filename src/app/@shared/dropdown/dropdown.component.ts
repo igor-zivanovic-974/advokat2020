@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { KeyValuePair } from '@app/@core/interfaces/keyValuePair';
 
 @Component({
   selector: 'app-dropdown',
@@ -6,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit {
-  constructor() {}
+  @Input() label: string;
+  @Input() readonly: boolean;
+  @Input() items: KeyValuePair[];
+  @Input() selectedItemId: number;
+  // @Output() changedItem: EventEmitter<KeyValuePair> = new EventEmitter();
+  @Output() changedItem: EventEmitter<number> = new EventEmitter();
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void { }
+
+  onValueChange() {
+    // debugger
+    // const item: KeyValuePair = this.items.find(x => x.id === this.selectedItemId);
+    // console.log('item', item);
+    this.changedItem.emit(this.selectedItemId);
+  }
 }

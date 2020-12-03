@@ -136,5 +136,7 @@
   "case.history-movement": "Case Movement",
   "case.notes": "Notes",
   "case.add-note": "Add Note",
-  "case.remove-note": "Remove note"
+  "case.remove-note": "Remove note",
+  "case.payments": "Payments",
+  "case.charges": "Charges"
 }

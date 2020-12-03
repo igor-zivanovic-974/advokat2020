@@ -1,5 +1,6 @@
 import { CaseHistory } from './caseHistory';
 import { CaseMovement } from './caseMovement';
+import { CasePayment } from './casePayment';
 import { Client } from './client';
 import { Council } from './council';
 import { Court } from './court';
@@ -37,4 +38,5 @@ export interface Case {
   active: boolean;
   caseHistory?: CaseHistory[];
   caseMovements?: CaseMovement[];
+  payments?: CasePayment[];
 }

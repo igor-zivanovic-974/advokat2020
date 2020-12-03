@@ -19,7 +19,8 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
-import { NoteComponent } from './note/note.component';
+import { NoteComponent } from './modals/note/note.component';
+import { PaymentsComponent } from './modals/payments/payments.component';
 
 @NgModule({
   imports: [
@@ -44,9 +45,11 @@ import { NoteComponent } from './note/note.component';
     FileUploadComponent,
     DropdownComponent,
     NoteComponent,
+    PaymentsComponent,
+    DropdownComponent
   ],
-  exports: [LoaderComponent, DeleteModalComponent, ConfirmationModalComponent, NoteComponent, TranslateModule, FileUploadComponent],
-  entryComponents: [DeleteModalComponent, ConfirmationModalComponent, FileUploadComponent, NoteComponent],
+  exports: [LoaderComponent, DeleteModalComponent, ConfirmationModalComponent, NoteComponent, TranslateModule, FileUploadComponent, PaymentsComponent, DropdownComponent],
+  entryComponents: [DeleteModalComponent, ConfirmationModalComponent, FileUploadComponent, NoteComponent, PaymentsComponent, DropdownComponent],
   providers: [NotificationsService],
 })
 export class SharedModule { }

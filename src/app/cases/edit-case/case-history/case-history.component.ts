@@ -23,7 +23,7 @@ export class CaseHistoryComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    console.log('caseHistory: ', this.caseHistory);
+    // console.log('caseHistory: ', this.caseHistory);
   }
 
   addHistory() {

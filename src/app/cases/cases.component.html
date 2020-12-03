@@ -11,7 +11,7 @@
     <div class="col-2 text-right pr-5">
       <button class="" (click)="goToUrl('new', 0)" class="btn btn-outline-primary header-btn" title="{{ 'case.add-new' | translate }}">
         <i class="fas fa-folder-plus px-1"></i>
-        {{ !(isMobileScreen$ | async) ? ('case.add-new' | translate) : '' }}
+        <!-- {{ !(isMobileScreen$ | async) ? ('case.add-new' | translate) : '' }} -->
       </button>
     </div>
   </div>
@@ -102,22 +102,16 @@
           </div>
         </div>
 
-
+        <!-- case history -->
         <app-case-history *ngIf="selectedCase && case.id === selectedCaseId" [caseHistory]="selectedCase.caseHistory" [title]="'case.history'" [mode]="'preview'" [disabled]="true"></app-case-history>
+
         <!-- case movement -->
-        <div class="card my-3" *ngIf="selectedCase && case.id === selectedCaseId">
-          <div class="form-group m-3 mb-5 ">
-            <div class="border-bottom mb-3">
-              <label class="font-weight-bold" for="other">{{ 'case.history-movement' | translate }}</label>
-              <hr>
-              <ul class="list-unstyled">
-                <li *ngFor="let cm of selectedCase.caseMovements" (click)="openRelatedCase()" class="list-link">
-                  {{cm.date | date: 'dd.MM.yyyy'}} - {{cm.title}}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <app-case-movements *ngIf="selectedCase && case.id === selectedCaseId" [caseMovements]="case.caseMovements" (relatedCaseId)="openRelatedCase($event)"></app-case-movements>
+
+
+        <!-- troskovnik -->
+        <app-payments *ngIf="selectedCase && case.id === selectedCaseId" [payments]="case.payments"></app-payments>
+
       </div>
     </div>
 
