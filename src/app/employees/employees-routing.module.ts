@@ -9,8 +9,8 @@ import { extract } from '@app/i18n';
 const routes: Routes = [
   Shell.childRoutes([
     { path: 'employees', component: EmployeesComponent, data: { title: extract('Zaposleni') } },
-    { path: 'edit-employee/:id', component: EditEmployeeComponent, data: { title: extract('Zaposleni') } },
-    // { path: 'edit-employee/new', component: EditEmployeeComponent, data: { title: extract('Zaposleni') } }
+    { path: 'employees/:mode/:id', component: EditEmployeeComponent, data: { title: extract('Zaposleni') } },
+    { path: 'employees/:mode', component: EditEmployeeComponent, data: { title: extract('Zaposleni') } },
   ]),
 ];
 
@@ -19,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class EmployeesRoutingModule {}
+export class EmployeesRoutingModule { }

@@ -74,9 +74,9 @@ export class HelperService {
 
   getRoles() {
     const roles: Role[] = [
-      { id: 1, roleName: 'operator' },
-      { id: 2, roleName: 'owner' },
-      { id: 3, roleName: 'client' },
+      { id: 1, name: 'operator' },
+      { id: 2, name: 'owner' },
+      { id: 3, name: 'client' },
     ];
     return roles;
   }

@@ -6,7 +6,7 @@
 
   <div>
     <!-- *ngIf="!disabled" -->
-    <form [formGroup]="form" class="">
+    <form [formGroup]="form">
       <div class="row mt-4 mb-3" *ngIf="mode === 'edit'">
         <!-- council -->
         <div class="col-6 col-lg-3">
@@ -34,7 +34,7 @@
         <!-- case number -->
         <div class="form-group col-6 col-lg-3">
           <label class="font-weight-bold" for="caseNumber">{{ 'case.number' | translate }}</label>
-          <input type="text" class="form-control" id="caseTitle" placeholder="{{ 'case.number' | translate }}" formControlName="caseNumber" [readOnly]="disabled" />
+          <input type="text" class="form-control" id="caseNumber" placeholder="{{ 'case.number' | translate }}" formControlName="caseNumber" [readOnly]="disabled" />
         </div>
 
         <!-- year -->

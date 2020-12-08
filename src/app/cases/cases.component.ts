@@ -59,7 +59,6 @@ export class CasesComponent implements OnInit {
   getCases() {
     this.casesService.getCases().subscribe((data: Case[]) => {
       this.cases = data;
-      // this.cases.forEach((x) => (x.courtName = this.helperService.getCourt(x.id)));
       console.log('CASES: ', this.cases);
       this.spinner.hide();
     });
@@ -107,7 +106,6 @@ export class CasesComponent implements OnInit {
 
   setActiveCase(caseId: number) {
     this.selectedCaseId = caseId;
-    // this.selectedDocument = null;
     this.selectedCase = this.cases.find((c) => c.id === caseId);
   }
 

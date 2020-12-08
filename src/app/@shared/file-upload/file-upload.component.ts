@@ -41,9 +41,9 @@ export class FileUploadComponent implements OnInit {
     private modalService: NgbModal,
     private http: HttpClient,
     private notifier: NotificationsService
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   uploadFile(file: any) {
     const formData = new FormData();
@@ -68,7 +68,7 @@ export class FileUploadComponent implements OnInit {
       )
       .subscribe((event: any) => {
         if (typeof event === 'object') {
-          console.log(event.body);
+          // console.log(event.body);
         }
         this.clicked = false;
       });

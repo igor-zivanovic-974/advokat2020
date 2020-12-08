@@ -11,19 +11,22 @@ import { EmployeesService } from './employees.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CoreModule } from '@app/@core';
 import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     TranslateModule,
     EmployeesRoutingModule,
     SimpleNotificationsModule,
     NgxSpinnerModule,
+    NgSelectModule
   ],
   declarations: [EmployeesComponent, EditEmployeeComponent],
   providers: [EmployeesService, CoreModule],
 })
-export class EmployeesModule {}
+export class EmployeesModule { }

@@ -1,0 +1,15 @@
+.scrollable {
+  overflow: scroll;
+}
+
+.hovered {
+  padding: 16px 0;
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+.selected-item {
+  background: #000;
+}

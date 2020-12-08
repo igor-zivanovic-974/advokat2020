@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="row top">
+  <!-- <div class="row top">
     <div class="col-lg-10 col-md-10 col-xs-10">
       <h1>
         {{ mode === 'new' ? ('new' | translate) : ('update' | translate) }}
@@ -7,76 +7,67 @@
       </h1>
     </div>
   </div>
-  <div class="container">
-    <form #f="ngForm">
-      <!-- client first name -->
-      <div class="row">
-        <div class="col-lg-2 col-md-2 col-xs-2">
-          <label>{{ 'firstName' | translate }}</label>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6">
-          <input
-            type="text"
-            [(ngModel)]="client.firstName"
-            #firstName="ngModel"
-            name="firstName"
-            id="firstName"
-            required
-          />
-        </div>
+  <div class="container"> -->
+  <h5 class="mt-3 border-bottom">{{ 'client.details' | translate }}</h5>
+  <form [formGroup]="form">
+    <!-- client first name -->
+    <div class="form-group">
+      <label class="font-weight-bold" for="firstName">{{ 'firstName' | translate }}</label>
+      <input type="text" formControlName="firstName" class="form-control" />
+    </div>
+
+    <!-- client last name -->
+    <div class="form-group">
+      <label class="font-weight-bold" for="lastName">{{ 'lastName' | translate }}</label>
+      <input type="text" formControlName="lastName" class="form-control" />
+    </div>
+
+    <!-- address -->
+    <div class="form-group">
+      <label class="font-weight-bold" for="address">{{ 'address' | translate }}</label>
+      <input type="text" formControlName="address" class="form-control" />
+    </div>
+
+    <!-- phone -->
+    <div class="form-group">
+      <label class="font-weight-bold" for="phone">{{ 'phone' | translate }}</label>
+      <input type="text" formControlName="phone" class="form-control" />
+    </div>
+
+    <!-- pin -->
+    <div class="form-group">
+      <label class="font-weight-bold" for="pin">{{ 'pin' | translate }}</label>
+      <input type="text" formControlName="pin" class="form-control" />
+    </div>
+
+    <!-- cases -->
+    <div class="form-group mt-5">
+      <div class="row border-bottom">
+        <h5 class="mr-3">{{ 'client.cases' | translate }}</h5>
+        <span class="float-right">
+          <button class="btn btn-sm btn-outline-success" (click)="addCase()"><i class="fa fa-plus"></i></button>
+        </span>
       </div>
 
-      <!-- client last name -->
-      <div class="row">
-        <div class="col-lg-2 col-md-2 col-xs-2">
-          <label>{{ 'lastName' | translate }}</label>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6">
-          <input type="text" [(ngModel)]="client.lastName" #lastName="ngModel" name="lastName" id="lastName" required />
+      <div *ngIf="client.cases && client.cases.length > 0">
+        <div *ngFor="let c of client.cases" class="lh-40">
+          <span><i class="fa fa-folder"></i> {{c.name}}</span>
+          <span class="float-right">
+            <button class="btn btn-sm btn-outline-danger" (click)="invokeDeleteCase(c.id)"><i class="fa fa-times"></i></button>
+          </span>
         </div>
       </div>
+      <div *ngIf="!client.cases || client.cases.length === 0">{{'common.no-data' |translate}}</div>
+    </div>
 
-      <!-- address -->
-      <div class="row">
-        <div class="col-lg-2 col-md-2 col-xs-2">
-          <label>{{ 'address' | translate }}</label>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6">
-          <input type="text" [(ngModel)]="client.address" #address="ngModel" name="address" id="address" required />
-        </div>
-      </div>
-
-      <!-- phone -->
-      <div class="row">
-        <div class="col-lg-2 col-md-2 col-xs-2">
-          <label>{{ 'phone' | translate }}</label>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6">
-          <input type="text" [(ngModel)]="client.phone" #phone="ngModel" name="phone" id="phone" required />
-        </div>
-      </div>
-
-      <!-- pin -->
-      <div class="row">
-        <div class="col-lg-2 col-md-2 col-xs-2">
-          <label>{{ 'pin' | translate }}</label>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6">
-          <input type="text" [(ngModel)]="client.pin" #pin="ngModel" name="pin" id="pin" required />
-        </div>
-      </div>
-
-      <!-- buttons -->
-      <div class="row">
-        <div class="col-md-offset-4 col-md-4">
-          <button type="submit" class="btn btn-outline-dark" (click)="save()" [disabled]="!f.valid">
-            {{ 'save' | translate }}
-          </button>
-          <!-- </div>
-        <div class="col-lg-2 col-md-2 col-xs-2"> -->
-          <button type="submit" class="btn btn-outline-dark" (click)="goToUrl()">{{ 'cancel' | translate }}</button>
-        </div>
-      </div>
-    </form>
-  </div>
+    <hr *ngIf="client.cases && client.cases.length > 0">
+    <!-- buttons -->
+    <div class="mt-5">
+      <button type="submit" class="btn btn-outline-dark" (click)="save()" [disabled]="form.invalid">
+        {{ 'common.save' | translate }}
+      </button>
+      <button type="submit" class="btn btn-outline-dark" (click)="goToUrl('clients')">{{ 'common.cancel' | translate }}</button>
+      <!-- <button type="submit" class="btn btn-outline-dark" (click)="printForm()">{{ 'common.print' | translate }}</button> -->
+    </div>
+  </form>
 </div>

@@ -1,44 +1,66 @@
-<div class="container-fluid">
-  <div class="wrapper">
-    <div class="row top">
-      <div class="col-lg-11 col-md-11 col-xs-11">
-        <h1>{{ 'employees' | translate }}</h1>
-      </div>
-      <div class="col-lg-1 col-md-1 col-xs-1">
-        <button (click)="goToUrl('new')" class="btn btn-primary btn-md header-btn">
-          <i class="fa fa-user-plus"></i>
-        </button>
+<div class="wrapper">
+  <div class="row">
+    <div class="col-9 col-lg-3">
+      <h3 class="ml-5">{{ 'employees' | translate }}</h3>
+    </div>
+    <div class="col-1 text-right">
+      <button (click)="goToUrl('new', 0)" class="btn btn-outline-primary header-btn" title="{{ 'employee.add' | translate }}">
+        <i class="fas fa-folder-plus px-1"></i>
+      </button>
+    </div>
+    <div class="col-12 col-lg-7">
+      <div class="form-group">
+        <input type="text" class="form-control" id="search" placeholder="{{ 'common.search' | translate }}" (ngModelChange)="searchEmployees()" [(ngModel)]="filter" />
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-1 col-xs-1"><b>#</b></div>
-      <div class="col-lg-2 col-xs-2">
-        <b>{{ 'firstName' | translate }}</b>
+
+  </div>
+
+  <div class="col-12" *ngIf="employees && employees.length > 0">
+    <div class="card my-2" *ngFor="let employee of employees" (click)="setActiveEmployee(employee.id)" [ngClass]="{ 'border-bold': employee.id === selectedEmployeeId }">
+      <div class="card-header">
+        <h5 class="card-title">{{ employee.firstName }} {{ employee.lastName }}</h5>
       </div>
-      <div class="col-lg-2 col-xs-2">
-        <b>{{ 'lastName' | translate }}</b>
-      </div>
-      <div class="col-lg-2 col-xs-2">
-        <b>{{ 'role' | translate }}</b>
-      </div>
-      <div class="col-lg-1 col-xs-1">
-        <b>{{ 'action' | translate }}</b>
-      </div>
-    </div>
-    <hr />
-    <div class="row" *ngFor="let employee of employees; index as i">
-      <div class="col-lg-1 col-xs-1">{{ i + 1 }}</div>
-      <div class="col-lg-2 col-xs-2">{{ employee.firstName }}</div>
-      <div class="col-lg-2 col-xs-2">{{ employee.lastName }}</div>
-      <div class="col-lg-2 col-xs-2">{{ employee.role | translate }}</div>
-      <div class="col-lg-1 col-xs-1">
-        <a><i class="fa fa-edit" (click)="goToUrl(employee.id)"></i></a>
-        <a><i class="fa fa-times" (click)="invokeDelete(employee.id)"></i></a>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <h5 class="mt-3 border-bottom">{{ 'employee.details' | translate }}</h5>
+            <i class="fa fa-phone mr-2"></i> {{ employee.phone }}<br />
+            <i class="fa fa-home mr-2"></i> {{ employee.address }}
+          </div>
+          <div class="col-12 col-lg-6" *ngIf="selectedEmployee && selectedEmployee.id===employee.id">
+            <h5 class="mt-3 border-bottom">{{ 'employee.cases' | translate }}</h5>
+            <div *ngFor="let cc of selectedEmployee.cases">
+              <a (click)="goToUrl('preview', cc.id)">
+                <i class="fa fa-folder mr-2"></i>
+                {{ cc.subject }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer mt-3" style="height: 50px">
+          <span class="float-left cursor-pointer" (click)="invokeDeleteEmployee(employee.id)">
+            {{ !(isMobileScreen$ | async) ? ('employee.delete' | translate) : '' }}
+            <i class="fa fa-trash text-danger ml-2"></i>
+          </span>
+          <span class="float-right cursor-pointer" (click)="goToUrl('edit', employee.id)">
+            {{ !(isMobileScreen$ | async) ? ('employee.edit' | translate) : '' }}
+            <i class="fa fa-edit text-primary ml-2"></i>
+          </span>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="" *ngIf="!employees || employees.length === 0">
+    {{ 'common.no-data' | translate }}
+  </div>
+
+
 </div>
-<app-delete-modal [hidden]="!modalState"></app-delete-modal
-><!--  (onConfirm)="onConfirm($event)"-->
+
+<app-delete-modal [hidden]="!modalState"></app-delete-modal>
 <ngx-spinner></ngx-spinner>
 <simple-notifications></simple-notifications>

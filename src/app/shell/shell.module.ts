@@ -11,10 +11,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { GlobalService } from './global.service';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, NgbModule, AuthModule, I18nModule, RouterModule],
+  imports: [CommonModule, TranslateModule, NgbModule, AuthModule, I18nModule, SimpleNotificationsModule, RouterModule],
   declarations: [HeaderComponent, ShellComponent, SideMenuComponent, FooterComponent],
   providers: [GlobalService],
 })
-export class ShellModule {}
+export class ShellModule { }

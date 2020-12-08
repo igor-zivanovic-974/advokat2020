@@ -8,10 +8,9 @@ import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([
-    { path: 'clients', component: ClientsComponent, data: { title: extract('Klijenti') } },
-    // { path: 'edit-client/new', component: EditClientComponent, data: { title: extract('Klijent') } },
-    { path: 'clients/:mode/:id', component: EditClientComponent, data: { title: extract('Klijent') } },
-    { path: 'clients/:mode', component: EditClientComponent, data: { title: extract('Klijent') } },
+    { path: 'clients', component: ClientsComponent, data: { title: extract('clients') } },
+    { path: 'clients/:mode/:id', component: EditClientComponent, data: { title: extract('client') } },
+    { path: 'clients/:mode', component: EditClientComponent, data: { title: extract('client') } },
   ]),
 ];
 
@@ -20,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class ClientsRoutingModule {}
+export class ClientsRoutingModule { }

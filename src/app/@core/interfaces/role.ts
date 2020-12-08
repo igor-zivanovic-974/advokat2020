@@ -1,6 +1,6 @@
 export interface Role {
   id: number;
-  roleName: string;
+  name: string;
 
   // constructor(id: number, roleName: string) {
   //   this.id = id;

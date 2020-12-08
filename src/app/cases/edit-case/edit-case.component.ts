@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, Input } from '@angular/core';
 import { CasesService } from '.././cases.service';
 import { Case } from '@app/@core/interfaces/case';
 // import { TranslateService } from '@ngx-translate/core';
@@ -96,6 +96,8 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   };
   id: number;
   mode: string;
+  @Input() modalId?: number;
+  @Input() modalMode?: string;
   isMobileScreen$: Observable<boolean>;
   hasSideMenu$: Observable<boolean>;
   historyMode = 'preview';
@@ -132,9 +134,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
 
     this.activatedRoute.params.subscribe((params: any) => {
       this.spinner.show();
-      if (params.id) {
-        this.id = params.id;
-      }
+      this.id = params.id ? params.id : this.modalId;
       this.mode = params.mode ? params.mode : null;
       this.disabled = !!(this.mode === 'preview');
       if (this.mode !== Mode.create && this.mode !== Mode.update && this.mode !== Mode.preview) {
@@ -465,7 +465,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
 
   onChangeCouncil(councilId: number) {
     this.form.value.councilId = councilId;
-    console.log('FORM', this.form.value);
+    // console.log('FORM', this.form.value);
   }
 
   createForm() {

@@ -29,8 +29,10 @@ export class ClientsComponent implements OnInit {
   selectedClientId: number; // Client; // (null, '', '', '', '', '');
   modalState: boolean;
   clients: Client[] = [];
+  filteredClients: Client[] = [];
   isMobileScreen$: Observable<boolean>;
-  hasSideMenu$: Observable<boolean>;
+  // hasSideMenu$: Observable<boolean>;
+  link = 'clients';
 
   constructor(
     private clientsService: ClientsService,
@@ -42,7 +44,7 @@ export class ClientsComponent implements OnInit {
     private _globalService: GlobalService
   ) {
     this.isMobileScreen$ = this._globalService.isMobileScreen$;
-    this.hasSideMenu$ = this._globalService.hasSideMenu$;
+    // this.hasSideMenu$ = this._globalService.hasSideMenu$;
   }
 
   ngOnInit() {
@@ -55,6 +57,7 @@ export class ClientsComponent implements OnInit {
   getClients() {
     this.clientsService.getClients().subscribe((data: Client[]) => {
       this.clients = data;
+      this.filteredClients = data;
       this.spinner.hide();
     });
     // this.clients = this.helperService.getClients();
@@ -62,8 +65,12 @@ export class ClientsComponent implements OnInit {
     this.spinner.hide();
   }
 
-  goToUrl(link: string, id?: number) {
-    this.router.navigate([link, id]);
+  goToUrl(mode: string, clientId?: number) {
+    if (mode !== 'new') {
+      this.router.navigate([`${this.link}/${mode}/${clientId}`]);
+    } else {
+      this.router.navigate([`${this.link}/${mode}`]);
+    }
   }
 
   // showClientDetails(cId: number) {
@@ -73,7 +80,7 @@ export class ClientsComponent implements OnInit {
   invokeDeleteClient(id: number) {
     const modalRef = this.modalService.open(DeleteModalComponent);
     modalRef.componentInstance.confirm.subscribe((res: any) => {
-      console.log('confirmed for deletion');
+      // console.log('confirmed for deletion');
       if (res) {
         this.delete(id);
       }
@@ -88,7 +95,9 @@ export class ClientsComponent implements OnInit {
 
   searchClients() {
     setTimeout(() => {
-      console.log(this.filter);
+      this.filteredClients = this.clients.filter(c => {
+        return c.firstName.toLowerCase().includes(this.filter.toLowerCase()) || c.lastName.toLowerCase().includes(this.filter.toLowerCase()) || c.phone.includes(this.filter) || c.address.includes(this.filter.toLowerCase());
+      });
     }, 500);
   }
 

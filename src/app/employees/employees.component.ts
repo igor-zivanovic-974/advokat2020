@@ -8,6 +8,9 @@ import { DeleteModalComponent } from '@app/@shared/modals/delete-modal/delete-mo
 import { EmployeesService } from './employees.service';
 import { HelperService } from '@app/@core/services/helper.service';
 import { Role } from '@app/@core/interfaces/role';
+import { Observable } from 'rxjs';
+import { GlobalService } from '@app/shell/global.service';
+import { EditCaseComponent } from '@app/cases/edit-case/edit-case.component';
 
 @Component({
   selector: 'app-employees',
@@ -16,11 +19,16 @@ import { Role } from '@app/@core/interfaces/role';
 })
 export class EmployeesComponent implements OnInit {
   employees: Employee[] = [];
-  param = { value: 'world' };
+  filteredEmployees: Employee[] = [];
+  filter = '';
   message = '';
   title = '';
   modalState: boolean;
   roles: Role[] = [];
+  isMobileScreen$: Observable<boolean>;
+  selectedEmployee: Employee;
+  selectedEmployeeId: number;
+  link = 'employees';
 
   constructor(
     private translateService: TranslateService,
@@ -28,8 +36,11 @@ export class EmployeesComponent implements OnInit {
     private router: Router,
     private modalService: NgbModal,
     private spinner: NgxSpinnerService,
-    private employeesService: EmployeesService
-  ) {}
+    private employeesService: EmployeesService,
+    private _globalService: GlobalService
+  ) {
+    this.isMobileScreen$ = this._globalService.isMobileScreen$;
+  }
 
   ngOnInit() {
     this.spinner.show();
@@ -45,19 +56,40 @@ export class EmployeesComponent implements OnInit {
     });
   }
 
-  goToUrl(link: string) {
-    this.router.navigate(['edit-employee/' + link]);
+  setActiveEmployee(employeeId: number) {
+    this.selectedEmployeeId = employeeId;
+    this.selectedEmployee = this.employees.find((c) => c.id === employeeId);
+    console.log(this.selectedEmployee);
   }
 
-  invokeDelete(id: number) {
+  searchEmployees() {
+    setTimeout(() => {
+      this.filteredEmployees = this.employees.filter(e => {
+        return e.firstName.toLowerCase().includes(this.filter.toLowerCase()) || e.lastName.toLowerCase().includes(this.filter.toLowerCase()) || e.phone.includes(this.filter) || e.address.includes(this.filter.toLowerCase());
+      });
+    }, 500);
+  }
+
+  goToUrl(mode: string, employeeId?: number) {
+    if (mode !== 'new') {
+      // this.router.navigate([`cases/${mode}/${empoyeeId}`]);
+      const modalRef = this.modalService.open(EditCaseComponent, { size: 'xl' });
+      modalRef.componentInstance.mode = mode;
+      modalRef.componentInstance.id = employeeId;
+    } else {
+      this.router.navigate([`cases/${mode}`]);
+    }
+  }
+
+  invokeDeleteEmployee(id: number) {
     const modalRef = this.modalService.open(DeleteModalComponent);
     modalRef.componentInstance.confirm.subscribe((res: any) => {
       console.log('confirmed');
-      this.delete(id);
+      this.deleteEmployee(id);
     });
   }
 
-  delete(id: number) {
+  deleteEmployee(id: number) {
     this.employeesService.deleteEmployee(id).subscribe((x: any) => {
       console.log('obrisano');
       this.getEmployees();

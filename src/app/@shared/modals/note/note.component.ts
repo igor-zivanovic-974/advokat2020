@@ -34,7 +34,7 @@ export class NoteComponent implements OnInit {
   ngOnInit(): void {
     if (this.noteToEdit) {
       this.mode = Mode.update;
-      console.log('noteToEdit', this.noteToEdit);
+      // console.log('noteToEdit', this.noteToEdit);
       // this.form.value = this.noteToEdit;
       this.form.patchValue({ text: this.noteToEdit.text })
     } else {
