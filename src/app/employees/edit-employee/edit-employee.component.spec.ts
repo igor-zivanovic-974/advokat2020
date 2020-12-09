@@ -1,24 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditEmployeeComponent } from './edit-employee.component';
+// import { EditEmployeeComponent } from './edit-employee.component';
 
-describe('EditEmployeeComponent', () => {
-  let component: EditEmployeeComponent;
-  let fixture: ComponentFixture<EditEmployeeComponent>;
+// describe('EditEmployeeComponent', () => {
+//   let component: EditEmployeeComponent;
+//   let fixture: ComponentFixture<EditEmployeeComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [EditEmployeeComponent],
-    }).compileComponents();
-  }));
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [EditEmployeeComponent],
+//     }).compileComponents();
+//   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EditEmployeeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(EditEmployeeComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

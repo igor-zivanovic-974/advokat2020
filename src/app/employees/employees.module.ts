@@ -14,6 +14,8 @@ import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,10 +23,10 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     SharedModule,
     TranslateModule,
-    EmployeesRoutingModule,
     SimpleNotificationsModule,
     NgxSpinnerModule,
-    NgSelectModule
+    NgSelectModule,
+    EmployeesRoutingModule,
   ],
   declarations: [EmployeesComponent, EditEmployeeComponent],
   providers: [EmployeesService, CoreModule],

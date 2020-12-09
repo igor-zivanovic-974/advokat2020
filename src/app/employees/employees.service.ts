@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from '@app/@core/interfaces/Employee';
 import { TranslateService } from '@ngx-translate/core';
 import { PersistenceService } from '@app/@core/services/persistence.service';
 import { NotificationsService } from 'angular2-notifications';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, take } from 'rxjs/operators';
 import { GlobalService } from '@app/shell/global.service';
 import { Role } from '@app/@core';
 
@@ -24,6 +24,8 @@ export class EmployeesService {
   url = this.persistenceService.apiUrl; //  + '/employees';
   notificationsOptions: any;
   titles: any;
+  // eUpdated$ = new Subject<boolean>();
+  employees: Employee[];
 
   constructor(
     private http: HttpClient,
@@ -39,6 +41,7 @@ export class EmployeesService {
   getEmployees(): Observable<Employee[]> {
     return this.http.get(`${this.url}/${endpoints.read()}`).pipe(
       map((res: Employee[]) => {
+        this.employees = res;
         return res as Employee[];
       }),
       catchError((err: any) => this.persistenceService.handleError(err))

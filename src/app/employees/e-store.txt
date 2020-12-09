@@ -1,0 +1,18 @@
+employees.module
+------------------
+import { StoreModule } from '@ngrx/store';
+...
+StoreModule.forFeature('employees', {employeeReducer}),
+
+
+employees.component
+-------------------
+deleteEmployee(id: number) {
+    this.store.dispatch(new employeesActions.DeleteEmployeeAction(id));
+    this.store.dispatch(new employeesActions.LoadEmployeesAction());
+    this.getEmployees();
+}
+
+constructor
+    this.empl$ = this.store.select(state => state.employees);
+    console.log('EMPLOYEES-STORE', this.empl$);

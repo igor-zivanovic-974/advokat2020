@@ -26,6 +26,11 @@ import { NotifierModule } from 'angular-notifier';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
 // import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { StoreModule } from '@ngrx/store';
+import { employeeReducer } from './store/reducers/employees.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { EmployeeEffects } from './store/effects/employees.effects';
+import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
@@ -51,6 +56,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ClientsModule,
     MessagesModule,
     NgxFileDropModule,
+    StoreModule.forRoot({ employees: employeeReducer }),
+    EffectsModule.forRoot([EmployeeEffects]),
+    StoreDevtoolsModule.instrument(),
     // PdfViewerModule,
     NotifierModule.withConfig({
       position: {
@@ -100,6 +108,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
   bootstrap: [AppComponent],
   exports: [TranslateModule],
 })
-export class AppModule {}
+export class AppModule { }
 
 // platformBrowserDynamic().bootstrapModule(AppModule);

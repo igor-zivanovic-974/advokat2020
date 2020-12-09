@@ -2,72 +2,53 @@
 {{((isMobileScreen$ | async) && !(hasSideMenu$ | async) || !(isMobileScreen$ | async))}}
 {{((isMobileScreen$ | async) && (hasSideMenu$ | async) || (isMobileScreen$ | async))}} -->
 <!-- mobile -->
-<div
-  class="side-menu"
-  [ngClass]="{
+<div class="side-menu" [ngClass]="{
     show: ((isMobileScreen$ | async) && !(hasSideMenu$ | async)) || !(isMobileScreen$ | async),
     hide: (isMobileScreen$ | async) && (hasSideMenu$ | async),
     'mobile-bg': isMobileScreen$ | async,
     'desktop-bg': !(isMobileScreen$ | async),
     'sticky-top': !(isMobileScreen$ | async)
-  }"
->
+  }">
   <img src="assets/images/logo.png" class="ml-4 mt-3 w-75" alt="{{ 'lawyer' | translate }}" />
   <ul class="list-unstyled mt-4">
     <li (contextmenu)="displayContextMenu($event, 'home')">
-      <button
-        routerLink="/home"
-        routerLinkActive="active"
-        class="btn w-100 px-2 no-outline text-left"
-        [ngClass]="{
+      <button routerLink="/home" routerLinkActive="active" class="btn w-100 px-2 no-outline text-left" [ngClass]="{
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
-        }"
-        (click)="toggleSideMenu(false)"
-      >
+        }" (click)="toggleSideMenu(false)">
         <i class="fa fa-home" routerLinkActive="active2"></i> Home
       </button>
     </li>
     <li (contextmenu)="displayContextMenu($event, 'cases')">
-      <button
-        routerLink="/cases"
-        routerLinkActive="active"
-        class="btn w-100 px-2 text-left"
-        [ngClass]="{
+      <button routerLink="/cases" routerLinkActive="active" class="btn w-100 px-2 text-left" [ngClass]="{
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
-        }"
-        (click)="toggleSideMenu(false)"
-      >
+        }" (click)="toggleSideMenu(false)">
         <i class="fa fa-folder" routerLinkActive="active2"></i> Cases
       </button>
     </li>
     <li (contextmenu)="displayContextMenu($event, 'clients')">
-      <button
-        routerLink="/clients"
-        routerLinkActive="active"
-        class="btn w-100 px-2 text-left"
-        [ngClass]="{
+      <button routerLink="/clients" routerLinkActive="active" class="btn w-100 px-2 text-left" [ngClass]="{
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
-        }"
-        (click)="toggleSideMenu(false)"
-      >
+        }" (click)="toggleSideMenu(false)">
         <i class="fa fa-users" routerLinkActive="active2"></i> Clients
       </button>
     </li>
     <li (contextmenu)="displayContextMenu($event, 'employees')">
-      <button
-        routerLink="/employees"
-        routerLinkActive="active"
-        class="btn w-100 px-2 text-left"
-        [ngClass]="{
+      <button routerLink="/employees" routerLinkActive="active" class="btn w-100 px-2 text-left" [ngClass]="{
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
-        }"
-        (click)="toggleSideMenu(false)"
-      >
+        }" (click)="toggleSideMenu(false)">
         <i class="fa fa-user" routerLinkActive="active2"></i> Employees
+      </button>
+    </li>
+    <li (contextmenu)="displayContextMenu($event, 'employees')">
+      <button routerLink="/evidences" routerLinkActive="active" class="btn w-100 px-2 text-left" [ngClass]="{
+          'btn-outline-link': !(isMobileScreen$ | async),
+          'btn-outline-secondary': (isMobileScreen$ | async)
+        }" (click)="toggleSideMenu(false)">
+        <i class="fa fa-user" routerLinkActive="active2"></i> Evidences
       </button>
     </li>
   </ul>

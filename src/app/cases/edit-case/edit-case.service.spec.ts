@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
 
-import { EditCaseService } from './edit-case.service';
+// import { EditCaseService } from './edit-case.service';
 
-describe('EditCaseService', () => {
-  let service: EditCaseService;
+// describe('EditCaseService', () => {
+//   let service: EditCaseService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(EditCaseService);
-  });
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//     service = TestBed.inject(EditCaseService);
+//   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     expect(service).toBeTruthy();
+//   });
+// });
