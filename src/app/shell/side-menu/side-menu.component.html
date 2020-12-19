@@ -16,7 +16,7 @@
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
         }" (click)="toggleSideMenu(false)">
-        <i class="fa fa-home" routerLinkActive="active2"></i> Home
+        <i class="fa fa-home" routerLinkActive="active2"></i> {{'home' | translate}}
       </button>
     </li>
     <li (contextmenu)="displayContextMenu($event, 'cases')">
@@ -24,7 +24,7 @@
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
         }" (click)="toggleSideMenu(false)">
-        <i class="fa fa-folder" routerLinkActive="active2"></i> Cases
+        <i class="fa fa-folder" routerLinkActive="active2"></i> {{'cases' | translate}}
       </button>
     </li>
     <li (contextmenu)="displayContextMenu($event, 'clients')">
@@ -32,7 +32,7 @@
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
         }" (click)="toggleSideMenu(false)">
-        <i class="fa fa-users" routerLinkActive="active2"></i> Clients
+        <i class="fa fa-users" routerLinkActive="active2"></i> {{'clients' | translate}}
       </button>
     </li>
     <li (contextmenu)="displayContextMenu($event, 'employees')">
@@ -40,16 +40,24 @@
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
         }" (click)="toggleSideMenu(false)">
-        <i class="fa fa-user" routerLinkActive="active2"></i> Employees
+        <i class="fa fa-user" routerLinkActive="active2"></i> {{'employees' | translate}}
       </button>
     </li>
-    <li (contextmenu)="displayContextMenu($event, 'employees')">
+    <li (contextmenu)="displayContextMenu($event, 'evidences')">
       <button routerLink="/evidences" routerLinkActive="active" class="btn w-100 px-2 text-left" [ngClass]="{
           'btn-outline-link': !(isMobileScreen$ | async),
           'btn-outline-secondary': (isMobileScreen$ | async)
         }" (click)="toggleSideMenu(false)">
-        <i class="fa fa-user" routerLinkActive="active2"></i> Evidences
+        <i class="fa fa-folder-open" routerLinkActive="active2"></i> {{'evidences' | translate}}
       </button>
     </li>
+    <!-- <li (contextmenu)="displayContextMenu($event, 'payments')">
+      <button routerLink="/payments" routerLinkActive="active" class="btn w-100 px-2 text-left" [ngClass]="{
+          'btn-outline-link': !(isMobileScreen$ | async),
+          'btn-outline-secondary': (isMobileScreen$ | async)
+        }" (click)="toggleSideMenu(false)">
+        <i class="fa fa-credit-card" routerLinkActive="active2"></i> {{'payments' | translate}}
+      </button>
+    </li> -->
   </ul>
 </div>

@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "text": "dsfds",
+    "date": "2020-12-01T16:10:01.586Z",
+    "employee": {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "roleId": 1,
+      "role": "Operator"
+    },
+    "caseId": 1
+  }
+]

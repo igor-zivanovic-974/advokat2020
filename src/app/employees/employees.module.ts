@@ -10,11 +10,8 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { EmployeesService } from './employees.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CoreModule } from '@app/@core';
-import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-
-
 
 @NgModule({
   imports: [
@@ -26,7 +23,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     SimpleNotificationsModule,
     NgxSpinnerModule,
     NgSelectModule,
-    EmployeesRoutingModule,
+    EmployeesRoutingModule
   ],
   declarations: [EmployeesComponent, EditEmployeeComponent],
   providers: [EmployeesService, CoreModule],

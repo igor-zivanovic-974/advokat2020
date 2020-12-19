@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "firstName": "Igor",
+    "lastName": "Zivanovic",
+    "address": "Radoja Dakica 12, Zemun",
+    "phone": "063/ 331030",
+    "pin": "4444",
+    "cases": [
+      {
+        "id": 1,
+        "name": "Pera protiv Mike"
+      },
+      {
+        "id": 2,
+        "name": "Mika protiv Zike"
+      },
+      {
+        "id": 3,
+        "name": "Zika protiv svih"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "Pera ",
+    "lastName": "Peric",
+    "address": "Svetogorska 33",
+    "phone": "063/ 8898016",
+    "pin": "5555",
+    "cases": [
+      {
+        "id": 1,
+        "name": "Pera protiv Mike"
+      },
+      {
+        "id": 2,
+        "name": "Pera protiv Muje"
+      },
+      {
+        "id": 3,
+        "name": "Zoran protiv Skole"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "firstName": "Sima",
+    "lastName": "Simic",
+    "address": "Stanoja Glavasa 25",
+    "phone": "064/ 5566887",
+    "pin": "2222",
+    "cases": [
+      {
+        "id": 1,
+        "name": "Igor protiv Srbe"
+      },
+      {
+        "id": 2,
+        "name": "Skola protiv Zike"
+      },
+      {
+        "id": 3,
+        "name": "Zika protiv Vlade"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "firstName": "Lidija",
+    "lastName": "Comagic",
+    "address": "asdadas",
+    "phone": "jlk",
+    "pin": "ljlkjl",
+    "cases": [
+      {
+        "id": 3,
+        "name": "Subject 3"
+      },
+      {
+        "id": 5,
+        "name": "Mobing"
+      }
+    ]
+  }
+]

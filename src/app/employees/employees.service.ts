@@ -15,7 +15,7 @@ const endpoints = {
   readOne: (id: number) => `employees/${id}`,
   update: (id: number) => `employees/${id}`,
   delete: (id: number) => `employees/${id}`,
-  roles: () => `roles`
+  roles: () => `roles`,
 };
 @Injectable({
   providedIn: 'root',
@@ -49,7 +49,8 @@ export class EmployeesService {
   }
 
   getEmployeeById(id: number): Observable<Employee> {
-    return this.http.get(`${this.url}/${endpoints.readOne(id)}`).pipe( // , fd
+    return this.http.get(`${this.url}/${endpoints.readOne(id)}`).pipe(
+      // , fd
       map((res: Employee) => {
         return res as Employee;
       }),

@@ -14,9 +14,9 @@ export class DropdownComponent implements OnInit {
   // @Output() changedItem: EventEmitter<KeyValuePair> = new EventEmitter();
   @Output() changedItem: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   onValueChange() {
     // debugger

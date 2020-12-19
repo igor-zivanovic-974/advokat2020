@@ -1,7 +1,14 @@
 <!-- <div class="container-fluid"> -->
 <div class="form-group">
   <label for="" class="font-weight-bold">{{ label | translate }}</label>
-  <ng-select [items]="items" bindLabel="name" bindValue="id" id="dropdown" (change)="onValueChange()" [(ngModel)]="selectedItemId">
+  <ng-select
+    [items]="items"
+    bindLabel="name"
+    bindValue="id"
+    id="dropdown"
+    (change)="onValueChange()"
+    [(ngModel)]="selectedItemId"
+  >
   </ng-select>
   <!-- formControlName="registrationMark" -->
   <!-- <small [hidden]="form.controls.registrationMark.valid || form.controls.registrationMark.untouched" class="text-danger" translate>

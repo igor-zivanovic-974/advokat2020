@@ -46,12 +46,28 @@ import { PaymentsComponent } from './modals/payments/payments.component';
     DropdownComponent,
     NoteComponent,
     PaymentsComponent,
-    DropdownComponent
+    DropdownComponent,
   ],
-  exports: [LoaderComponent, DeleteModalComponent, ConfirmationModalComponent, NoteComponent, TranslateModule, FileUploadComponent, PaymentsComponent, DropdownComponent],
-  entryComponents: [DeleteModalComponent, ConfirmationModalComponent, FileUploadComponent, NoteComponent, PaymentsComponent, DropdownComponent],
+  exports: [
+    LoaderComponent,
+    DeleteModalComponent,
+    ConfirmationModalComponent,
+    NoteComponent,
+    TranslateModule,
+    FileUploadComponent,
+    PaymentsComponent,
+    DropdownComponent,
+  ],
+  entryComponents: [
+    DeleteModalComponent,
+    ConfirmationModalComponent,
+    FileUploadComponent,
+    NoteComponent,
+    PaymentsComponent,
+    DropdownComponent,
+  ],
   providers: [NotificationsService],
 })
-export class SharedModule { }
+export class SharedModule {}
 
 // platformBrowserDynamic().bootstrapModule(SharedModule);

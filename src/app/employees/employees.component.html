@@ -4,20 +4,19 @@
       <h3 class="ml-5">{{ 'employees' | translate }}</h3>
     </div>
     <div class="col-1 text-right">
-      <button (click)="goToUrl('new', 0)" class="btn btn-outline-primary header-btn" title="{{ 'employee.add' | translate }}">
+      <button (click)="goToUrl('new', 0)" class="btn btn-outline-secondary header-btn" title="{{ 'employee.add' | translate }}">
         <i class="fas fa-folder-plus px-1"></i>
       </button>
     </div>
     <div class="col-12 col-lg-7">
       <div class="form-group">
-        <input type="text" class="form-control" id="search" placeholder="{{ 'common.search' | translate }}" (ngModelChange)="searchEmployees()" [(ngModel)]="filter" />
+        <input type="text" class="form-control" id="search" placeholder="{{ 'common.search' | translate }}" [(ngModel)]="searchValue" (ngModelChange)="searchEmployees()" />
       </div>
     </div>
-
   </div>
 
-  <div class="col-12" *ngIf="employees && employees.length > 0">
-    <div class="card my-2" *ngFor="let employee of employees" (click)="setActiveEmployee(employee.id)" [ngClass]="{ 'border-bold': employee.id === selectedEmployeeId }">
+  <div class="col-12" *ngIf="filteredEmployees && filteredEmployees.length > 0">
+    <div class="card cursor-pointer my-2" *ngFor="let employee of filteredEmployees" (click)="setActiveEmployee(employee)" [ngClass]="{ 'border-bold': employee.id === selectedEmployeeId }">
       <div class="card-header">
         <h5 class="card-title">{{ employee.firstName }} {{ employee.lastName }}</h5>
       </div>
@@ -29,7 +28,7 @@
             <i class="fa fa-phone mr-2"></i> {{ employee.phone }}<br />
             <i class="fa fa-home mr-2"></i> {{ employee.address }}
           </div>
-          <div class="col-12 col-lg-6" *ngIf="selectedEmployee && selectedEmployee.id===employee.id">
+          <div class="col-12 col-lg-6" *ngIf="selectedEmployee && selectedEmployee.id === employee.id">
             <h5 class="mt-3 border-bottom">{{ 'employee.cases' | translate }}</h5>
             <div *ngFor="let cc of selectedEmployee.cases">
               <a (click)="goToUrl('preview', cc.id)">
@@ -42,12 +41,10 @@
 
         <div class="card-footer mt-3" style="height: 50px">
           <span class="float-left cursor-pointer" (click)="invokeDeleteEmployee(employee.id)">
-            {{ !(isMobileScreen$ | async) ? ('employee.delete' | translate) : '' }}
-            <i class="fa fa-trash text-danger ml-2"></i>
+            <i class="fa fa-trash btn btn-outline-secondary ml-2" title="{{'employee.delete' | translate}}"></i>
           </span>
           <span class="float-right cursor-pointer" (click)="goToUrl('edit', employee.id)">
-            {{ !(isMobileScreen$ | async) ? ('employee.edit' | translate) : '' }}
-            <i class="fa fa-edit text-primary ml-2"></i>
+            <i class="fa fa-edit btn btn-outline-secondary ml-2" title="{{'employee.edit' | translate}}"></i>
           </span>
         </div>
       </div>
@@ -57,8 +54,6 @@
   <div class="" *ngIf="!employees || employees.length === 0">
     {{ 'common.no-data' | translate }}
   </div>
-
-
 </div>
 
 <app-delete-modal [hidden]="!modalState"></app-delete-modal>

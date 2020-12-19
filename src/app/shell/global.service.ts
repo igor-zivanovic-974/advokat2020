@@ -13,7 +13,7 @@ export class GlobalService {
     sc: this.translateService.get('api.successCreate'),
     su: this.translateService.get('api.successUpdate'),
     sd: this.translateService.get('api.successDelete'),
-  }
+  };
   notificationsOptions = {
     timeOut: 2000,
     showProgressBar: true,
@@ -22,7 +22,7 @@ export class GlobalService {
     maxLength: 100,
   };
 
-  constructor(private translateService: TranslateService) { }
+  constructor(private translateService: TranslateService) {}
 
   calcMessagesNumber(numMessages: number) {
     this.messageCounter$.subscribe((a) => (this.messageCounter = a));

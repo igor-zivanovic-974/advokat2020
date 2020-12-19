@@ -1,13 +1,13 @@
 <div class="card my-3 border-0">
-    <div class="form-group m-3 mb-5 ">
-        <div class="border-bottom mb-3">
-            <label class="font-weight-bold" for="other">{{ 'case.history-movement' | translate }}</label>
-            <hr>
-            <ul class="list-unstyled">
-                <li *ngFor="let cm of caseMovements" (click)="openRelatedCase(cm.id)" class="list-link">
-                    {{cm.date | date: 'dd.MM.yyyy'}} - {{cm.title}}
-                </li>
-            </ul>
-        </div>
+  <div class="form-group m-3 mb-5">
+    <div class="border-bottom mb-3">
+      <label class="font-weight-bold" for="other">{{ 'case.history-movement' | translate }}</label>
+      <hr />
+      <ul class="list-unstyled">
+        <li *ngFor="let cm of caseMovements" (click)="openRelatedCase(cm.id)" class="list-link">
+          {{ cm.date | date: 'dd.MM.yyyy' }} - {{ cm.title }}
+        </li>
+      </ul>
     </div>
+  </div>
 </div>

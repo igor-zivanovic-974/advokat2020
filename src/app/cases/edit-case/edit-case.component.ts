@@ -92,7 +92,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     active: false,
     caseHistory: [],
     caseMovements: [],
-    payments: []
+    payments: [],
   };
   id: number;
   mode: string;
@@ -160,7 +160,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   selectCourtType() {
     const modalRef = this.modalService.open(SelectCourtTypeModalComponent, {
@@ -358,7 +358,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     const modalRef = this.modalService.open(NoteComponent, { size: 'xl' });
     modalRef.componentInstance.caseId = this.case.id;
     if (noteId) {
-      modalRef.componentInstance.noteToEdit = this.case.notes.find(n => n.id === noteId);
+      modalRef.componentInstance.noteToEdit = this.case.notes.find((n) => n.id === noteId);
     }
     modalRef.componentInstance.note.subscribe((receivedEntry: Note) => {
       this.case.notes.push(receivedEntry);
@@ -378,12 +378,15 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   }
 
   deleteNote(noteId: number) {
-    this.notesService.deleteNote(noteId).pipe(take(1)).subscribe((note: Note) => {
-      const index = this.case.notes.indexOf(note);
-      if (index) {
-        this.case.notes.splice(index, 1);
-      }
-    })
+    this.notesService
+      .deleteNote(noteId)
+      .pipe(take(1))
+      .subscribe((note: Note) => {
+        const index = this.case.notes.indexOf(note);
+        if (index) {
+          this.case.notes.splice(index, 1);
+        }
+      });
   }
 
   openPaymentsModal() {

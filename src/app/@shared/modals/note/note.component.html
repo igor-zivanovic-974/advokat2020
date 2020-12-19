@@ -1,27 +1,32 @@
 <div class="container p-5">
-    <div class="title">
-        <button type="button" class="close" aria-label="Close" (click)="cancel()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        {{'common.add-note' | translate}}
+  <div class="title">
+    <button type="button" class="close" aria-label="Close" (click)="cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ 'common.add-note' | translate }}
+  </div>
+  <hr />
+  <form [formGroup]="form">
+    <div class="formGroup">
+      <label for="text">{{ 'common.note' | translate }}</label>
+      <textarea
+        class="form-control"
+        formControlName="text"
+        rows="10"
+        placeholder="{{ 'common.note' | translate }}"
+      ></textarea>
     </div>
-    <hr />
-    <form [formGroup]="form">
-        <div class="formGroup">
-            <label for="text">{{'common.note' | translate}}</label>
-            <textarea class="form-control" formControlName="text" rows="10" placeholder="{{'common.note' | translate}}"></textarea>
-        </div>
 
-        <!-- buttons -->
-        <div class="row mt-3">
-            <div class="col-md-offset-4 col-md-4">
-                <button type="submit" class="btn btn-outline-dark" (click)="save()" [disabled]="form.invalid">
-                    {{ 'common.save' | translate }}
-                </button>
-                <button type="submit" class="btn btn-outline-dark" (click)="cancel()">
-                    {{ 'common.cancel' | translate }}
-                </button>
-            </div>
-        </div>
-    </form>
+    <!-- buttons -->
+    <div class="row mt-3">
+      <div class="col-md-offset-4 col-md-4">
+        <button type="submit" class="btn btn-outline-dark" (click)="save()" [disabled]="form.invalid">
+          {{ 'common.save' | translate }}
+        </button>
+        <button type="submit" class="btn btn-outline-dark" (click)="cancel()">
+          {{ 'common.cancel' | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
 </div>

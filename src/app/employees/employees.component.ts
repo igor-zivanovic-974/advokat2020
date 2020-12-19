@@ -1,30 +1,24 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Employee } from '@app/@core/interfaces/employee';
-import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DeleteModalComponent } from '@app/@shared/modals/delete-modal/delete-modal.component';
 import { EmployeesService } from './employees.service';
-import { HelperService } from '@app/@core/services/helper.service';
 import { Role } from '@app/@core/interfaces/role';
 import { Observable } from 'rxjs';
 import { GlobalService } from '@app/shell/global.service';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/@core/interfaces/app-state';
-import * as employeesActions from '../store/actions/employees.actions';
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
-
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeesComponent implements OnInit {
   employees: Employee[] = [];
+  searchValue = '';
   filteredEmployees: Employee[] = [];
-  filter = '';
   message = '';
   title = '';
   modalState: boolean;
@@ -33,17 +27,14 @@ export class EmployeesComponent implements OnInit {
   selectedEmployee: Employee;
   selectedEmployeeId: number;
   link = 'employees';
+  errorMessage: any;
 
   constructor(
-    private translateService: TranslateService,
-    private helperService: HelperService,
     private router: Router,
     private modalService: NgbModal,
     private spinner: NgxSpinnerService,
     private employeesService: EmployeesService,
-    private _globalService: GlobalService,
-    private store: Store<AppState>
-
+    private _globalService: GlobalService
   ) {
     this.isMobileScreen$ = this._globalService.isMobileScreen$;
   }
@@ -51,41 +42,53 @@ export class EmployeesComponent implements OnInit {
   ngOnInit() {
     this.spinner.show();
     this.getEmployees();
+
   }
 
   getEmployees() {
     this.employeesService.getEmployees().subscribe((data: Employee[]) => {
       this.employees = data;
+      this.filteredEmployees = data;
       this.spinner.hide();
     });
   }
 
-  getEmployees$() {
-    this.store.dispatch(new employeesActions.LoadEmployeesAction());
-  }
-
-  setActiveEmployee(employeeId: number) {
-    this.selectedEmployeeId = employeeId;
-    this.selectedEmployee = this.employees.find((c) => c.id === employeeId);
-    console.log(this.selectedEmployee);
+  setActiveEmployee(employee: Employee) {
+    this.selectedEmployee = employee;
   }
 
   searchEmployees() {
     setTimeout(() => {
-      this.filteredEmployees = this.employees.filter(e => {
-        return e.firstName.toLowerCase().includes(this.filter.toLowerCase()) || e.lastName.toLowerCase().includes(this.filter.toLowerCase()) || e.phone.includes(this.filter) || e.address.includes(this.filter.toLowerCase());
+      this.searchValue = this.searchValue.trim();
+      if (this.searchValue === '') {
+        this.filteredEmployees = [...this.employees];
+        return;
+      }
+      this.filteredEmployees = this.employees.filter((e) => {
+        return (
+          e.firstName.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          e.lastName.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          e.phone.includes(this.searchValue) ||
+          e.address.toLowerCase().includes(this.searchValue.toLowerCase())
+        );
       });
     }, 500);
+
+    console.log(this.filteredEmployees);
   }
 
   goToUrl(mode: string, employeeId?: number) {
-    if (mode !== 'new') {
-      const modalRef = this.modalService.open(EditEmployeeComponent, { size: 'xl' });
-      modalRef.componentInstance.mode = mode;
-      modalRef.componentInstance.id = employeeId;
-    } else {
-      this.router.navigate([`employees/${mode}`]);
-    }
+    const baseUrl = `employees/${mode}`;
+    const url = mode === 'new' ? baseUrl : `${baseUrl}/${employeeId}`;
+    this.router.navigate([url]);
+    // if (mode !== 'new') {
+    // const modalRef = this.modalService.open(EditEmployeeComponent, { size: 'xl' });
+    // modalRef.componentInstance.mode = mode;
+    // modalRef.componentInstance.id = employeeId;
+    //   this.router.navigate([`employees/${mode}`]);
+    // } else {
+    //   this.router.navigate([`employees/${mode}`]);
+    // }
   }
 
   invokeDeleteEmployee(id: number) {

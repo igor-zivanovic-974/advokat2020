@@ -4,6 +4,8 @@ SideMenu$: {{hasSideMenu$ | async}} SideMenu: {{hasSideMenu}} -->
 <app-header></app-header>
 <div *ngIf="!(isMobileScreen$ | async)">
   <div class="container-fluid">
+    websocket
+    <button (click)="sendMessage()">SEND MESSAGE</button>
     <div class="row">
       <div class="col-2">
         <app-side-menu></app-side-menu>

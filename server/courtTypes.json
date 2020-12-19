@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "type": "Osnovni sud"
+  },
+  {
+    "id": 2,
+    "type": "Visi sud"
+  },
+  {
+    "id": 3,
+    "type": "Apelacioni sud"
+  },
+  {
+    "id": 4,
+    "type": "Privredni sud"
+  },
+  {
+    "id": 5,
+    "type": "Privredni apelacioni sud"
+  },
+  {
+    "id": 6,
+    "type": "Prekrsajni sud"
+  },
+  {
+    "id": 7,
+    "type": "Prekrsajni apelacioni sud"
+  },
+  {
+    "id": 8,
+    "type": "Upravni sud"
+  },
+  {
+    "id": 9,
+    "type": "Vrhovni kasacioni sud"
+  },
+  {
+    "id": 10,
+    "type": "Ustavni sud"
+  }
+]

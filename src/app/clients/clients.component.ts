@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent implements OnInit {
-  filter = '';
+  searchValue = '';
   selectedClient: Client = {
     id: null,
     firstName: '',
@@ -95,15 +95,22 @@ export class ClientsComponent implements OnInit {
 
   searchClients() {
     setTimeout(() => {
-      this.filteredClients = this.clients.filter(c => {
-        return c.firstName.toLowerCase().includes(this.filter.toLowerCase()) || c.lastName.toLowerCase().includes(this.filter.toLowerCase()) || c.phone.includes(this.filter) || c.address.includes(this.filter.toLowerCase());
+      this.searchValue = this.searchValue.trim();
+      this.filteredClients = this.clients.filter((c) => {
+        return (
+          c.firstName.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          c.lastName.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          c.phone.includes(this.searchValue) ||
+          c.address.includes(this.searchValue.toLowerCase())
+        );
       });
     }, 500);
+
   }
 
-  setActiveClient(clientId: number) {
-    this.selectedClientId = clientId;
-    this.selectedClient = this.clients.find((c) => c.id === clientId);
-    console.log(this.selectedClient);
+  setActiveClient(c: Client) {
+    this.selectedClientId = c.id;
+    this.selectedClient = c;
+    // console.log(this.selectedClient);
   }
 }

@@ -1,0 +1,180 @@
+[
+    {
+      "osnovni": [
+        {
+          "id": 1,
+          "name": "I Osnovni sud u Beogradu",
+          "active": true
+        },
+        {
+          "id": 2,
+          "name": "II Osnovni sud u Beogradu",
+          "active": true
+        },
+        {
+          "id": 3,
+          "name": "III Osnovni sud u Beogradu",
+          "active": true
+        },
+        {
+          "id": 4,
+          "name": "Osnovni sud u Pancevu",
+          "active": true
+        },
+        {
+          "id": 5,
+          "name": "Osnovni sud u Smederevu",
+          "active": true
+        },
+        {
+          "id": 6,
+          "name": "Osnovni sud u Obrenovcu",
+          "active": true
+        },
+        {
+          "id": 7,
+          "name": "Osnovni sud u Kragujevcu",
+          "active": true
+        },
+        {
+          "id": 8,
+          "name": "Osnovni sud u Arandjelovcu",
+          "active": true
+        },
+        {
+          "id": 9,
+          "name": "Osnovni sud u Ubu",
+          "active": true
+        },
+        {
+          "id": 10,
+          "name": "Osnovni sud u Mladenovcu",
+          "active": true
+        }
+      ]
+    },
+    {
+      "privredni": [
+        {
+          "id": 1,
+          "name": "Privredni sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Privredni sud u Pancevu"
+        },
+        {
+          "id": 3,
+          "name": "Privredni sud u Zrenjaninu"
+        },
+        {
+          "id": 4,
+          "name": "Privredni sud u Novom Sadu"
+        },
+        {
+          "id": 5,
+          "name": "Privredni sud u Subotici"
+        }
+      ]
+    },
+    {
+      "prekrsajni": [
+        {
+          "id": 1,
+          "name": "Prekrsajni sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Prekrsajni sud u Sapcu"
+        },
+        {
+          "id": 3,
+          "name": "Prekrsajni sud u Valjevu"
+        },
+        {
+          "id": 4,
+          "name": "Prekrsajni sud u Nisu"
+        },
+        {
+          "id": 5,
+          "name": "Prekrsajni sud u Subotici"
+        }
+      ]
+    },
+    {
+      "visi": [
+        {
+          "id": 1,
+          "name": "Visi sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Visi sud u "
+        },
+        {
+          "id": 3,
+          "name": "Visi sud u "
+        },
+        {
+          "id": 4,
+          "name": "Visi sud u "
+        },
+        {
+          "id": 5,
+          "name": "Visi sud u "
+        }
+      ]
+    },
+    {
+      "prekrsajniApelacioni": [
+        {
+          "id": 1,
+          "name": "Apelacioni sud u Beogradu"
+        },
+        {
+          "id": 2,
+          "name": "Apelacioni sud u Novom Sadu"
+        },
+        {
+          "id": 3,
+          "name": "Apelacioni sud u Kragujevcu"
+        },
+        {
+          "id": 4,
+          "name": "Apelacioni sud u Nisu"
+        }
+      ]
+    },
+    {
+      "kasacioni": {
+        "id": 1,
+        "name": "Kasacioni sud"
+      }
+    },
+    {
+      "specijalni": {
+        "id": 1,
+        "name": "Specijalni sud"
+      }
+    },
+    {
+      "upravni": [
+        {
+          "id": 1,
+          "name": "Upravni sud u Beogradu"
+        },
+        {
+          "id": 1,
+          "name": "Upravni sud u Novom Sadu"
+        },
+        {
+          "id": 1,
+          "name": "Upravni sud u Kragujevcu"
+        },
+        {
+          "id": 1,
+          "name": "Upravni sud u Nisu"
+        }
+      ]
+    }
+  ]

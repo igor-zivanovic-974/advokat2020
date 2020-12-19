@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService, CredentialsService } from '@app/auth';
+import { AuthenticationService, CredentialsService } from '@app/@core/auth';
 
 @Component({
   selector: 'app-header',
@@ -15,9 +15,9 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private credentialsService: CredentialsService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   toggleMenu() {
     this.menuHidden = !this.menuHidden;

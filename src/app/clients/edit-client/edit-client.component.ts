@@ -86,8 +86,7 @@ export class EditClientComponent implements OnInit {
     });
   }
 
-
-  ngOnInit() { }
+  ngOnInit() {}
 
   getClient(id: number) {
     this.clientsService.getClientById(id).subscribe((data: Client) => {
@@ -98,7 +97,6 @@ export class EditClientComponent implements OnInit {
       // console.log('POCETNA FORMA:', this.form.value);
       this.spinner.hide();
     });
-
   }
 
   goToUrl(link: string) {
@@ -129,7 +127,7 @@ export class EditClientComponent implements OnInit {
   }
 
   deleteCase(id: number) {
-    const c = this.client.cases.find(el => el.id === id);
+    const c = this.client.cases.find((el) => el.id === id);
     const index = this.client.cases.indexOf(c);
 
     if (index > -1) {
@@ -145,7 +143,7 @@ export class EditClientComponent implements OnInit {
     modalRef.componentInstance.selectedIds = this.selectedIds;
     modalRef.componentInstance.selectedCasesIds.subscribe((cases: KeyValuePair[]) => {
       this.client.cases = cases;
-      this.form.patchValue({ 'cases': cases });
+      this.form.patchValue({ cases: cases });
       this.selectedIds = [];
       this.setCaseIds();
       // console.log(this.form.value);
@@ -153,7 +151,7 @@ export class EditClientComponent implements OnInit {
   }
 
   setCaseIds() {
-    this.client.cases.forEach(c => {
+    this.client.cases.forEach((c) => {
       this.selectedIds.push(c.id);
     });
   }

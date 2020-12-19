@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NoteService {
   url = this.persistenceService.apiUrl + '/notes';
@@ -31,7 +31,7 @@ export class NoteService {
     private persistenceService: PersistenceService,
     private notificationService: NotificationsService,
     private translateService: TranslateService
-  ) { }
+  ) {}
 
   getNotes(): Observable<Note[]> {
     return this.http.get(this.url).pipe(

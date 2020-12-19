@@ -2062,8 +2062,8 @@
       "id": 2,
       "firstName": "Ivan",
       "lastName": "Smith",
-      "address": "Radoja Dakica 12, Zemun",
-      "phone": "063/ 331030",
+      "address": "Trike Trikica 142, Kragujevac",
+      "phone": "063/ 331040",
       "roleId": 1,
       "role": {
         "id": 1,
@@ -3226,8 +3226,8 @@
       "id": 3,
       "firstName": "Michael",
       "lastName": "Douglas",
-      "address": "Radoja Dakica 12, Zemun",
-      "phone": "063/ 331030",
+      "address": "Ivana Cankara 57, Sombor",
+      "phone": "063/ 331050",
       "roleId": "2",
       "role": {
         "id": 2,

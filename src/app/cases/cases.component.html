@@ -5,13 +5,12 @@
     </div>
     <div class="col-9 col-lg-6">
       <div class="form-group">
-        <input type="text" class="form-control" id="search" placeholder="{{ 'case.search' | translate }}" (ngModelChange)="searchCases()" [(ngModel)]="filter" />
+        <input type="text" class="form-control" id="search" placeholder="{{ 'case.search' | translate }}" (ngModelChange)="searchCases()" [(ngModel)]="searchValue" />
       </div>
     </div>
     <div class="col-2 text-right pr-5">
       <button class="" (click)="goToUrl('new', 0)" class="btn btn-outline-primary header-btn" title="{{ 'case.add-new' | translate }}">
         <i class="fas fa-folder-plus px-1"></i>
-        <!-- {{ !(isMobileScreen$ | async) ? ('case.add-new' | translate) : '' }} -->
       </button>
     </div>
   </div>
@@ -19,7 +18,7 @@
   <div class="row" *ngIf="cases && cases.length > 0">
     <div class="col-12">
       <!-- [ngClass]="{'col-8': !(isMobileScreen$ | async), 'col-12': (isMobileScreen$ | async)}" -->
-      <div class="card my-3 pb-3" *ngFor="let case of cases; let i = index" (click)="setActiveCase(case.id)" [ngClass]="{ 'border-bold': case.id === selectedCaseId }">
+      <div class="card my-3 pb-3" *ngFor="let case of filteredCases; let i = index" (click)="setActiveCase(case)" [ngClass]="{ 'border-bold': case.id === selectedCaseId }">
         <div class="card-header">
           <div class="row my-3">
             <div class="col-10">
@@ -39,20 +38,19 @@
                 </button>
               </div>
             </div>
-
           </div>
         </div>
 
         <!-- case title -->
         <div class="card-body my-0 py-0">
-          <h6 class="my-3">{{ case.caseTitle }}</h6>
+          <h6 class="my-3" id="caseTitle">{{ case.caseTitle }}</h6>
         </div>
         <div class="px-3 d-none" *ngIf="selectedCase" [ngClass]="{ 'd-block': selectedCase.id === case.id, 'd-none': selectedCase.id !== case.id }">
           <hr />
-          <h6>
+          <h6 id="subject">
             {{ 'case.subject' | translate }}: <span class="normal-text">{{ selectedCase.subject }}</span>
           </h6>
-          <h6>
+          <h6 id="caseValue">
             {{ 'case.value' | translate }}: <span class="normal-text">{{ selectedCase.caseValue }}</span>
           </h6>
 
@@ -108,10 +106,8 @@
         <!-- case movement -->
         <app-case-movements *ngIf="selectedCase && case.id === selectedCaseId" [caseMovements]="case.caseMovements" (relatedCaseId)="openRelatedCase($event)"></app-case-movements>
 
-
         <!-- troskovnik -->
         <app-payments *ngIf="selectedCase && case.id === selectedCaseId" [payments]="case.payments"></app-payments>
-
       </div>
     </div>
 

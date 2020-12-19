@@ -11,7 +11,7 @@ import { NoteService } from './note.service';
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.scss']
+  styleUrls: ['./note.component.scss'],
 })
 export class NoteComponent implements OnInit {
   @Input() caseId: number;
@@ -27,7 +27,8 @@ export class NoteComponent implements OnInit {
     private formBuilder: FormBuilder,
     private notesService: NoteService,
     private activeModal: NgbActiveModal,
-    private employeesService: EmployeesService) {
+    private employeesService: EmployeesService
+  ) {
     this.createForm();
   }
 
@@ -36,19 +37,21 @@ export class NoteComponent implements OnInit {
       this.mode = Mode.update;
       // console.log('noteToEdit', this.noteToEdit);
       // this.form.value = this.noteToEdit;
-      this.form.patchValue({ text: this.noteToEdit.text })
+      this.form.patchValue({ text: this.noteToEdit.text });
     } else {
       this.mode = Mode.create;
       this.userId = +localStorage.getItem('currentUserId') || 1;
       this.getEmployee();
     }
-
   }
 
   getEmployee() {
-    this.employeesService.getEmployeeById(this.userId).pipe(take(1)).subscribe((e: Employee) => {
-      this.employee = e;
-    })
+    this.employeesService
+      .getEmployeeById(this.userId)
+      .pipe(take(1))
+      .subscribe((e: Employee) => {
+        this.employee = e;
+      });
   }
 
   addNote() {
@@ -57,20 +60,26 @@ export class NoteComponent implements OnInit {
       text: this.form.value.text,
       date: new Date(),
       employee: this.employee,
-      caseId: this.caseId
+      caseId: this.caseId,
     };
 
-    this.notesService.addNote(this.noteToAdd).pipe(take(1)).subscribe((note: Note) => {
-      this.note.emit(this.noteToAdd);
-    })
+    this.notesService
+      .addNote(this.noteToAdd)
+      .pipe(take(1))
+      .subscribe((note: Note) => {
+        this.note.emit(this.noteToAdd);
+      });
     this.activeModal.close();
   }
 
   updateNote() {
     this.noteToEdit.text = this.form.value.text;
-    this.notesService.editNote(this.noteToEdit).pipe(take(1)).subscribe((note: Note) => {
-      this.note.emit(this.noteToEdit);
-    });
+    this.notesService
+      .editNote(this.noteToEdit)
+      .pipe(take(1))
+      .subscribe((note: Note) => {
+        this.note.emit(this.noteToEdit);
+      });
     this.activeModal.close();
   }
 

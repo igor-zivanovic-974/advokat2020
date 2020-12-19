@@ -47,4 +47,4 @@ import { CaseMovementsComponent } from './edit-case/case-movements/case-movement
   exports: [PdfViewerComponent],
   entryComponents: [SelectCourtTypeModalComponent],
 })
-export class CasesModule { }
+export class CasesModule {}

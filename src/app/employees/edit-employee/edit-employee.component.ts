@@ -21,7 +21,15 @@ import { Case, Role } from '@app/@core';
   styleUrls: ['./edit-employee.component.scss'],
 })
 export class EditEmployeeComponent implements OnInit {
-  employee: Employee = { id: null, firstName: '', lastName: '', phone: '063/ 331030', address: 'Radoja Dakica 12, Zemun', role: { id: null, name: '' }, cases: [] }; // (null, '', null, null, '');
+  employee: Employee = {
+    id: null,
+    firstName: '',
+    lastName: '',
+    phone: '063/ 331030',
+    address: 'Radoja Dakica 12, Zemun',
+    role: { id: null, name: '' },
+    cases: [],
+  }; // (null, '', null, null, '');
   id: number;
   mode: string;
   form!: FormGroup;
@@ -58,9 +66,7 @@ export class EditEmployeeComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   getEmployee(id: number) {
     this.employeesService.getEmployeeById(id).subscribe((data: Employee) => {
@@ -82,7 +88,7 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   setRole(roleId: any) {
-    const r = this.roles.find(x => x.id === +roleId);
+    const r = this.roles.find((x) => x.id === +roleId);
     this.form.patchValue({ role: r });
     // console.log(this.form.value.role);
   }
@@ -116,7 +122,7 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   deleteCase(id: number) {
-    const c = this.employee.cases.find(el => el.id === id);
+    const c = this.employee.cases.find((el) => el.id === id);
     const index = this.employee.cases.indexOf(c);
 
     if (index > -1) {
@@ -141,7 +147,7 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   setCaseIds() {
-    this.employee.cases.forEach(c => {
+    this.employee.cases.forEach((c) => {
       this.selectedIds.push(c.id);
     });
   }

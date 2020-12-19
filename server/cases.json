@@ -1,0 +1,1152 @@
+[
+  {
+    "id": 1,
+    "stateChanges": [
+      {
+        "id": 1,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "III P1 123/2008",
+        "active": false
+      },
+      {
+        "id": 2,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "II GZ1 123/2010",
+        "active": false
+      },
+      {
+        "id": 3,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "IV P1 123/2011",
+        "active": true
+      }
+    ],
+    "clientId": 1,
+    "internalMark": "01/2020",
+    "council": {
+      "id": 1,
+      "name": "III"
+    },
+    "court": {
+      "id": 1,
+      "name": "Prvi osnovni sud u Beogradu",
+      "courtTypeId": 1
+    },
+    "respondent": {
+      "id": 1,
+      "firstName": "Igor",
+      "lastName": "Zivanovic",
+      "address": "Radoja Dakica 12, Zemun",
+      "phone": "1234567898",
+      "pin": "9876543210"
+    },
+    "prosecutor": {
+      "id": 2,
+      "firstName": "Srbislava",
+      "lastName": "Janda",
+      "address": "Novi Sor 30, Sremska Mitrovica",
+      "phone": "1234567898",
+      "pin": "9876543210"
+    },
+    "registrationMark": {
+      "id": 1,
+      "name": "P",
+      "description": "Parnicni predmeti"
+    },
+    "caseNumber": "369",
+    "year": "2011",
+    "caseTitle": "Parnica kuca Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
+    "subject": "Subject 1",
+    "caseValue": "100.000 din",
+    "notes": [
+      {
+        "id": 1,
+        "text": "Note 1",
+        "date": "2010-01-01",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 1
+      },
+      {
+        "id": 2,
+        "text": "Note 2",
+        "date": "2010-01-02",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 2
+      },
+      {
+        "id": 3,
+        "text": "Note 3",
+        "date": "2010-01-10",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 3
+      },
+      {
+        "id": 4,
+        "text": "Note 4",
+        "date": "2010-01-21",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 4
+      }
+    ],
+    "files": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "link": "assets/files/plan-otplate-igor.pdf"
+      },
+      {
+        "id": 2,
+        "title": "odgovor na tuzbu",
+        "link": "assets/files/4.pdf"
+      }
+    ],
+    "evidences": [
+      {
+        "id": 1,
+        "title": "dokaz 1",
+        "link": "assets/files/5.pdf"
+      },
+      {
+        "id": 1,
+        "title": "dokaz 2",
+        "link": "assets/files/2.pdf"
+      }
+    ],
+    "hearingMinutes": [
+      {
+        "id": 1,
+        "title": "zapisnik sa rocista 1",
+        "link": "assets/files/3.pdf"
+      }
+    ],
+    "expertises": [
+      {
+        "id": 1,
+        "title": "vestacenje 1",
+        "link": "assets/files/1.pdf"
+      }
+    ],
+    "decisions": [
+      {
+        "id": 1,
+        "title": "odluka 1",
+        "link": "assets/files/6.pdf"
+      }
+    ],
+    "other": [
+      {
+        "id": 1,
+        "title": "prijem poziva na rociste 1",
+        "link": "assets/files/3.pdf"
+      },
+      {
+        "id": 2,
+        "title": "prijem poziva na rociste 2",
+        "link": "assets/files/4.pdf"
+      }
+    ],
+    "dateCreated": "2015-12-04",
+    "dateUpdated": "2020-11-05",
+    "status": {
+      "id": 2,
+      "name": "In progress"
+    },
+    "active": true,
+    "caseHistory": [
+      {
+        "id": 1,
+        "date": "2020-01-01",
+        "title": "Tuzba"
+      },
+      {
+        "id": 11,
+        "date": "2020-01-02",
+        "title": "Odgovor na tuzbu"
+      },
+      {
+        "id": 111,
+        "date": "2020-01-03",
+        "title": "Dopis tuzioca"
+      },
+      {
+        "id": 1111,
+        "date": "2020-01-04",
+        "title": "Rociste za glavnu raspravu"
+      }
+    ],
+    "caseMovements": [
+      {
+        "id": 1,
+        "title": "III P1 222/10",
+        "date": "2010-01-01",
+        "active": false
+      },
+      {
+        "id": 2,
+        "title": "I GZ1 222/10",
+        "date": "2013-07-31",
+        "active": false
+      },
+      {
+        "id": 3,
+        "title": "IV P1 222/10",
+        "date": "2015-11-21",
+        "active": false
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "date": "2010-01-01",
+        "price": 12000
+      },
+      {
+        "id": 2,
+        "title": "Odgovor na tuzbu",
+        "date": "2010-03-01",
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "title": "Podnesak",
+        "date": "2010-05-01",
+        "price": 14000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "stateChanges": [
+      {
+        "id": 1,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "III P1 123/2008",
+        "active": false
+      },
+      {
+        "id": 2,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "II GZ1 123/2010",
+        "active": false
+      },
+      {
+        "id": 3,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "IV P1 123/2011",
+        "active": true
+      }
+    ],
+    "internalMark": "02/2020",
+    "council": {
+      "id": 1,
+      "name": "I"
+    },
+    "court": {
+      "id": 2,
+      "name": "Drugi osnovni sud u Beogradu",
+      "courtTypeId": 1
+    },
+    "clientId": 1,
+    "respondent": {
+      "id": 1,
+      "firstName": "Igor",
+      "lastName": "Zivanovic",
+      "address": "Radoja Dakica 12, Zemun",
+      "phone": "1234567898",
+      "pin": "9876543210"
+    },
+    "prosecutor": {
+      "id": 2,
+      "firstName": "Pera",
+      "lastName": "Peric",
+      "address": "Zmaj Jovina 22, Novi Sad",
+      "phone": "1234567898",
+      "pin": "9876543210"
+    },
+    "registrationMark": {
+      "id": 1,
+      "name": "P1",
+      "description": "Radni sporovi"
+    },
+    "caseNumber": "2995",
+    "year": "2015",
+    "caseTitle": "Tehnoloski visak Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
+    "subject": "Subject 2",
+    "caseValue": "200.000 din",
+    "notes": [
+      {
+        "id": 1,
+        "text": "Note 1",
+        "date": "2010-01-01",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 1
+      },
+      {
+        "id": 2,
+        "text": "Note 2",
+        "date": "2010-01-02",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 2
+      },
+      {
+        "id": 3,
+        "text": "Note 3",
+        "date": "2010-01-10",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 3
+      },
+      {
+        "id": 4,
+        "text": "Note 4",
+        "date": "2010-01-21",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 4
+      }
+    ],
+    "files": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "link": "assets/files/plan-otplate-igor.pdf"
+      },
+      {
+        "id": 2,
+        "title": "odgovor na tuzbu",
+        "link": "assets/files/2.pdf"
+      }
+    ],
+    "evidences": [
+      {
+        "id": 1,
+        "title": "dokaz 1",
+        "link": "assets/files/4.pdf"
+      },
+      {
+        "id": 1,
+        "title": "dokaz 2",
+        "link": "assets/files/5.pdf"
+      }
+    ],
+    "hearingMinutes": [
+      {
+        "id": 1,
+        "title": "zapisnik sa rocista 1",
+        "link": "assets/files/6.pdf"
+      }
+    ],
+    "expertises": [
+      {
+        "id": 1,
+        "title": "vestacenje 1",
+        "link": "assets/files/2.pdf"
+      }
+    ],
+    "decisions": [
+      {
+        "id": 1,
+        "title": "odluka 1",
+        "link": "assets/files/3.pdf"
+      }
+    ],
+    "other": [
+      {
+        "id": 1,
+        "title": "prijem poziva na rociste 1",
+        "link": "assets/files/4.pdf"
+      }
+    ],
+    "dateCreated": "2015-12-04",
+    "dateUpdated": "2020-11-05",
+    "status": {
+      "id": 2,
+      "name": "In progress"
+    },
+    "active": true,
+    "caseHistory": [
+      {
+        "id": 2,
+        "date": "2020-01-01",
+        "title": "Tuzba"
+      },
+      {
+        "id": 22,
+        "date": "2020-01-02",
+        "title": "Odgovor na tuzbu"
+      },
+      {
+        "id": 222,
+        "date": "2020-01-03",
+        "title": "Dopis tuzioca"
+      },
+      {
+        "id": 2222,
+        "date": "2020-01-04",
+        "title": "Rociste za glavnu raspravu"
+      }
+    ],
+    "caseMovements": [
+      {
+        "id": 1,
+        "title": "III P1 222/10",
+        "date": "2010-01-01",
+        "active": false
+      },
+      {
+        "id": 2,
+        "title": "I GZ1 222/10",
+        "date": "2013-07-31",
+        "active": false
+      },
+      {
+        "id": 3,
+        "title": "IV P1 222/10",
+        "date": "2015-11-21",
+        "active": false
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "date": "2010-01-01",
+        "price": 12000
+      },
+      {
+        "id": 2,
+        "title": "Odgovor na tuzbu",
+        "date": "2010-03-01",
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "title": "Podnesak",
+        "date": "2010-05-01",
+        "price": 14000
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "stateChanges": [
+      {
+        "id": 1,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "III P1 123/2008",
+        "active": false
+      },
+      {
+        "id": 2,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "II GZ1 123/2010",
+        "active": false
+      },
+      {
+        "id": 3,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "IV P1 123/2011",
+        "active": true
+      }
+    ],
+    "internalMark": "03/2020",
+    "council": {
+      "id": 1,
+      "name": "I"
+    },
+    "court": {
+      "id": 3,
+      "name": "Treci osnovni sud u Beogradu",
+      "courtTypeId": 1
+    },
+    "clientId": 1,
+    "respondent": {
+      "id": 1,
+      "firstName": "Jovan",
+      "lastName": "Jovanovic",
+      "address": "Respondent Address in Belgrade",
+      "phone": "1234567898",
+      "pin": "9876543210"
+    },
+    "prosecutor": {
+      "id": 3,
+      "firstName": "OS",
+      "lastName": "Starina Novak",
+      "address": "Knez Danilova 33-37, Belgrade",
+      "phone": "1234567898",
+      "pin": "9876543210"
+    },
+    "registrationMark": {
+      "id": 1,
+      "name": "P2",
+      "description": "Porodicni sporovi"
+    },
+    "caseNumber": "2991",
+    "year": "2018",
+    "caseTitle": "Tehnoloski visak Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
+    "subject": "Subject 3",
+    "caseValue": "300.000 din",
+    "notes": [
+      {
+        "id": 1,
+        "text": "Note 1",
+        "date": "2010-01-01",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 1
+      },
+      {
+        "id": 2,
+        "text": "Note 2",
+        "date": "2010-01-02",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 2
+      },
+      {
+        "id": 3,
+        "text": "Note 3",
+        "date": "2010-01-10",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 3
+      },
+      {
+        "id": 4,
+        "text": "Note 4",
+        "date": "2010-01-21",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 4
+      }
+    ],
+    "files": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "link": "assets/files/plan-otplate-igor.pdf"
+      },
+      {
+        "id": 2,
+        "title": "odgovor na tuzbu",
+        "link": "assets/files/1.pdf"
+      }
+    ],
+    "evidences": [
+      {
+        "id": 1,
+        "title": "dokaz 1",
+        "link": "assets/files/2.pdf"
+      },
+      {
+        "id": 1,
+        "title": "dokaz 2",
+        "link": "assets/files/3.pdf"
+      }
+    ],
+    "hearingMinutes": [
+      {
+        "id": 1,
+        "title": "zapisnik sa rocista 1",
+        "link": "assets/files/4.pdf"
+      }
+    ],
+    "expertises": [
+      {
+        "id": 1,
+        "title": "vestacenje 1",
+        "link": "assets/files/5.pdf"
+      }
+    ],
+    "decisions": [
+      {
+        "id": 1,
+        "title": "odluka 1",
+        "link": "assets/files/6.pdf"
+      }
+    ],
+    "other": [
+      {
+        "id": 1,
+        "title": "prijem poziva na rociste 1",
+        "link": "assets/files/5.pdf"
+      }
+    ],
+    "dateCreated": "2015-12-04",
+    "dateUpdated": "2020-11-05",
+    "status": {
+      "id": 2,
+      "name": "In progress"
+    },
+    "active": true,
+    "caseHistory": [
+      {
+        "id": 3,
+        "date": "2020-01-01",
+        "title": "Tuzba"
+      },
+      {
+        "id": 33,
+        "date": "2020-01-02",
+        "title": "Odgovor na tuzbu"
+      },
+      {
+        "id": 333,
+        "date": "2020-01-03",
+        "title": "Dopis tuzioca"
+      },
+      {
+        "id": 3333,
+        "date": "2020-01-04",
+        "title": "Rociste za glavnu raspravu"
+      }
+    ],
+    "caseMovements": [
+      {
+        "id": 1,
+        "title": "III P1 222/10",
+        "date": "2010-01-01",
+        "active": false
+      },
+      {
+        "id": 2,
+        "title": "I GZ1 222/10",
+        "date": "2013-07-31",
+        "active": false
+      },
+      {
+        "id": 3,
+        "title": "IV P1 222/10",
+        "date": "2015-11-21",
+        "active": false
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "date": "2010-01-01",
+        "price": 12000
+      },
+      {
+        "id": 2,
+        "title": "Odgovor na tuzbu",
+        "date": "2010-03-01",
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "title": "Podnesak",
+        "date": "2010-05-01",
+        "price": 14000
+      }
+    ]
+  },
+  {
+    "stateChanges": [
+      {
+        "id": 1,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "III P1 123/2008",
+        "active": false
+      },
+      {
+        "id": 2,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "II GZ1 123/2010",
+        "active": false
+      },
+      {
+        "id": 3,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "IV P1 123/2011",
+        "active": true
+      }
+    ],
+    "dateCreated": "2020-11-23T02:37:13.130Z",
+    "dateUpdated": "2020-11-23T02:37:13.130Z",
+    "court": {
+      "id": 1,
+      "name": "Treci osnovni sud u Beogradu",
+      "courtTypeId": 1,
+      "courtTypeName": "Osnovni sud"
+    },
+    "council": {
+      "id": 2,
+      "name": "II"
+    },
+    "registrationMark": {
+      "id": 1,
+      "name": "P"
+    },
+    "caseNumber": "555",
+    "year": "2020",
+    "caseTitle": "Pera tuzi Simu Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
+    "subject": "Subject 1",
+    "prosecutor": {
+      "id": 2,
+      "firstName": "Sima",
+      "lastName": "Simic",
+      "address": "Adresa 2",
+      "phone": "21323213",
+      "pin": "321323"
+    },
+    "respondent": {
+      "id": 2,
+      "firstName": "Sima",
+      "lastName": "Simic",
+      "address": "Adresa 2",
+      "phone": "21323213",
+      "pin": "321323"
+    },
+    "caseValue": "100.000 din",
+    "notes": [
+      {
+        "id": 1,
+        "text": "Note 1",
+        "date": "2010-01-01",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 1
+      },
+      {
+        "id": 2,
+        "text": "Note 2",
+        "date": "2010-01-02",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 2
+      },
+      {
+        "id": 3,
+        "text": "Note 3",
+        "date": "2010-01-10",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 3
+      },
+      {
+        "id": 4,
+        "text": "Note 4",
+        "date": "2010-01-21",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 4
+      }
+    ],
+    "status": {
+      "id": 1,
+      "name": "U toku"
+    },
+    "active": true,
+    "files": [],
+    "decisions": [],
+    "evidences": [],
+    "expertises": [],
+    "hearingMinutes": [],
+    "other": [],
+    "caseHistory": [],
+    "caseMovements": [
+      {
+        "id": 1,
+        "title": "III P1 222/10",
+        "date": "2010-01-01",
+        "active": false
+      },
+      {
+        "id": 2,
+        "title": "I GZ1 222/10",
+        "date": "2013-07-31",
+        "active": false
+      },
+      {
+        "id": 3,
+        "title": "IV P1 222/10",
+        "date": "2015-11-21",
+        "active": false
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "date": "2010-01-01",
+        "price": 12000
+      },
+      {
+        "id": 2,
+        "title": "Odgovor na tuzbu",
+        "date": "2010-03-01",
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "title": "Podnesak",
+        "date": "2010-05-01",
+        "price": 14000
+      }
+    ],
+    "id": 4,
+    "internalMark": "04/2020"
+  },
+  {
+    "stateChanges": [
+      {
+        "id": 1,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "III P1 123/2008",
+        "active": false
+      },
+      {
+        "id": 2,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "II GZ1 123/2010",
+        "active": false
+      },
+      {
+        "id": 3,
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "dateOfChange": "2008-10-12",
+        "state": "IV P1 123/2011",
+        "active": true
+      }
+    ],
+    "dateCreated": "2020-11-23T02:41:24.343Z",
+    "dateUpdated": "2020-11-23T02:41:24.343Z",
+    "court": {
+      "id": 2,
+      "name": "Drugi osnovni sud u Beogradu",
+      "courtTypeId": 1,
+      "courtTypeName": "Osnovni sud"
+    },
+    "council": {
+      "id": 4,
+      "internalMark": "04/2020",
+      "name": "IV"
+    },
+    "registrationMark": {
+      "id": 3,
+      "name": "P2"
+    },
+    "caseNumber": "444",
+    "year": "2021",
+    "caseTitle": "Moma protiv Cezara Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ducimus ea modi quas ad sit, eum reiciendis magnam, illo nesciunt recusandae quis minus perferendis ab?",
+    "subject": "Mobing",
+    "prosecutor": {
+      "id": 2,
+      "firstName": "Sima",
+      "lastName": "Simic",
+      "address": "Adresa 2",
+      "phone": "21323213",
+      "pin": "321323"
+    },
+    "respondent": {
+      "id": 2,
+      "firstName": "Sima",
+      "lastName": "Simic",
+      "address": "Adresa 2",
+      "phone": "21323213",
+      "pin": "321323"
+    },
+    "caseValue": "100.000 din",
+    "notes": [
+      {
+        "id": 1,
+        "text": "Note 1",
+        "date": "2010-01-01",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 1
+      },
+      {
+        "id": 2,
+        "text": "Note 2",
+        "date": "2010-01-02",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 2
+      },
+      {
+        "id": 3,
+        "text": "Note 3",
+        "date": "2010-01-10",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 3
+      },
+      {
+        "id": 4,
+        "text": "Note 4",
+        "date": "2010-01-21",
+        "employee": {
+          "id": 1,
+          "firstName": "Pera",
+          "lastName": "Peric",
+          "roleId": 2,
+          "role": "Operator"
+        },
+        "userId": 4
+      }
+    ],
+    "status": {
+      "id": 1,
+      "name": "U toku"
+    },
+    "active": true,
+    "files": [],
+    "decisions": [],
+    "evidences": [],
+    "expertises": [],
+    "hearingMinutes": [],
+    "other": [],
+    "caseHistory": [],
+    "caseMovements": [
+      {
+        "id": 1,
+        "title": "III P1 222/10",
+        "date": "2010-01-01",
+        "active": false
+      },
+      {
+        "id": 2,
+        "title": "I GZ1 222/10",
+        "date": "2013-07-31",
+        "active": false
+      },
+      {
+        "id": 3,
+        "title": "IV P1 222/10",
+        "date": "2015-11-21",
+        "active": false
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "title": "Tuzba",
+        "date": "2010-01-01",
+        "price": 12000
+      },
+      {
+        "id": 2,
+        "title": "Odgovor na tuzbu",
+        "date": "2010-03-01",
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "title": "Podnesak",
+        "date": "2010-05-01",
+        "price": 14000
+      }
+    ],
+    "id": 5,
+    "internalMark": "05/2020"
+  }
+]

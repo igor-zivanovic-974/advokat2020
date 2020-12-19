@@ -43,8 +43,11 @@
           <input type="text" class="form-control" id="year" placeholder="{{ 'case.year' | translate }}" formControlName="year" [readOnly]="disabled" />
         </div>
       </div>
-      <div class="row mt-4 mb-3" *ngIf="mode === 'preview'">{{'case.history-movement' | translate}}:
-        <button *ngFor="let state of case.stateChanges" class="mx-3" (click)="switchCase(state.state)" [ngClass]="{'btn btn-primary': !state.active, 'btn btn-danger': state.active}">{{state.state}}</button>
+      <div class="row mt-4 mb-3" *ngIf="mode === 'preview'">
+        {{ 'case.history-movement' | translate }}:
+        <button *ngFor="let state of case.stateChanges" class="mx-3" (click)="switchCase(state.state)" [ngClass]="{ 'btn btn-primary': !state.active, 'btn btn-danger': state.active }">
+          {{ state.state }}
+        </button>
       </div>
 
       <!-- court Name -->
@@ -171,27 +174,27 @@
 
       <!-- notes -->
       <div class="form-group mb-5" *ngIf="case.notes && case.notes.length > 0">
-        <div class="border-bottom mb-3"><label class="font-weight-bold" for="notes">{{ 'case.notes' | translate }}</label>
-          <button class="btn btn-sm btn primary" (click)="openNoteModal()"><i class="fas fa-plus"></i>
-            <!-- {{'case.add-note' | translate}} -->
+        <div class="border-bottom mb-3">
+          <label class="font-weight-bold" for="notes">{{ 'case.notes' | translate }}</label>
+          <button class="btn btn-sm btn primary" (click)="openNoteModal()" title="{{'case.add-note' | translate}}">
+            <i class="fas fa-plus"></i>
           </button>
         </div>
         <div id="notes" placeholder="Notes">
           <div *ngFor="let note of case.notes">
-            <div>{{note.date | date: 'dd.MM.yyyy'}}
-              <span class="small"><b>{{'common.note-created-by' | translate}}: {{note.employee.firstName}}</b></span>
+            <div>
+              {{ note.date | date: 'dd.MM.yyyy' }}
+              <span class="small text-muted">{{ 'common.note-created-by' | translate }}: {{ note.employee.firstName.substr(0,1)}}. {{ note.employee.lastName}}</span>
               <span *ngIf="mode === 'edit'" class="float-right">
-                <button class="btn btn-sm btn primary" (click)="openNoteModal(note.id)">
+                <button class="btn btn-sm btn primary" (click)="openNoteModal(note.id)" title="{{'case.add-note' | translate}}">
                   <i class="fa fa-edit"></i>
-                  <!-- {{'case.add-note' | translate}} -->
                 </button>
-                <button class="btn btn-sm btn primary" (click)="invokeDeleteNote(note.id)">
+                <button class="btn btn-sm btn primary" (click)="invokeDeleteNote(note.id)" title="{{'case.add-note' | translate}}">
                   <i class="fa fa-times"></i>
-                  <!-- {{'case.add-note' | translate}} -->
                 </button>
               </span>
             </div>
-            <div class="mb-3">{{note.text}}</div>
+            <div class="mb-3">{{ note.text }}</div>
           </div>
         </div>
       </div>

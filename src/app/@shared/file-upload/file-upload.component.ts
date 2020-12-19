@@ -41,9 +41,9 @@ export class FileUploadComponent implements OnInit {
     private modalService: NgbModal,
     private http: HttpClient,
     private notifier: NotificationsService
-  ) { }
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   uploadFile(file: any) {
     const formData = new FormData();

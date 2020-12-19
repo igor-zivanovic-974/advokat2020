@@ -5,17 +5,19 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { I18nModule } from '@app/i18n';
-import { AuthModule } from '@app/auth';
+import { AuthModule } from '@app/@core/auth';
 import { ShellComponent } from './shell.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { GlobalService } from './global.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { WebsocketService } from '@app/@core/services/websocket.service';
+import { ChatService } from '@app/@core/services/chat.service';
 
 @NgModule({
   imports: [CommonModule, TranslateModule, NgbModule, AuthModule, I18nModule, SimpleNotificationsModule, RouterModule],
   declarations: [HeaderComponent, ShellComponent, SideMenuComponent, FooterComponent],
-  providers: [GlobalService],
+  providers: [GlobalService, WebsocketService, ChatService],
 })
 export class ShellModule { }

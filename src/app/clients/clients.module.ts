@@ -27,4 +27,4 @@ import { CaseModalComponent } from './edit-client/case-modal/case-modal.componen
   declarations: [ClientsComponent, EditClientComponent, CaseModalComponent],
   providers: [ClientsService, CoreModule],
 })
-export class ClientsModule { }
+export class ClientsModule {}

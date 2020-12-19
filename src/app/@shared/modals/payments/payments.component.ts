@@ -4,15 +4,14 @@ import { CasePayment } from '@app/@core/interfaces/casePayment';
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.component.html',
-  styleUrls: ['./payments.component.scss']
+  styleUrls: ['./payments.component.scss'],
 })
 export class PaymentsComponent implements OnInit {
   @Input() payments: CasePayment[];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  print() { }
+  print() {}
 }

@@ -2,6 +2,8 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { GlobalService } from './global.service';
+import { WebsocketService } from '@core/services/websocket.service';
+import { ChatService } from '@core/services/chat.service';
 
 @Component({
   selector: 'app-shell',
@@ -15,7 +17,9 @@ export class ShellComponent implements OnInit, OnDestroy {
   hasSideMenu: boolean;
   unsubscribe$ = new Subject<void>();
 
-  constructor(private _globalService: GlobalService) {
+  private message = { author: 'Pera', message: 'idi spavaj' };
+
+  constructor(private _globalService: GlobalService, private wsService: WebsocketService, private chatService: ChatService) {
     this.getScreenSize();
 
     this.isMobileScreen$ = this._globalService.isMobileScreen$;
@@ -25,9 +29,16 @@ export class ShellComponent implements OnInit, OnDestroy {
     this._globalService.hasSideMenu$.pipe(takeUntil(this.unsubscribe$)).subscribe((value: any) => {
       this.hasSideMenu = value;
     });
+
+    // ws
+    this.chatService.message.subscribe((msg: any) => {
+      console.log('Response from WS Server: ');
+      console.log(msg);
+    });
+
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   @HostListener('window:resize', ['$event'])
   getScreenSize() {
@@ -45,5 +56,11 @@ export class ShellComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  sendMessage() {
+    console.log('New Message sent from client');
+    console.log(this.message);
+    this.chatService.message.next(this.message);
   }
 }

@@ -1,0 +1,268 @@
+{
+  "councils": [
+    {
+      "osnovni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "privredni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "prekrsajni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "visi": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "apelacioni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "kasacioni": [
+        {
+          "id": 1,
+          "name": "I"
+        },
+        {
+          "id": 2,
+          "name": "II"
+        },
+        {
+          "id": 3,
+          "name": "III"
+        },
+        {
+          "id": 4,
+          "name": "IV"
+        },
+        {
+          "id": 5,
+          "name": "V"
+        },
+        {
+          "id": 6,
+          "name": "VI"
+        },
+        {
+          "id": 7,
+          "name": "VII"
+        },
+        {
+          "id": 8,
+          "name": "VIII"
+        },
+        {
+          "id": 9,
+          "name": "IX"
+        },
+        {
+          "id": 10,
+          "name": "X"
+        }
+      ]
+    }
+  ]
+}

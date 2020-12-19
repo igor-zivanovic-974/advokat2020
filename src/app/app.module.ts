@@ -7,7 +7,7 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CoreModule } from '@core';
 import { SharedModule } from '@shared';
-import { AuthModule } from '@app/auth';
+import { AuthModule } from '@app/@core/auth';
 import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AboutModule } from './about/about.module';
@@ -23,14 +23,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessagesModule } from './messages/messages.module';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { NotifierModule } from 'angular-notifier';
-// import { PdfViewerModule } from 'ng2-pdf-viewer';
-// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { StoreModule } from '@ngrx/store';
-import { employeeReducer } from './store/reducers/employees.reducers';
-import { EffectsModule } from '@ngrx/effects';
-import { EmployeeEffects } from './store/effects/employees.effects';
-import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { WebSocket, Server } from 'mock-socket';
 
 @NgModule({
   imports: [
@@ -56,10 +52,8 @@ import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
     ClientsModule,
     MessagesModule,
     NgxFileDropModule,
-    StoreModule.forRoot({ employees: employeeReducer }),
-    EffectsModule.forRoot([EmployeeEffects]),
+
     StoreDevtoolsModule.instrument(),
-    // PdfViewerModule,
     NotifierModule.withConfig({
       position: {
         horizontal: {
@@ -101,7 +95,9 @@ import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
       },
     }),
     AuthModule,
-    AppRoutingModule, // must be imported as the last module as it contains the fallback route
+    // WebSocket,
+    // Server,
+    AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
   providers: [NgbActiveModal],
@@ -110,4 +106,3 @@ import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 })
 export class AppModule { }
 
-// platformBrowserDynamic().bootstrapModule(AppModule);

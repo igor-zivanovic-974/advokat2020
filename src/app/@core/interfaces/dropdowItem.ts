@@ -1,5 +1,5 @@
 export interface DropdownItem {
-    id: number;
-    name: string;
-    active?: boolean;
+  id: number;
+  name: string;
+  active?: boolean;
 }

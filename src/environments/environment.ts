@@ -15,6 +15,7 @@ export const environment = {
   hmr: true,
   version: env.npm_package_version + '-dev',
   serverUrl: 'http://localhost:3000', // 'http://localhost:2222/advokat/api',
+  wsUrl: 'ws://echo.websocket.org',
   defaultLanguage: 'sr-RS',
   supportedLanguages: ['en-US', 'sr-RS'],
   // serverUrl: '/api',

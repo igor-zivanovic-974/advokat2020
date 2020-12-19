@@ -2,18 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CasesService } from './cases.service';
 import { Case } from '@app/@core/interfaces/case';
 import { Router } from '@angular/router';
-// import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DeleteModalComponent } from '@app/@shared/modals/delete-modal/delete-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { HelperService } from '@app/@core/services/helper.service';
 import { Observable } from 'rxjs';
 import { GlobalService } from '@app/shell/global.service';
 import { FileService } from '@app/@shared/services/file.service';
-import { PreviewImageComponent } from '@app/@shared/preview-image/preview-image.component';
-import { Document } from '@core/models/document';
-import { EditCaseComponent } from './edit-case/edit-case.component';
-import { CaseHistoryComponent } from './edit-case/case-history/case-history.component';
 
 declare var require: any;
 const FileSaver = require('file-saver');
@@ -29,21 +23,20 @@ export class CasesComponent implements OnInit {
   isMobileScreen$: Observable<boolean>;
   hasSideMenu$: Observable<boolean>;
   link = 'cases/';
-  filter = '';
+  searchValue = '';
   selectedCase: Case;
   selectedCaseId = 0;
   fileToUpload: File = null;
   preparing: boolean;
   progress: number;
   selectedDocument: string;
+  filteredCases: Case[];
 
   constructor(
     private casesService: CasesService,
-    // private translateService: TranslateService,
     private router: Router,
     private modalService: NgbModal,
     private spinner: NgxSpinnerService,
-    private helperService: HelperService,
     private _globalService: GlobalService,
     private fileService: FileService
   ) {
@@ -59,7 +52,8 @@ export class CasesComponent implements OnInit {
   getCases() {
     this.casesService.getCases().subscribe((data: Case[]) => {
       this.cases = data;
-      console.log('CASES: ', this.cases);
+      this.filteredCases = data;
+      // console.log('CASES: ', this.cases);
       this.spinner.hide();
     });
   }
@@ -100,13 +94,22 @@ export class CasesComponent implements OnInit {
 
   searchCases() {
     setTimeout(() => {
-      console.log(this.filter);
+      this.searchValue = this.searchValue.trim();
+      this.filteredCases = this.cases.filter((c) => {
+        return (
+          c.subject.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          c.caseTitle.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          c.caseNumber.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          c.year.includes(this.searchValue) ||
+          c.registrationMark.name.toLowerCase().includes(this.searchValue.toLowerCase())
+        );
+      });
     }, 500);
   }
 
-  setActiveCase(caseId: number) {
-    this.selectedCaseId = caseId;
-    this.selectedCase = this.cases.find((c) => c.id === caseId);
+  setActiveCase(c: Case) {
+    this.selectedCaseId = c.id;
+    this.selectedCase = c;
   }
 
   goToUrl(mode: string, caseId?: number) {

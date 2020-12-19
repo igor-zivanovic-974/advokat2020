@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-case-modal',
   templateUrl: './case-modal.component.html',
-  styleUrls: ['./case-modal.component.scss']
+  styleUrls: ['./case-modal.component.scss'],
 })
 export class CaseModalComponent implements OnInit {
   @Input() selectedIds: number[];
@@ -29,13 +29,14 @@ export class CaseModalComponent implements OnInit {
     private casesService: CasesService,
     private spinner: NgxSpinnerService,
     private activeModal: NgbActiveModal,
-    private _globalService: GlobalService) {
+    private _globalService: GlobalService
+  ) {
     this.isMobileScreen$ = this._globalService.isMobileScreen$;
   }
 
   ngOnInit(): void {
     this.spinner.show();
-    this.caseIdsList = [... this.selectedIds];
+    this.caseIdsList = [...this.selectedIds];
     this.getCases();
   }
 
@@ -51,7 +52,7 @@ export class CaseModalComponent implements OnInit {
   searchCases() {
     setTimeout(() => {
       setTimeout(() => {
-        this.filteredCases = this.cases.filter(c => {
+        this.filteredCases = this.cases.filter((c) => {
           return c.subject.toLowerCase().includes(this.filter.toLowerCase());
         });
       }, 500);
@@ -72,9 +73,8 @@ export class CaseModalComponent implements OnInit {
   }
 
   save() {
-
-    this.caseIdsList.forEach(element => {
-      const c = this.cases.find(x => x.id === element);
+    this.caseIdsList.forEach((element) => {
+      const c = this.cases.find((x) => x.id === element);
       if (!this.fromEmployeesPage) {
         this.caseList.push({ id: c.id, name: c.subject });
       } else {

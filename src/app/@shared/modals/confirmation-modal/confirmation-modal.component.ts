@@ -14,9 +14,9 @@ export class ConfirmationModalComponent implements OnInit {
   @Output() confirm: EventEmitter<boolean> = new EventEmitter<boolean>();
   deleteConfirm = false;
 
-  constructor(public activeModal: NgbActiveModal, private translate: TranslateService) { }
+  constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   isIn(): boolean {
     return this.modalState;

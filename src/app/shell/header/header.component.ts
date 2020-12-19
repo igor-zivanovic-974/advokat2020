@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '@app/auth';
+import { AuthenticationService } from '@app/@core/auth';
 import { I18nService } from '@app/i18n';
 import { Observable } from 'rxjs';
 import { GlobalService } from '../global.service';
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     this.messageCounter$ = this._globalService.messageCounter$;
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   // toggleMenu() {
   //   this.menuHidden = !this.menuHidden;
