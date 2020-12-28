@@ -8,26 +8,25 @@ import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { NotificationsService } from '@app/@shared/services/notifications.service';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
 import { NoteComponent } from './modals/note/note.component';
 import { PaymentsComponent } from './modals/payments/payments.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
     NgbModalModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
@@ -36,6 +35,8 @@ import { PaymentsComponent } from './modals/payments/payments.component';
     NgxExtendedPdfViewerModule,
     SimpleNotificationsModule,
     NgSelectModule,
+    NgxSpinnerModule,
+    // BrowserAnimationsModule
   ],
   declarations: [
     LoaderComponent,
@@ -49,11 +50,18 @@ import { PaymentsComponent } from './modals/payments/payments.component';
     DropdownComponent,
   ],
   exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModalModule,
+    NgSelectModule,
+    SimpleNotificationsModule,
+    TranslateModule,
+    NgxSpinnerModule,
     LoaderComponent,
     DeleteModalComponent,
     ConfirmationModalComponent,
     NoteComponent,
-    TranslateModule,
     FileUploadComponent,
     PaymentsComponent,
     DropdownComponent,
@@ -65,9 +73,10 @@ import { PaymentsComponent } from './modals/payments/payments.component';
     NoteComponent,
     PaymentsComponent,
     DropdownComponent,
+    BrowserAnimationsModule
   ],
   providers: [NotificationsService],
 })
-export class SharedModule {}
+export class SharedModule { }
 
 // platformBrowserDynamic().bootstrapModule(SharedModule);

@@ -3,13 +3,15 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   // Fallback when no prior route is matched
-  { path: '**', redirectTo: 'clients', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // lazy loaded routes
+  { path: 'cases', loadChildren: () => import('./cases/cases.module').then(m => m.CasesModule) }, // './cases/cases.module#CasesModule' },
+  { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) }
 ];
 
 @NgModule({
-  // imports: [RouterModule.forRoot(routes)],
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: true })],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: false })],
   exports: [RouterModule],
   providers: [],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

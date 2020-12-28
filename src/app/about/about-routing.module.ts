@@ -6,6 +6,8 @@ import { Shell } from '@app/shell/shell.service';
 import { AboutComponent } from './about.component';
 
 const routes: Routes = [
+  // eagerly loaded, not lazy loaded
+  // TODO make it lazy loaded
   Shell.childRoutes([{ path: 'about', component: AboutComponent, data: { title: extract('About') } }]),
 ];
 
@@ -14,4 +16,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class AboutRoutingModule {}
+export class AboutRoutingModule { }

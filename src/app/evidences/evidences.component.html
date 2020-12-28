@@ -1,1 +1,10 @@
-<p>evidences works!</p>
+<div *ngIf="!isLoading">
+    <div *ngFor="let e of evidences">
+        {{e.name}}
+        <i (click)="deleteEvidence(e.id)" class="fa fa-times text-danger ml-4">Delete</i>
+    </div>
+</div>
+<button (click)="getEvidences()" class="btn btn-primary">Reload</button>
+<button (click)="addEvidence()" class="btn btn-success">Create</button>
+
+<app-loader [isLoading]="isLoading"></app-loader>

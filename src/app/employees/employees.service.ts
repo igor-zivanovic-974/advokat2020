@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from '@app/@core/interfaces/Employee';
 import { TranslateService } from '@ngx-translate/core';
-import { PersistenceService } from '@app/@core/services/persistence.service';
+import { PersistenceService } from '@core/services/persistence.service';
 import { NotificationsService } from 'angular2-notifications';
 import { map, catchError, take } from 'rxjs/operators';
 import { GlobalService } from '@app/shell/global.service';

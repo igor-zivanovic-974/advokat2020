@@ -13,46 +13,43 @@ import { ShellModule } from './shell/shell.module';
 import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CasesModule } from './cases/cases.module';
-import { EmployeesModule } from './employees/employees.module';
+// import { CasesModule } from './cases/cases.module';
+// import { EmployeesModule } from './employees/employees.module';
 import { EvidencesModule } from './evidences/evidences.module';
 import { ClientsModule } from './clients/clients.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessagesModule } from './messages/messages.module';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { NotifierModule } from 'angular-notifier';
-import { NgSelectModule } from '@ng-select/ng-select';
-// import { StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { evidencesReducer } from './evidences/store/evidences.reducer';
 // import { WebSocket, Server } from 'mock-socket';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
+    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot(),
     SimpleNotificationsModule.forRoot(),
     NgbModule,
-    NgxSpinnerModule,
     NgbModule,
-    NgSelectModule,
     CoreModule,
     SharedModule,
     ShellModule,
     HomeModule,
     AboutModule,
-    CasesModule,
-    EmployeesModule,
+    // lazy loaded feature modules
+    // CasesModule,
+    // EmployeesModule,
     EvidencesModule,
     ClientsModule,
     MessagesModule,
     NgxFileDropModule,
-
+    StoreModule.forRoot({ evidences: evidencesReducer }),
     StoreDevtoolsModule.instrument(),
     NotifierModule.withConfig({
       position: {

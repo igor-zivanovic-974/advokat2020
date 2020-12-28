@@ -8,10 +8,11 @@ import { extract } from '@app/i18n';
 
 const routes: Routes = [
   Shell.childRoutes([
-    { path: 'cases', component: CasesComponent, data: { title: extract('cases') } },
-    { path: 'cases/:mode/:id', component: EditCaseComponent, data: { title: extract('case') } },
-    { path: 'cases/:mode', component: EditCaseComponent, data: { title: extract('case') } },
-  ]),
+    // lazy loaded
+    { path: '', component: CasesComponent, data: { title: extract('cases') } },
+    { path: ':mode/:id', component: EditCaseComponent, data: { title: extract('case') } },
+    { path: ':mode', component: EditCaseComponent, data: { title: extract('case') } }
+  ])
 ];
 
 @NgModule({
@@ -20,5 +21,5 @@ const routes: Routes = [
   providers: [],
 })
 export class CasesRoutingModule {
-  constructor() {}
+  constructor() { }
 }

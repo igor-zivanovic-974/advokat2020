@@ -9,9 +9,10 @@ import { AuthenticationGuard } from '@app/@core/auth';
 
 const routes: Routes = [
   Shell.childRoutes([
-    { path: 'employees', component: EmployeesComponent, data: { title: extract('Zaposleni') }, canActivate: [AuthenticationGuard] },
-    { path: 'employees/:mode/:id', component: EditEmployeeComponent, data: { title: extract('Zaposleni') }, canActivate: [AuthenticationGuard] },
-    { path: 'employees/:mode', component: EditEmployeeComponent, data: { title: extract('Zaposleni') }, canActivate: [AuthenticationGuard] },
+    // lazy loaded
+    { path: '', component: EmployeesComponent, data: { title: extract('employees') }, canActivate: [AuthenticationGuard] },
+    { path: ':mode/:id', component: EditEmployeeComponent, data: { title: extract('employee') }, canActivate: [AuthenticationGuard] },
+    { path: ':mode', component: EditEmployeeComponent, data: { title: extract('employee') }, canActivate: [AuthenticationGuard] },
   ]),
 ];
 
