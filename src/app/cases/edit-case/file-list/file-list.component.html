@@ -2,32 +2,22 @@
   <div class="border-bottom mb-3">
     <label class="font-weight-bold" for="">{{ wholeTitle | translate }}</label>
     <span class="float-right" *ngIf="mode && (mode === 'new' || mode === 'edit')">
-      <button
-        class="btn btn-sm btn-primary mb-2"
-        (click)="addFile()"
-        title="{{ 'case.add-file' | translate }}"
-        [disabled]="disabled"
-      >
+      <button class="btn btn-sm btn-primary mb-2" (click)="addFile()" title="{{ 'case.add-file' | translate }}" [disabled]="disabled">
         <i class="fa fa-plus"></i>
         {{ !(isMobileScreen$ | async) ? ('case.add-file' | translate) : '' }}
       </button>
     </span>
   </div>
   <div *ngIf="items && items.length > 0">
-    <div *ngFor="let item of items" class="row m-0">
+    <div *ngFor="let item of items; let i=index" class="row m-0 pl-3 stripe-row">
       <a (click)="showFileInModal(item.link, content)">
-        <span><i class="fa fa-file"></i></span>
+        <span><i class="fa fa-file" id="fileTypeImage"></i></span>
         <span class="col-lg">{{ item.title }}</span>
       </a>
-      <span class="col-sm" *ngIf="mode && (mode === 'new' || mode === 'edit')">
-        <button
-          class="btn btn-sm btn-outline-danger mb-2 float-right"
-          (click)="invokeDeleteFile(item.id)"
-          title="{{ 'case.delete-file' | translate }}"
-          [disabled]="disabled"
-        >
+      <span class="col-sm" *ngIf="mode &&  mode === 'edit'">
+        <button class="btn btn-sm mb-2 float-right" (click)="invokeDeleteFile(item.id)" title="{{ 'case.delete-file' | translate }}" [disabled]="disabled">
           <i class="fa fa-times"></i>
-          {{ !(isMobileScreen$ | async) ? ('case.delete-file' | translate) : '' }}
+          <!-- {{ !(isMobileScreen$ | async) ? ('case.delete-file' | translate) : '' }} -->
         </button>
       </span>
     </div>
@@ -43,14 +33,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <pdf-viewer
-      [src]="selectedDocument"
-      [rotation]="0"
-      [fit-to-page]="true"
-      [original-size]="true"
-      [show-all]="true"
-      style="display: block"
-    ></pdf-viewer>
+    <pdf-viewer [src]="selectedDocument" [rotation]="0" [fit-to-page]="true" [original-size]="true" [show-all]="true" style="display: block"></pdf-viewer>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">

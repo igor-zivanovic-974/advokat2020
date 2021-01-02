@@ -9,11 +9,11 @@ import { take } from 'rxjs/operators';
 import { NoteService } from './note.service';
 
 @Component({
-  selector: 'app-note',
-  templateUrl: './note.component.html',
-  styleUrls: ['./note.component.scss'],
+  selector: 'app-note-modal',
+  templateUrl: './note-modal.component.html',
+  styleUrls: ['./note-modal.component.scss'],
 })
-export class NoteComponent implements OnInit {
+export class NoteModalComponent implements OnInit {
   @Input() caseId: number;
   @Input() noteToEdit?: Note;
   @Output() note: EventEmitter<Note> = new EventEmitter();

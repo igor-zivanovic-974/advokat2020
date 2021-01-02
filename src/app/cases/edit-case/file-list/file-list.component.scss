@@ -1,3 +1,15 @@
-div.stripe-row:hover {
-  background: #eee !important;
+div.stripe-row {
+  padding-top: 16px;
+
+  &:hover {
+    background: #eee !important;
+  }
 }
+
+// .grey-stripe {
+//   background: #eee !important;
+// }
+
+// .white-stripe {
+//   background: #fff !important;
+// }

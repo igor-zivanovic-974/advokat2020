@@ -5,7 +5,7 @@ import { finalize } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 import { Logger, untilDestroyed } from '@core';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../@core/auth/authentication.service';
 
 const log = new Logger('Login');
 
@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.createForm();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  ngOnDestroy() {}
+  ngOnDestroy() { }
 
   login() {
     this.isLoading = true;
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         untilDestroyed(this)
       )
       .subscribe(
-        (credentials) => {
+        (credentials: any) => {
           log.debug(`${credentials.username} successfully logged in`);
           this.router.navigate([this.route.snapshot.queryParams.redirect || '/'], { replaceUrl: true });
         },

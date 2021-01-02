@@ -4,7 +4,7 @@ export * from './modals/delete-modal/delete-modal.component';
 export * from './modals/confirmation-modal/confirmation-modal.component';
 // export * from 'ngx-extended-pdf-viewer';
 export * from './file-upload/file-upload.component';
-export * from './modals/note/note.component';
+export * from './modals/note-modal/note-modal.component';
 export * from './modals/payments/payments.component';
 export * from './preview-image/preview-image.component';
 export * from './dropdown/dropdown.component';

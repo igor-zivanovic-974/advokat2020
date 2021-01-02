@@ -10,6 +10,7 @@ import { FileListComponent } from './edit-case/file-list/file-list.component';
 import { CaseHistoryComponent } from './edit-case/case-history/case-history.component';
 import { SelectCourtTypeModalComponent } from './edit-case/select-court-type-modal/select-court-type-modal.component';
 import { CaseMovementsComponent } from './edit-case/case-movements/case-movements.component';
+import { NoteListComponent } from './edit-case/note-list/note-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CaseMovementsComponent } from './edit-case/case-movements/case-movement
     CaseHistoryComponent,
     SelectCourtTypeModalComponent,
     CaseMovementsComponent,
+    NoteListComponent,
   ],
   imports: [
     SharedModule,

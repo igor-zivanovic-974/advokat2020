@@ -26,7 +26,7 @@
               <h6>{{ case.court.name }}</h6>
               <h6>{{ case.status.name }}</h6>
             </div>
-            <div class="col-2">
+            <div class="col-2" *ngIf="selectedCase">
               <div class="text-center">
                 <button class="btn btn-link mx-auto" (click)="invokeDelete(case.id)" title="{{ 'case.delete' | translate }}">
                   <i class="fa fa-times"></i>

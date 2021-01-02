@@ -1,20 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CoreModule } from '@core';
 import { SharedModule } from '@shared';
-import { AuthModule } from '@app/@core/auth';
 import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-// import { CasesModule } from './cases/cases.module';
-// import { EmployeesModule } from './employees/employees.module';
 import { EvidencesModule } from './evidences/evidences.module';
 import { ClientsModule } from './clients/clients.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
@@ -45,6 +41,7 @@ import { evidencesReducer } from './evidences/store/evidences.reducer';
     // lazy loaded feature modules
     // CasesModule,
     // EmployeesModule,
+    // LoginModule
     EvidencesModule,
     ClientsModule,
     MessagesModule,
@@ -91,7 +88,6 @@ import { evidencesReducer } from './evidences/store/evidences.reducer';
         overlap: 150,
       },
     }),
-    AuthModule,
     // WebSocket,
     // Server,
     AppRoutingModule // must be imported as the last module as it contains the fallback route

@@ -31,7 +31,7 @@ export class NoteService {
     private persistenceService: PersistenceService,
     private notificationService: NotificationsService,
     private translateService: TranslateService
-  ) {}
+  ) { }
 
   getNotes(): Observable<Note[]> {
     return this.http.get(this.url).pipe(
@@ -60,6 +60,7 @@ export class NoteService {
   }
 
   addNote(body: Note): Observable<Note> {
+    //  TODO save note to case or separatelly
     return this.http.post(this.url, body).pipe(
       map((res: Note) => {
         this.notificationService.success(this.st.value, this.sc.value, this.notificationsOptions);

@@ -12,6 +12,7 @@ import { HelperService } from './services/helper.service';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, TranslateModule, RouterModule],
+
   providers: [
     PersistenceService,
     HelperService,

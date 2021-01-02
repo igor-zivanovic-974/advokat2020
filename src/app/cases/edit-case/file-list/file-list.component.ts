@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DeleteModalComponent } from '@app/@shared/modals/delete-modal/delete-modal.component';
 import { GlobalService } from '@app/shell/global.service';
 import { File } from '@core/interfaces/file';

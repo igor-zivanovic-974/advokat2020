@@ -22,11 +22,11 @@ import { SelectCourtTypeModalComponent } from './select-court-type-modal/select-
 import { Observable, Subject } from 'rxjs';
 import { GlobalService } from '@app/shell/global.service';
 import { take, takeUntil } from 'rxjs/operators';
-import { NoteComponent } from '@app/@shared/modals/note/note.component';
+import { NoteModalComponent } from '@app/@shared/modals/note-modal/note-modal.component';
 import { Note } from '@app/@core/interfaces/note';
 import { User } from '@app/@core/interfaces/user';
 import { EmployeesService } from '@app/employees/employees.service';
-import { NoteService } from '@app/@shared/modals/note/note.service';
+import { NoteService } from '@app/@shared/modals/note-modal/note.service';
 import { PaymentsComponent } from '@app/@shared/modals/payments/payments.component';
 
 @Component({
@@ -160,7 +160,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   selectCourtType() {
     const modalRef = this.modalService.open(SelectCourtTypeModalComponent, {
@@ -354,40 +354,40 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     alert(state);
   }
 
-  openNoteModal(noteId?: number) {
-    const modalRef = this.modalService.open(NoteComponent, { size: 'xl' });
-    modalRef.componentInstance.caseId = this.case.id;
-    if (noteId) {
-      modalRef.componentInstance.noteToEdit = this.case.notes.find((n) => n.id === noteId);
-    }
-    modalRef.componentInstance.note.subscribe((receivedEntry: Note) => {
-      this.case.notes.push(receivedEntry);
-      this.getHelperData();
-    });
-  }
+  // openNoteModal(noteId?: number) {
+  //   const modalRef = this.modalService.open(NoteComponent, { size: 'xl' });
+  //   modalRef.componentInstance.caseId = this.case.id;
+  //   if (noteId) {
+  //     modalRef.componentInstance.noteToEdit = this.case.notes.find((n) => n.id === noteId);
+  //   }
+  //   modalRef.componentInstance.note.subscribe((receivedEntry: Note) => {
+  //     this.case.notes.push(receivedEntry);
+  //     this.getHelperData();
+  //   });
+  // }
 
-  invokeDeleteNote(noteId: number) {
-    const modalRef = this.modalService.open(ConfirmationModalComponent, { size: 'xl' });
-    modalRef.componentInstance.id = noteId;
-    modalRef.componentInstance.queryText = 'common.delete-note-query';
-    modalRef.componentInstance.confirm.subscribe((response: boolean) => {
-      if (response) {
-        this.deleteNote(noteId);
-      }
-    });
-  }
+  // invokeDeleteNote(noteId: number) {
+  //   const modalRef = this.modalService.open(ConfirmationModalComponent, { size: 'xl' });
+  //   modalRef.componentInstance.id = noteId;
+  //   modalRef.componentInstance.queryText = 'common.delete-note-query';
+  //   modalRef.componentInstance.confirm.subscribe((response: boolean) => {
+  //     if (response) {
+  //       this.deleteNote(noteId);
+  //     }
+  //   });
+  // }
 
-  deleteNote(noteId: number) {
-    this.notesService
-      .deleteNote(noteId)
-      .pipe(take(1))
-      .subscribe((note: Note) => {
-        const index = this.case.notes.indexOf(note);
-        if (index) {
-          this.case.notes.splice(index, 1);
-        }
-      });
-  }
+  // deleteNote(noteId: number) {
+  //   this.notesService
+  //     .deleteNote(noteId)
+  //     .pipe(take(1))
+  //     .subscribe((note: Note) => {
+  //       const index = this.case.notes.indexOf(note);
+  //       if (index) {
+  //         this.case.notes.splice(index, 1);
+  //       }
+  //     });
+  // }
 
   openPaymentsModal() {
     const modalRef = this.modalService.open(PaymentsComponent, { size: 'xl' });

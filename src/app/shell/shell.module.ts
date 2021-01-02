@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { I18nModule } from '@app/i18n';
-import { AuthModule } from '@app/@core/auth';
+// import { AuthModule } from '@app/@core/auth';
 import { ShellComponent } from './shell.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,7 +16,7 @@ import { WebsocketService } from '@app/@core/services/websocket.service';
 import { ChatService } from '@app/@core/services/chat.service';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, NgbModule, AuthModule, I18nModule, SimpleNotificationsModule, RouterModule],
+  imports: [CommonModule, TranslateModule, NgbModule, I18nModule, SimpleNotificationsModule, RouterModule],
   declarations: [HeaderComponent, ShellComponent, SideMenuComponent, FooterComponent],
   providers: [GlobalService, WebsocketService, ChatService],
 })

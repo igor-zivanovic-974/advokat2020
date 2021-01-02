@@ -17,10 +17,14 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
-import { NoteComponent } from './modals/note/note.component';
+import { NoteModalComponent } from './modals/note-modal/note-modal.component';
 import { PaymentsComponent } from './modals/payments/payments.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PasswordLengthDetectorDirective } from './directives/password-length-detector.directive';
+import { HighlightFieldDirective } from './directives/highlight-field.directive';
+import { TestDirective } from './directives/test.directive';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   imports: [
@@ -45,9 +49,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContextMenuComponent,
     FileUploadComponent,
     DropdownComponent,
-    NoteComponent,
+    NoteModalComponent,
     PaymentsComponent,
     DropdownComponent,
+    PasswordLengthDetectorDirective,
+    HighlightFieldDirective,
+    TestDirective,
+    HighlightDirective,
   ],
   exports: [
     CommonModule,
@@ -61,16 +69,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoaderComponent,
     DeleteModalComponent,
     ConfirmationModalComponent,
-    NoteComponent,
+    NoteModalComponent,
     FileUploadComponent,
     PaymentsComponent,
     DropdownComponent,
+    PasswordLengthDetectorDirective,
+    HighlightFieldDirective,
+    TestDirective,
+    HighlightDirective,
   ],
   entryComponents: [
     DeleteModalComponent,
     ConfirmationModalComponent,
     FileUploadComponent,
-    NoteComponent,
+    NoteModalComponent,
     PaymentsComponent,
     DropdownComponent,
     BrowserAnimationsModule
