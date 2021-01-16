@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="case">
   <!-- [ngClass]="{'bg-light-orange': mode === 'edit'}" 
     <h1>
     {{ mode === 'new' ? ('new' | translate) : ('update' | translate) }} 
@@ -83,10 +83,10 @@
       </div>
 
       <!-- prosecutor -->
+      {{respondentAdded}} {{prosecutorAdded}}
       <!-- edit -->
       <div class="form-group" *ngIf="mode !== 'new'">
-        <label class="font-weight-bold" for="prosecutor">
-          <!-- [ngClass]="{'text-success': case.clientId === case.prosecutor.id, 'text-danger': case.clientId !== case.prosecutor.id}" -->
+        <label class="font-weight-bold" for="prosecutor" [ngClass]="{'text-success': case.clientId === case.prosecutor.id, 'text-danger': case.clientId !== case.prosecutor.id}">
           {{ 'case.prosecutor' | translate }}
         </label>
         <div class="d-flex mb-2">
@@ -102,7 +102,7 @@
       <div class="form-group" *ngIf="mode === 'new'">
         <label class="font-weight-bold" for="prosecutor">
           {{ 'case.prosecutor' | translate }}
-          <button class="btn btn-sm btn-primary ml-2" *ngIf="!prosecutorAdded" (click)="setClient(case.respondent.id)">
+          <button class="btn btn-sm btn-primary ml-2" *ngIf="respondentAdded" (click)="setClient(case.respondent.id)">
             {{ 'case.set-as-client' | translate }}
           </button>
           <span *ngIf="prosecutorAdded" class="text-danger"> *</span>
@@ -128,8 +128,7 @@
       <!-- respondent -->
       <!-- edit -->
       <div class="form-group" *ngIf="mode !== 'new'">
-        <label class="font-weight-bold" for="respondent">
-          <!-- [ngClass]="{'text-success': case.clientId !== case.prosecutor.id, 'text-danger': case.clientId === case.prosecutor.id}" -->
+        <label class="font-weight-bold" for="respondent" [ngClass]="{'text-success': case.clientId !== case.prosecutor.id, 'text-danger': case.clientId === case.prosecutor.id}">
           {{ 'case.respondent' | translate }}
           <button class="btn btn-sm btn-primary ml-2" *ngIf="!respondentAdded" (click)="setClient(case.respondent.id)">
             {{ 'case.set-as-client' | translate }}
@@ -149,7 +148,7 @@
       <div class="form-group" *ngIf="mode === 'new'">
         <label class="font-weight-bold" for="respondent">
           {{ 'case.respondent' | translate }}
-          <button class="btn btn-sm btn-primary ml-2" *ngIf="!respondentAdded" (click)="setClient(case.respondent.id)">
+          <button class="btn btn-sm btn-primary ml-2" *ngIf="prosecutorAdded" (click)="setClient(case.respondent.id)">
             {{ 'case.set-as-client' | translate }}
           </button>
           <span *ngIf="respondentAdded" class="text-danger"> *</span>

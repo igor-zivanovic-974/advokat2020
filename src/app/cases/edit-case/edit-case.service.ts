@@ -2,13 +2,49 @@ import { Injectable } from '@angular/core';
 import { Court, RegistrationMark } from '@app/@core';
 import { Council } from '@app/@core/interfaces/council';
 import { KeyValuePair } from '@app/@core/interfaces/keyValuePair';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, forkJoin, Observable, of, Subject } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EditCaseService {
-  constructor() {}
+  councils: Council[] = [];
+  rms: RegistrationMark[] = [];
+  cns: KeyValuePair[] = [];
+  cts: KeyValuePair[] = [];
+  statusList: KeyValuePair[] = [];
+  helpersDone$ = new BehaviorSubject(false);
+
+  constructor() { }
+
+  getHelperData() {
+
+    forkJoin([
+      this.getCouncils(1),
+      this.getRegistrationMarks(1),
+      this.getCourtNames(1),
+      this.getCourtTypes(),
+      this.getStatuses()
+    ]).pipe(
+      take(1),
+      map(([councilList, rmList, courtNameList, courtTypeList, statusList]: [Council[], RegistrationMark[], KeyValuePair[], KeyValuePair[], KeyValuePair[]]) => {
+        this.councils = councilList;
+        this.rms = rmList;
+        this.cns = courtNameList;
+        this.cts = courtTypeList;
+        this.statusList = statusList;
+        console.log(this.councils);
+        console.log(this.rms);
+        console.log(this.cns);
+        console.log(this.cts);
+        console.log(this.statusList);
+      })
+    ).subscribe(() => {
+      this.helpersDone$.next(true);
+    });
+
+  }
 
   getCouncils(courtId: number): Observable<Council[]> {
     return of([

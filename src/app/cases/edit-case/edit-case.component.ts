@@ -37,63 +37,67 @@ import { PaymentsComponent } from '@app/@shared/modals/payments/payments.compone
 export class EditCaseComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   unsubscribe$ = new Subject<void>();
-  respondent: Client = {
-    id: null,
-    firstName: '',
-    lastName: '',
-    address: '',
-    phone: '',
-    pin: '',
-    cases: [{ id: 1, name: 'Pera protiv Sime' }],
-  };
-  prosecutor: Client = {
-    id: null,
-    firstName: '',
-    lastName: '',
-    address: '',
-    phone: '',
-    pin: '',
-    cases: [{ id: 2, name: 'Igor protiv Sime' }],
-  };
-  client: Client = {
-    id: null,
-    firstName: '',
-    lastName: '',
-    address: '',
-    phone: '',
-    pin: '',
-    cases: [{ id: 3, name: 'Igor protiv Sime' }],
-  };
-  case: Case = {
-    id: null,
-    stateChanges: [],
-    internalMark: '',
-    dateCreated: new Date(),
-    dateUpdated: new Date(),
-    council: null,
-    clientId: null,
-    court: null,
-    registrationMark: null,
-    respondent: null,
-    prosecutor: null,
-    year: '',
-    caseNumber: '',
-    caseTitle: '',
-    subject: '',
-    caseValue: '',
-    notes: [],
-    files: [],
-    evidences: [],
-    hearingMinutes: [],
-    expertises: [],
-    decisions: [],
-    other: [],
-    status: null,
-    active: false,
-    caseHistory: [],
-    caseMovements: [],
-    payments: [],
-  };
+  respondent: Client;
+  //  = {
+  //   id: null,
+  //   firstName: '',
+  //   lastName: '',
+  //   address: '',
+  //   phone: '',
+  //   pin: '',
+  //   cases: [{ id: 1, name: 'Pera protiv Sime' }],
+  // };
+  prosecutor: Client;
+  //  = {
+  //   id: null,
+  //   firstName: '',
+  //   lastName: '',
+  //   address: '',
+  //   phone: '',
+  //   pin: '',
+  //   cases: [{ id: 2, name: 'Igor protiv Sime' }],
+  // };
+  client: Client;
+  //  = {
+  //   id: null,
+  //   firstName: '',
+  //   lastName: '',
+  //   address: '',
+  //   phone: '',
+  //   pin: '',
+  //   cases: [{ id: 3, name: 'Igor protiv Sime' }],
+  // };
+  case: Case;
+  //  = {
+  // id: null,
+  // stateChanges: [],
+  // internalMark: '',
+  // dateCreated: new Date(),
+  // dateUpdated: new Date(),
+  // council: null,
+  // clientId: null,
+  // court: null,
+  // registrationMark: null,
+  // respondent: null,
+  // prosecutor: null,
+  // year: '',
+  // caseNumber: '',
+  // caseTitle: '',
+  // subject: '',
+  // caseValue: '',
+  // notes: [],
+  // files: [],
+  // evidences: [],
+  // hearingMinutes: [],
+  // expertises: [],
+  // decisions: [],
+  // other: [],
+  // status: null,
+  // active: false,
+  // caseHistory: [],
+  // caseMovements: [],
+  // payments: [],
+  // };
   id: number;
   mode: string;
   @Input() modalId?: number;
@@ -114,6 +118,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   lastInternalMark: string;
   note: string;
   employees: Employee[];
+  helpersDone$: Observable<boolean>;
 
   constructor(
     private casesService: CasesService,
@@ -158,6 +163,14 @@ export class EditCaseComponent implements OnInit, OnDestroy {
         });
       }
     });
+
+    this.ecService.helpersDone$.subscribe(() => {
+      this.councils = this.ecService.councils;
+      this.courtNames = this.ecService.cns;
+      this.courtTypes = this.ecService.cts;
+      this.statuses = this.ecService.statusList;
+      this.registrationMarks = this.ecService.rms;
+    });
   }
 
   ngOnInit() { }
@@ -179,6 +192,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   getCase() {
     this.casesService.getCaseById(this.id).subscribe((data: Case) => {
       this.case = data;
+      this.setClient(this.case.clientId);
       this.courtTypeId = data.court.courtTypeId;
       this.form.patchValue(data);
       this.form.patchValue({
@@ -198,12 +212,13 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   }
 
   getHelperData() {
+    this.ecService.getHelperData();
     this.getEmployees();
     this.getLastInternalMark();
-    this.getCouncils();
-    this.getRegistrators();
-    this.getCourtNames();
-    this.getStatuses();
+    // this.getCouncils();
+    // this.getRegistrators();
+    // this.getCourtNames();
+    // this.getStatuses();
     this.spinner.hide();
   }
 
@@ -347,7 +362,17 @@ export class EditCaseComponent implements OnInit, OnDestroy {
   }
 
   setClient(id: number) {
+    // debugger
     this.case.clientId = id;
+    this.form.value.clientId = id;
+    if (id === +this.case.prosecutor.id) {
+      this.prosecutorAdded = true;
+      this.respondentAdded = false;
+    } else {
+      this.respondentAdded = true;
+      this.prosecutorAdded = false;
+    }
+
   }
 
   switchCase(state: string) {
