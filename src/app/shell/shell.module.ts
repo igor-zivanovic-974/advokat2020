@@ -20,4 +20,4 @@ import { ChatService } from '@app/@core/services/chat.service';
   declarations: [HeaderComponent, ShellComponent, SideMenuComponent, FooterComponent],
   providers: [GlobalService, WebsocketService, ChatService],
 })
-export class ShellModule { }
+export class ShellModule {}

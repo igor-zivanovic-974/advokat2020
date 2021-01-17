@@ -5,11 +5,23 @@
     </div>
     <div class="col-9 col-lg-6">
       <div class="form-group">
-        <input type="text" class="form-control" id="search" placeholder="{{ 'case.search' | translate }}" (ngModelChange)="searchCases()" [(ngModel)]="searchValue" />
+        <input
+          type="text"
+          class="form-control"
+          id="search"
+          placeholder="{{ 'case.search' | translate }}"
+          (ngModelChange)="searchCases()"
+          [(ngModel)]="searchValue"
+        />
       </div>
     </div>
     <div class="col-2 text-right pr-5">
-      <button class="" (click)="goToUrl('new', 0)" class="btn btn-outline-primary header-btn" title="{{ 'case.add-new' | translate }}">
+      <button
+        class=""
+        (click)="goToUrl('new', 0)"
+        class="btn btn-outline-primary header-btn"
+        title="{{ 'case.add-new' | translate }}"
+      >
         <i class="fas fa-folder-plus px-1"></i>
       </button>
     </div>
@@ -18,7 +30,12 @@
   <div class="row" *ngIf="cases && cases.length > 0">
     <div class="col-12">
       <!-- [ngClass]="{'col-8': !(isMobileScreen$ | async), 'col-12': (isMobileScreen$ | async)}" -->
-      <div class="card my-3 pb-3" *ngFor="let case of filteredCases; let i = index" (click)="setActiveCase(case)" [ngClass]="{ 'border-bold': case.id === selectedCaseId }">
+      <div
+        class="card my-3 pb-3"
+        *ngFor="let case of filteredCases; let i = index"
+        (click)="setActiveCase(case)"
+        [ngClass]="{ 'border-bold': case.id === selectedCaseId }"
+      >
         <div class="card-header">
           <div class="row my-3">
             <div class="col-10">
@@ -28,12 +45,20 @@
             </div>
             <div class="col-2" *ngIf="selectedCase">
               <div class="text-center">
-                <button class="btn btn-link mx-auto" (click)="invokeDelete(case.id)" title="{{ 'case.delete' | translate }}">
+                <button
+                  class="btn btn-link mx-auto"
+                  (click)="invokeDelete(case.id)"
+                  title="{{ 'case.delete' | translate }}"
+                >
                   <i class="fa fa-times"></i>
                 </button>
               </div>
               <div class="text-center">
-                <button class="btn btn-link mx-auto" (click)="goToUrl('edit', case.id)" title="{{ 'case.edit' | translate }}">
+                <button
+                  class="btn btn-link mx-auto"
+                  (click)="goToUrl('edit', case.id)"
+                  title="{{ 'case.edit' | translate }}"
+                >
                   <i class="fa fa-edit"></i>
                 </button>
               </div>
@@ -45,7 +70,11 @@
         <div class="card-body my-0 py-0">
           <h6 class="my-3" id="caseTitle">{{ case.caseTitle }}</h6>
         </div>
-        <div class="px-3 d-none" *ngIf="selectedCase" [ngClass]="{ 'd-block': selectedCase.id === case.id, 'd-none': selectedCase.id !== case.id }">
+        <div
+          class="px-3 d-none"
+          *ngIf="selectedCase"
+          [ngClass]="{ 'd-block': selectedCase.id === case.id, 'd-none': selectedCase.id !== case.id }"
+        >
           <hr />
           <h6 id="subject">
             {{ 'case.subject' | translate }}: <span class="normal-text">{{ selectedCase.subject }}</span>
@@ -60,13 +89,15 @@
             {{ 'case.prosecutor' | translate }}:
             <span class="normal-text">
               {{ selectedCase.prosecutor.firstName }} {{ selectedCase.prosecutor.lastName }}:
-              {{ selectedCase.prosecutor.address }}</span>
+              {{ selectedCase.prosecutor.address }}</span
+            >
           </h6>
           <h6>
             {{ 'case.respondent' | translate }}:
             <span class="normal-text">
               {{ selectedCase.respondent.firstName }} {{ selectedCase.respondent.lastName }}:
-              {{ selectedCase.respondent.address }}</span>
+              {{ selectedCase.respondent.address }}</span
+            >
           </h6>
 
           <!-- subject -->
@@ -77,12 +108,23 @@
           <div class="row">
             <!-- files  -->
             <div class="col-12 col-lg-6">
-              <app-file-list class="mt-3" [items]="selectedCase.files" [title]="'files'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+              <app-file-list
+                class="mt-3"
+                [items]="selectedCase.files"
+                [title]="'files'"
+                [disabled]="true"
+                (changeOccured)="getCases()"
+              ></app-file-list>
             </div>
 
             <!-- hearing-minutes -->
             <div class="col-12 col-lg-6">
-              <app-file-list [items]="selectedCase.hearingMinutes" [title]="'hearing-minutes'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+              <app-file-list
+                [items]="selectedCase.hearingMinutes"
+                [title]="'hearing-minutes'"
+                [disabled]="true"
+                (changeOccured)="getCases()"
+              ></app-file-list>
             </div>
 
             <!-- evidences -->
@@ -92,19 +134,39 @@
 
             <!-- decisions -->
             <div class="col-12 col-lg-6">
-              <app-file-list [items]="selectedCase.decisions" [title]="'decisions'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+              <app-file-list
+                [items]="selectedCase.decisions"
+                [title]="'decisions'"
+                [disabled]="true"
+                (changeOccured)="getCases()"
+              ></app-file-list>
 
               <!-- other -->
-              <app-file-list [items]="selectedCase.other" [title]="'other'" [disabled]="true" (changeOccured)="getCases()"></app-file-list>
+              <app-file-list
+                [items]="selectedCase.other"
+                [title]="'other'"
+                [disabled]="true"
+                (changeOccured)="getCases()"
+              ></app-file-list>
             </div>
           </div>
         </div>
 
         <!-- case history -->
-        <app-case-history *ngIf="selectedCase && case.id === selectedCaseId" [caseHistory]="selectedCase.caseHistory" [title]="'case.history'" [mode]="'preview'" [disabled]="true"></app-case-history>
+        <app-case-history
+          *ngIf="selectedCase && case.id === selectedCaseId"
+          [caseHistory]="selectedCase.caseHistory"
+          [title]="'case.history'"
+          [mode]="'preview'"
+          [disabled]="true"
+        ></app-case-history>
 
         <!-- case movement -->
-        <app-case-movements *ngIf="selectedCase && case.id === selectedCaseId" [caseMovements]="case.caseMovements" (relatedCaseId)="openRelatedCase($event)"></app-case-movements>
+        <app-case-movements
+          *ngIf="selectedCase && case.id === selectedCaseId"
+          [caseMovements]="case.caseMovements"
+          (relatedCaseId)="openRelatedCase($event)"
+        ></app-case-movements>
 
         <!-- troskovnik -->
         <app-payments *ngIf="selectedCase && case.id === selectedCaseId" [payments]="case.payments"></app-payments>

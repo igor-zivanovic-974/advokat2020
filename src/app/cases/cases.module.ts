@@ -22,14 +22,9 @@ import { NoteListComponent } from './edit-case/note-list/note-list.component';
     CaseMovementsComponent,
     NoteListComponent,
   ],
-  imports: [
-    SharedModule,
-    NgxFileDropModule,
-    PdfViewerModule,
-    CasesRoutingModule,
-  ],
+  imports: [SharedModule, NgxFileDropModule, PdfViewerModule, CasesRoutingModule],
   providers: [CasesService],
   exports: [PdfViewerComponent],
   entryComponents: [SelectCourtTypeModalComponent],
 })
-export class CasesModule { }
+export class CasesModule {}

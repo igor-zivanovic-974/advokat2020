@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import * as Rx from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WebsocketService {
-
   private subject: Rx.Subject<MessageEvent>;
 
-  constructor() { }
+  constructor() {}
 
   public connect(url: any): Rx.Subject<MessageEvent> {
     if (!this.subject) {
@@ -26,7 +25,7 @@ export class WebsocketService {
       ws.onerror = obs.error.bind(obs);
       ws.onclose = obs.complete.bind(obs);
       return ws.close.bind(ws);
-    })
+    });
 
     const observer = {
       // tslint:disable-next-line:ban-types
@@ -34,8 +33,8 @@ export class WebsocketService {
         if (ws.readyState === WebSocket.OPEN) {
           ws.send(JSON.stringify(data));
         }
-      }
-    }
+      },
+    };
 
     return Rx.Subject.create(observer, observable);
   }

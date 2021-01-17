@@ -8,4 +8,4 @@ import { SharedModule } from '@app/@shared';
   declarations: [EvidencesComponent, EditEvidenceComponent],
   imports: [SharedModule, EvidencesRoutingModule],
 })
-export class EvidencesModule { }
+export class EvidencesModule {}

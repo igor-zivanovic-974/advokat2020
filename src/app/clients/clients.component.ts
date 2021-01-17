@@ -105,7 +105,6 @@ export class ClientsComponent implements OnInit {
         );
       });
     }, 500);
-
   }
 
   setActiveClient(c: Client) {

@@ -9,11 +9,8 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { EmployeesService } from './employees.service';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    EmployeesRoutingModule
-  ],
+  imports: [SharedModule, EmployeesRoutingModule],
   declarations: [EmployeesComponent, EditEmployeeComponent],
   providers: [EmployeesService],
 })
-export class EmployeesModule { }
+export class EmployeesModule {}

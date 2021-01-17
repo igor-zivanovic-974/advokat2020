@@ -10,21 +10,22 @@ export interface Message {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ChatService {
   public message: Subject<Message>;
 
   constructor(private wsService: WebsocketService) {
-    this.message = (wsService
-      .connect(environment.wsUrl).pipe(
-        map((response: MessageEvent): Message => {
+    this.message = wsService.connect(environment.wsUrl).pipe(
+      map(
+        (response: MessageEvent): Message => {
           const data = JSON.parse(response.data);
           return {
             author: data.author,
-            message: data.message
-          }
-        })) as Subject<Message>)
-
+            message: data.message,
+          };
+        }
+      )
+    ) as Subject<Message>;
   }
 }

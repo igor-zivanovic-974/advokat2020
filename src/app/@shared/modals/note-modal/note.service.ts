@@ -31,7 +31,7 @@ export class NoteService {
     private persistenceService: PersistenceService,
     private notificationService: NotificationsService,
     private translateService: TranslateService
-  ) { }
+  ) {}
 
   getNotes(): Observable<Note[]> {
     return this.http.get(this.url).pipe(

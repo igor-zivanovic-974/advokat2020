@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     this.messageCounter$ = this._globalService.messageCounter$;
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   // toggleMenu() {
   //   this.menuHidden = !this.menuHidden;

@@ -15,9 +15,9 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private credentialsService: CredentialsService
-  ) { }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   toggleMenu() {
     this.menuHidden = !this.menuHidden;

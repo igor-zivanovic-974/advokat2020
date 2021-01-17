@@ -10,9 +10,24 @@ import { AuthenticationGuard } from '@app/@core/auth';
 const routes: Routes = [
   Shell.childRoutes([
     // lazy loaded
-    { path: '', component: EmployeesComponent, data: { title: extract('employees') }, canActivate: [AuthenticationGuard] },
-    { path: ':mode/:id', component: EditEmployeeComponent, data: { title: extract('employee') }, canActivate: [AuthenticationGuard] },
-    { path: ':mode', component: EditEmployeeComponent, data: { title: extract('employee') }, canActivate: [AuthenticationGuard] },
+    {
+      path: '',
+      component: EmployeesComponent,
+      data: { title: extract('employees') },
+      canActivate: [AuthenticationGuard],
+    },
+    {
+      path: ':mode/:id',
+      component: EditEmployeeComponent,
+      data: { title: extract('employee') },
+      canActivate: [AuthenticationGuard],
+    },
+    {
+      path: ':mode',
+      component: EditEmployeeComponent,
+      data: { title: extract('employee') },
+      canActivate: [AuthenticationGuard],
+    },
   ]),
 ];
 
@@ -21,4 +36,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class EmployeesRoutingModule { }
+export class EmployeesRoutingModule {}

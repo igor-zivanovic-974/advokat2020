@@ -19,7 +19,11 @@ export class ShellComponent implements OnInit, OnDestroy {
 
   private message = { author: 'Pera', message: 'idi spavaj' };
 
-  constructor(private _globalService: GlobalService, private wsService: WebsocketService, private chatService: ChatService) {
+  constructor(
+    private _globalService: GlobalService,
+    private wsService: WebsocketService,
+    private chatService: ChatService
+  ) {
     this.getScreenSize();
 
     this.isMobileScreen$ = this._globalService.isMobileScreen$;
@@ -35,10 +39,9 @@ export class ShellComponent implements OnInit, OnDestroy {
       console.log('Response from WS Server: ');
       console.log(msg);
     });
-
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   @HostListener('window:resize', ['$event'])
   getScreenSize() {

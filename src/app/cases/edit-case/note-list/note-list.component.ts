@@ -9,7 +9,7 @@ import { take } from 'rxjs/operators';
 @Component({
   selector: 'app-note-list',
   templateUrl: './note-list.component.html',
-  styleUrls: ['./note-list.component.scss']
+  styleUrls: ['./note-list.component.scss'],
 })
 export class NoteListComponent implements OnInit {
   @Input() notes: Note[];
@@ -17,10 +17,9 @@ export class NoteListComponent implements OnInit {
   @Input() caseId: number;
   @Output() changeOccured: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private notesService: NoteService, private modalService: NgbModal) { }
+  constructor(private notesService: NoteService, private modalService: NgbModal) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openNoteModal(noteId?: number) {
     const modalRef = this.modalService.open(NoteModalComponent, { size: 'xl' });

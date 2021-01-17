@@ -7,10 +7,10 @@ import { EditEvidenceComponent } from './edit-evidence/edit-evidence.component';
 import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
-  // eagerly loaded, not lazy loaded
-  // TODO make it lazy loaded
+  // lazy loaded
   Shell.childRoutes([
-    { path: 'evidences', component: EvidencesComponent, data: { title: extract('evidences') } },
+    // { path: 'evidences', component: EvidencesComponent, data: { title: extract('evidences') } },
+    { path: '', component: EvidencesComponent, data: { title: extract('evidences') } },
     { path: 'evidences/edit/:id', component: EditEvidenceComponent, data: { title: extract('evidence') } },
   ]),
 ];

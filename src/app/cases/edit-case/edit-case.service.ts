@@ -16,34 +16,42 @@ export class EditCaseService {
   statusList: KeyValuePair[] = [];
   helpersDone$ = new BehaviorSubject(false);
 
-  constructor() { }
+  constructor() {}
 
   getHelperData() {
-
     forkJoin([
       this.getCouncils(1),
       this.getRegistrationMarks(1),
       this.getCourtNames(1),
       this.getCourtTypes(),
-      this.getStatuses()
-    ]).pipe(
-      take(1),
-      map(([councilList, rmList, courtNameList, courtTypeList, statusList]: [Council[], RegistrationMark[], KeyValuePair[], KeyValuePair[], KeyValuePair[]]) => {
-        this.councils = councilList;
-        this.rms = rmList;
-        this.cns = courtNameList;
-        this.cts = courtTypeList;
-        this.statusList = statusList;
-        console.log(this.councils);
-        console.log(this.rms);
-        console.log(this.cns);
-        console.log(this.cts);
-        console.log(this.statusList);
-      })
-    ).subscribe(() => {
-      this.helpersDone$.next(true);
-    });
-
+      this.getStatuses(),
+    ])
+      .pipe(
+        take(1),
+        map(
+          ([councilList, rmList, courtNameList, courtTypeList, statusList]: [
+            Council[],
+            RegistrationMark[],
+            KeyValuePair[],
+            KeyValuePair[],
+            KeyValuePair[]
+          ]) => {
+            this.councils = councilList;
+            this.rms = rmList;
+            this.cns = courtNameList;
+            this.cts = courtTypeList;
+            this.statusList = statusList;
+            console.log(this.councils);
+            console.log(this.rms);
+            console.log(this.cns);
+            console.log(this.cts);
+            console.log(this.statusList);
+          }
+        )
+      )
+      .subscribe(() => {
+        this.helpersDone$.next(true);
+      });
   }
 
   getCouncils(courtId: number): Observable<Council[]> {

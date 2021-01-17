@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PersistenceService {
   apiUrl = environment.serverUrl;
@@ -34,7 +34,7 @@ export class PersistenceService {
     private notificationService: NotificationsService,
     private router: Router,
     private translateService: TranslateService
-  ) { }
+  ) {}
 
   displayErrorMessageFromApi(error: any) {
     const title: any = this.translateService.get('error');

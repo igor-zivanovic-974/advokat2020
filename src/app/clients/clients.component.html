@@ -4,20 +4,36 @@
       <h3 class="ml-5">{{ 'clients' | translate }}</h3>
     </div>
     <div class="col-1 text-right">
-      <button (click)="goToUrl('new', 0)" class="btn btn-outline-secondary header-btn" title="{{ 'client.add' | translate }}">
+      <button
+        (click)="goToUrl('new', 0)"
+        class="btn btn-outline-secondary header-btn"
+        title="{{ 'client.add' | translate }}"
+      >
         <i class="fas fa-folder-plus px-1"></i>
         <!-- {{ !(isMobileScreen$ | async) ? ('client.add' | translate) : '' }} -->
       </button>
     </div>
     <div class="col-12 col-lg-7">
       <div class="form-group">
-        <input type="text" class="form-control" id="search" placeholder="{{ 'common.search' | translate }}" (ngModelChange)="searchClients()" [(ngModel)]="searchValue" />
+        <input
+          type="text"
+          class="form-control"
+          id="search"
+          placeholder="{{ 'common.search' | translate }}"
+          (ngModelChange)="searchClients()"
+          [(ngModel)]="searchValue"
+        />
       </div>
     </div>
   </div>
 
   <div class="col-12" *ngIf="clients && clients.length > 0">
-    <div class="card my-2" *ngFor="let c of filteredClients" (click)="setActiveClient(c)" [ngClass]="{ 'border-bold': c.id === selectedClientId }">
+    <div
+      class="card my-2"
+      *ngFor="let c of filteredClients"
+      (click)="setActiveClient(c)"
+      [ngClass]="{ 'border-bold': c.id === selectedClientId }"
+    >
       <div class="card-header">
         <h5 class="card-title">{{ c.firstName }} {{ c.lastName }}</h5>
       </div>
@@ -43,11 +59,11 @@
         <div class="card-footer mt-3" style="height: 50px">
           <span class="float-left cursor-pointer" (click)="invokeDeleteClient(c.id)">
             <!-- {{ !(isMobileScreen$ | async) ? ('client.delete' | translate) : '' }} -->
-            <i class="fa fa-trash btn btn-outline-secondary ml-2" title="{{'client.delete' | translate}}"></i>
+            <i class="fa fa-trash btn btn-outline-secondary ml-2" title="{{ 'client.delete' | translate }}"></i>
           </span>
           <span class="float-right cursor-pointer" (click)="goToUrl('edit', c.id)">
             <!-- {{ !(isMobileScreen$ | async) ? ('client.edit' | translate) : '' }} -->
-            <i class="fa fa-edit btn btn-outline-secondary ml-2" title="{{'client.edit' | translate}}"></i>
+            <i class="fa fa-edit btn btn-outline-secondary ml-2" title="{{ 'client.edit' | translate }}"></i>
           </span>
         </div>
       </div>

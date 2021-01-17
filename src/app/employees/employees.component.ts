@@ -42,7 +42,6 @@ export class EmployeesComponent implements OnInit {
   ngOnInit() {
     this.spinner.show();
     this.getEmployees();
-
   }
 
   getEmployees() {

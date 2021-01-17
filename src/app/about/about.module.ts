@@ -8,4 +8,4 @@ import { SharedModule } from '@app/@shared';
   imports: [SharedModule, AboutRoutingModule],
   declarations: [AboutComponent],
 })
-export class AboutModule { }
+export class AboutModule {}

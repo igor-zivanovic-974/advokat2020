@@ -2,25 +2,58 @@
   <div class="border-bottom mb-3">
     <label class="font-weight-bold" for="">{{ title | translate }}</label>
     <span class="float-right" *ngIf="mode && (mode === 'new' || mode === 'edit')">
-      <button class="btn btn-sm btn-primary" (click)="addHistory()" title="{{ 'case.add-history' | translate }}" [disabled]="disabled">
+      <button
+        class="btn btn-sm btn-primary"
+        (click)="addHistory()"
+        title="{{ 'case.add-history' | translate }}"
+        [disabled]="disabled"
+      >
         <i class="fa fa-plus"></i> {{ 'case.add-history' | translate }}
       </button>
     </span>
   </div>
   <div *ngIf="caseHistory">
-    <div *ngFor="let ch of caseHistory.slice().reverse(); let i = index" class="row m-0 stripe-row" [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-light': i % 2 !== 0 }">
+    <div
+      *ngFor="let ch of caseHistory.slice().reverse(); let i = index"
+      class="row m-0 stripe-row"
+      [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-light': i % 2 !== 0 }"
+    >
       <!-- (click)="openRelatedCase($event)" -->
       <span class="pl-2 mt-3">{{ ch.date | date: 'dd.MM.yyyy.' }}</span>
-      <span class="col-lg mt-3" [attr.contenteditable]="false" [attr.tabIndex]="" id="{{ i }}2" (focusout)="invokeUpdateHistory(i, ch.id)">{{ ch.title }}</span>
+      <span
+        class="col-lg mt-3"
+        [attr.contenteditable]="false"
+        [attr.tabIndex]=""
+        id="{{ i }}2"
+        (focusout)="invokeUpdateHistory(i, ch.id)"
+        >{{ ch.title }}</span
+      >
       <span class="col-sm mt-3" *ngIf="mode === 'edit' || mode === 'new'">
-        <button class="btn btn-sm mb-2 mx-1 float-right order-2" *ngIf="historyMode === 'preview' || ch.id !== editHistoryId" (click)="invokeDeleteHistory(ch.id)" title="{{ 'case.delete-history' | translate }}" [disabled]="disabled">
+        <button
+          class="btn btn-sm mb-2 mx-1 float-right order-2"
+          *ngIf="historyMode === 'preview' || ch.id !== editHistoryId"
+          (click)="invokeDeleteHistory(ch.id)"
+          title="{{ 'case.delete-history' | translate }}"
+          [disabled]="disabled"
+        >
           <i class="fa fa-times"></i>
         </button>
-        <button class="btn btn-sm mb-2 mx-1 float-right order-1" *ngIf="historyMode === 'preview' || ch.id !== editHistoryId" (click)="enableHistoryUpdate(i, ch.id)" title="{{ 'case.edit-history' | translate }}" [disabled]="disabled">
+        <button
+          class="btn btn-sm mb-2 mx-1 float-right order-1"
+          *ngIf="historyMode === 'preview' || ch.id !== editHistoryId"
+          (click)="enableHistoryUpdate(i, ch.id)"
+          title="{{ 'case.edit-history' | translate }}"
+          [disabled]="disabled"
+        >
           <i class="fa fa-edit"></i>
         </button>
 
-        <button class="btn btn-sm btn-outline-primary mb-2 mx-1 float-right" *ngIf="historyMode === 'edit' && ch.id === editHistoryId" (click)="updateHistory(i, ch.id)" title="{{ 'case.save-history' | translate }}">
+        <button
+          class="btn btn-sm btn-outline-primary mb-2 mx-1 float-right"
+          *ngIf="historyMode === 'edit' && ch.id === editHistoryId"
+          (click)="updateHistory(i, ch.id)"
+          title="{{ 'case.save-history' | translate }}"
+        >
           <i class="fa fa-save"></i>
         </button>
       </span>

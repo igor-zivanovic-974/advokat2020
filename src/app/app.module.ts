@@ -11,8 +11,8 @@ import { ShellModule } from './shell/shell.module';
 import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { EvidencesModule } from './evidences/evidences.module';
-import { ClientsModule } from './clients/clients.module';
+// import { EvidencesModule } from './evidences/evidences.module';
+// import { ClientsModule } from './clients/clients.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessagesModule } from './messages/messages.module';
@@ -42,8 +42,8 @@ import { evidencesReducer } from './evidences/store/evidences.reducer';
     // CasesModule,
     // EmployeesModule,
     // LoginModule
-    EvidencesModule,
-    ClientsModule,
+    // EvidencesModule,
+    // ClientsModule,
     MessagesModule,
     NgxFileDropModule,
     StoreModule.forRoot({ evidences: evidencesReducer }),
@@ -90,7 +90,7 @@ import { evidencesReducer } from './evidences/store/evidences.reducer';
     }),
     // WebSocket,
     // Server,
-    AppRoutingModule // must be imported as the last module as it contains the fallback route
+    AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
   providers: [NgbActiveModal],
@@ -98,4 +98,3 @@ import { evidencesReducer } from './evidences/store/evidences.reducer';
   exports: [TranslateModule],
 })
 export class AppModule { }
-

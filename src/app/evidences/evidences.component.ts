@@ -10,7 +10,7 @@ import { EvidencesService } from './evidences.service';
   styleUrls: ['./evidences.component.scss'],
 })
 export class EvidencesComponent implements OnInit {
-  evidences: Evidence[]; // 
+  evidences: Evidence[]; //
   evidences$: Observable<Evidence[]>;
   isLoading: boolean;
 
@@ -23,7 +23,7 @@ export class EvidencesComponent implements OnInit {
       this.evidences$.subscribe((evs: Evidence[]) => {
         this.evidences = evs;
       });
-    })
+    });
   }
 
   ngOnInit() {
@@ -38,13 +38,17 @@ export class EvidencesComponent implements OnInit {
         this.evidences = evs;
         this.isLoading = false;
       }, 1000);
-
     });
   }
 
   addEvidence() {
     this.isLoading = true;
-    const ev: Evidence = { id: Math.floor(Math.random() * 100), name: this.generateString(), caseId: 1, dateAdded: new Date() };
+    const ev: Evidence = {
+      id: Math.floor(Math.random() * 100),
+      name: this.generateString(),
+      caseId: 1,
+      dateAdded: new Date(),
+    };
     this.evidencesService.addEvidence(ev).subscribe((e: Evidence) => {
       setTimeout(() => {
         console.log(e);

@@ -85,10 +85,10 @@ import { HighlightDirective } from './directives/highlight.directive';
     NoteModalComponent,
     PaymentsComponent,
     DropdownComponent,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [NotificationsService],
 })
-export class SharedModule { }
+export class SharedModule {}
 
 // platformBrowserDynamic().bootstrapModule(SharedModule);

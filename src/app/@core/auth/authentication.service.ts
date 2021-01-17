@@ -19,7 +19,7 @@ export interface LoginContext {
 export class AuthenticationService {
   private _credentials: Credentials | null;
 
-  constructor(private credentialsService: CredentialsService) { }
+  constructor(private credentialsService: CredentialsService) {}
 
   /**
    * Authenticates the user.

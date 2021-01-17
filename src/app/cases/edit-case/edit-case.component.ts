@@ -173,7 +173,7 @@ export class EditCaseComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   selectCourtType() {
     const modalRef = this.modalService.open(SelectCourtTypeModalComponent, {
@@ -372,7 +372,6 @@ export class EditCaseComponent implements OnInit, OnDestroy {
       this.respondentAdded = true;
       this.prosecutorAdded = false;
     }
-
   }
 
   switchCase(state: string) {

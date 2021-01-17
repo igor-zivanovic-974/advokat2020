@@ -9,11 +9,8 @@ import { ClientsService } from './clients.service';
 import { CaseModalComponent } from './edit-client/case-modal/case-modal.component';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    ClientsRoutingModule
-  ],
+  imports: [SharedModule, ClientsRoutingModule],
   declarations: [ClientsComponent, EditClientComponent, CaseModalComponent],
   providers: [ClientsService, CoreModule],
 })
-export class ClientsModule { }
+export class ClientsModule {}

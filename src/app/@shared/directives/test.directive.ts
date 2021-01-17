@@ -1,10 +1,10 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-    selector: '[appTest]'
+  selector: '[appTest]',
 })
 export class TestDirective {
-    constructor(private el: ElementRef) {
-        el.nativeElement.style.backgroundColor = '#f00';
-    }
+  constructor(private el: ElementRef) {
+    el.nativeElement.style.backgroundColor = '#f00';
+  }
 }

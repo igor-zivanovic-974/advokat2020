@@ -11,8 +11,8 @@ const routes: Routes = [
     // lazy loaded
     { path: '', component: CasesComponent, data: { title: extract('cases') } },
     { path: ':mode/:id', component: EditCaseComponent, data: { title: extract('case') } },
-    { path: ':mode', component: EditCaseComponent, data: { title: extract('case') } }
-  ])
+    { path: ':mode', component: EditCaseComponent, data: { title: extract('case') } },
+  ]),
 ];
 
 @NgModule({
@@ -21,5 +21,5 @@ const routes: Routes = [
   providers: [],
 })
 export class CasesRoutingModule {
-  constructor() { }
+  constructor() {}
 }

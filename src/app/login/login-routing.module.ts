@@ -3,13 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { extract } from '@app/i18n';
 import { LoginComponent } from './login.component';
 
-
-const routes: Routes = [
-  { path: '', component: LoginComponent, data: { title: extract('login') } }
-];
+const routes: Routes = [{ path: '', component: LoginComponent, data: { title: extract('login') } }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LoginRoutingModule { }
+export class LoginRoutingModule {}

@@ -19,13 +19,13 @@ const endpoints = {
 export class EvidencesService {
   evidencesChanged$ = new BehaviorSubject<boolean>(false);
   evidences$ = new BehaviorSubject<Evidence[]>([]);
-  url = this.persistenceService.apiUrl;;
+  url = this.persistenceService.apiUrl;
 
-
-  constructor(private http: HttpClient, private persistenceService: PersistenceService) { }
+  constructor(private http: HttpClient, private persistenceService: PersistenceService) {}
 
   getEvidences() {
-    this.http.get(`${this.url}/${endpoints.read()}`)
+    this.http
+      .get(`${this.url}/${endpoints.read()}`)
       .pipe(take(1))
       .subscribe((evs: Evidence[]) => {
         console.log(evs);
@@ -35,24 +35,22 @@ export class EvidencesService {
   }
 
   addEvidence(ev: Evidence): Observable<Evidence> {
-    return this.http.post(`${this.url}/${endpoints.create()}`, ev)
-      .pipe(
-        take(1),
-        map((e: Evidence) => {
-          this.getEvidences();
-          return e;
-        })
-      )
+    return this.http.post(`${this.url}/${endpoints.create()}`, ev).pipe(
+      take(1),
+      map((e: Evidence) => {
+        this.getEvidences();
+        return e;
+      })
+    );
   }
 
   deleteEvidence(id: number) {
-    return this.http.delete(`${this.url}/${endpoints.delete(id)}`)
-      .pipe(
-        take(1),
-        map(() => {
-          this.getEvidences();
-          return;
-        })
-      )
+    return this.http.delete(`${this.url}/${endpoints.delete(id)}`).pipe(
+      take(1),
+      map(() => {
+        this.getEvidences();
+        return;
+      })
+    );
   }
 }

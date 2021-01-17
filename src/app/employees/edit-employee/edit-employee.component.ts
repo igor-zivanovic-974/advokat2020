@@ -66,7 +66,7 @@ export class EditEmployeeComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getEmployee(id: number) {
     this.employeesService.getEmployeeById(id).subscribe((data: Employee) => {
@@ -139,7 +139,7 @@ export class EditEmployeeComponent implements OnInit {
     modalRef.componentInstance.fromEmployeesPage = true;
     modalRef.componentInstance.selectedCases.subscribe((cases: Case[]) => {
       this.employee.cases = cases;
-      this.form.patchValue({ 'cases': cases });
+      this.form.patchValue({ cases: cases });
       this.selectedIds = [];
       this.setCaseIds();
       // console.log(this.form.value);
